@@ -1,0 +1,11 @@
+/*******************************
+         Theme Overrides
+*******************************/
+
+.ui.top.fixed.menu.secondary .item {
+  color : #008080;
+}
+
+.ui.top.fixed.menu.secondary{
+  box-shadow : 0px 1px 12px #555;
+}

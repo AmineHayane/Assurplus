@@ -1,0 +1,239 @@
+ <div class="ui top fixed menu secondary " [ngClass]= "{' heightchange four item' : isScrolled_50}">
+
+    <a class="item">
+      <img class="ui tiny image" src="/src/assets/images/brand_logo.png">
+    </a>
+    <a class=" item active">
+      <i class="home icon"></i>
+      Home
+    </a>
+    <a class="orange item">
+      About us
+    </a>
+    <a class="item">
+      Contact
+    </a>
+
+    <div *ngIf="!isScrolled_50" class="right menu">
+      <a class="orange item">
+        Se connecter
+      </a>
+      <div class="item">
+          <button class="ui small button teal">S'inscrire</button>
+      </div>
+      <a class="item" (click)="mySideBar.show({transition: 'overlay'})"><i class="icon sidebar"></i> </a>
+    </div>
+
+  </div>
+
+
+
+
+<sm-sidebar class="right inverted teal sidebar vertical menu labeled icon" #mySideBar>
+  <a class="item">
+      <i class="home icon"></i>
+    Home
+    </a>
+  <a class="item">
+      <i class="block layout icon"></i> Topics
+    </a>
+  <a class="item">
+      <i class="smile icon"></i> Friends
+    </a>
+</sm-sidebar>
+
+  <div tracking-scroll (scrolled)="onScroll($event.value, 50)" class="header-img-container" [@changeBngColor]="bngChanged" [@changeBngColorr]>
+    <div class="ui centered grid">
+      <div class="row">
+        <div class="ui container">
+          <img class="ui centered image" src="/src/assets/images/brand_logo_3.png" >
+        </div>
+      </div>
+      <div class="row">
+        <h1 class="ui inverted header" >
+          <span class="tagline">L'assurance sur-mesure à portée de main</span>
+        </h1>
+      </div>
+
+      <div class="row">
+        <a href=""><i class=" large chevron down icon get_started"></i> </a>
+        <!--<button class="ui inverted basic button" (click)="animateButton()">Sign up</button>-->
+      </div>
+    </div>
+  </div>
+
+<!--
+<h4 class="ui horizontal divider header">
+  <i class="tag icon"></i>
+  The Team
+</h4>
+
+<div class="ui special three stackable doubling cards container " [@flyInOrOut] >
+  <div class="card">
+
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="http://91.68.209.9/bmi/semantic-ui.com/images/avatar/large/elliot.jpg">
+    </div>
+
+    <div class="content">
+      <a class="header">Amine</a>
+      <div class="meta">
+        <span class="date">Created in Sep 2014</span>
+      </div>
+    </div>
+
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="http://91.68.209.9/bmi/semantic-ui.com/images/avatar2/large/matthew.png">
+    </div>
+
+    <div class="content">
+      <a class="header">Boubker</a>
+      <div class="meta">
+        <span class="date">Created in Sep 2014</span>
+      </div>
+    </div>
+
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+
+  </div>
+
+  <div class="card">
+
+    <div class="blurring dimmable image">
+      <div class="ui dimmer">
+        <div class="content">
+          <div class="center">
+            <div class="ui inverted button">Add Friend</div>
+          </div>
+        </div>
+      </div>
+      <img src="http://91.68.209.9/bmi/semantic-ui.com/images/avatar2/large/molly.png">
+    </div>
+
+    <div class="content">
+      <a class="header">Bin</a>
+      <div class="meta">
+        <span class="date">Created in Sep 2014</span>
+      </div>
+    </div>
+
+    <div class="extra content">
+      <a>
+        <i class="users icon"></i>
+        2 Members
+      </a>
+    </div>
+
+  </div>
+
+</div>
+-->
+<div tracking-scroll (scrolled)="onScrolll($event.value, 380, 0)" class="content_section">
+  <div class="ui stackable grid container">
+    <div class="three column row">
+      <div class="left floated column">
+        <img class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
+             [@scaleOut]="SCALED[0]" (mouseenter)="scaleIn(0)" (mouseleave)="scaleOut(0)">
+      </div>
+      <div class="right floated eight wide column" [@enterLeaveRight] *ngIf="APPEARED[0]">
+        <div class="ui huge header">Huge Header</div>
+        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
+          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
+          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
+          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+        <br/>
+        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
+          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
+          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
+          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div tracking-scroll (scrolled)="onScrolll($event.value, 890, 1)" class="content_section2" >
+  <div class="ui grid container">
+    <div class="three column row">
+
+      <div class="left floated eight wide column here" [@enterLeaveLeft] *ngIf="APPEARED[1]">
+        <div class="ui huge header">Huge Header</div>
+        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
+          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
+          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
+          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+        <br/>
+        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
+          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
+          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
+          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+      </div>
+
+      <div class="right floated column">
+        <img class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
+        [@scaleOut]="SCALED[1]" (mouseenter)="scaleIn(1)" (mouseleave)="scaleOut(1)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui divider"></div>
+
+<div tracking-scroll (scrolled)="onScrolll($event.value, 1500, 2)" class="content_section">
+  <div class="ui grid container">
+    <div class="three column row">
+      <div class="left floated column">
+        <img class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
+        [@scaleOut]="SCALED[2]" (mouseenter)="scaleIn(2)" (mouseleave)="scaleOut(2)">
+      </div>
+      <div class="right floated eight wide column" [@enterLeaveRight] *ngIf="APPEARED[2]">
+        <div class="ui huge header">Huge Header</div>
+        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
+          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
+          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
+          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+        <br/>
+        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
+          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
+          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
+          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h4 class="ui horizontal divider header text container">
+  <i class="icon comment"></i>
+  Article Section
+</h4>
