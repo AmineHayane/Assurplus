@@ -1,6 +1,6 @@
-﻿# Assur+
-Projet Sopra Steria
+#![My image](https://raw.githubusercontent.com/bkouhen/Assurplus/master/Design/Template/PNG%20Files/Brand%20logo.png)
 
-L'assurance sur-mesure à portée de main
+> Projet Sopra Steria
+> L'assurance sur-mesure à portée de main
 
-![My image](https://raw.githubusercontent.com/bkouhen/Assurplus/master/Design/Template/PNG%20Files/Brand%20logo.png)
+
