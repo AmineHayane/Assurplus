@@ -45,7 +45,6 @@
 
 .heightchange {
   height : 100px;
-  background : red;
 }
 
 .content_section{
@@ -54,7 +53,7 @@
 }
 
 .content_section .ui.huge.header {
-  margin-top : 70px;
+  margin-top : 10px;
 }
 
 .content_section2{
@@ -63,9 +62,46 @@
 }
 
 .content_section2 .ui.huge.header {
-  margin-top : 70px;
+  margin-top : 10px;
 }
 
 .bosch {
   box-shadow: 5px 5px 12px #555;
+}
+
+.easy {
+  position : relative;
+}
+
+.easy p,.list {
+  color : #7e8890;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 15px;
+  font-family: "Open Sans", open-sans, sans-serif;
+}
+
+.easy .huge.header{
+  color : #333c4e;
+  font-style: normal;
+  font-variant-ligatures: normal;
+  font-variant-caps: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 30px;
+  line-height: 52px;
+  font-family: "Open Sans", open-sans, sans-serif;
+}
+
+.easy .bulleted.list {
+  margin-bottom: 30px;
+}
+
+.ui.info.message {
+  margin-top : 50px;
 }

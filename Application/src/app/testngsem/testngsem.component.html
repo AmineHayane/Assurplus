@@ -1,4 +1,4 @@
- <div class="ui top fixed menu secondary " [ngClass]= "{' heightchange four item' : isScrolled_50}">
+ <div class="ui top fixed menu secondary " [ngClass]= "{'  four item' : isScrolled_50}">
 
     <a class="item">
       <img class="ui tiny image" src="/src/assets/images/brand_logo.png">
@@ -56,7 +56,7 @@
       </div>
 
       <div class="row">
-        <a href=""><i class=" large chevron down icon get_started"></i> </a>
+        <a pageScroll href="#here"><i class=" large chevron down icon get_started"></i> </a>
         <!--<button class="ui inverted basic button" (click)="animateButton()">Sign up</button>-->
       </div>
     </div>
@@ -158,24 +158,35 @@
 
 </div>
 -->
-<div tracking-scroll (scrolled)="onScrolll($event.value, 380, 0)" class="content_section">
+
+<div tracking-scroll (scrolled)="onScrolll($event.value, 300, 0)" id="here" class="content_section">
   <div class="ui stackable grid container">
     <div class="three column row">
       <div class="left floated column">
-        <img class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
-             [@scaleOut]="SCALED[0]" (mouseenter)="scaleIn(0)" (mouseleave)="scaleOut(0)">
+        <img tracking-scroll (scrolled)="onScrollll($event.value)" class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
+             [@scaleOut]="SCALED[0]" (mouseenter)="scaleIn(0)" (mouseleave)="scaleOut(0)" [style.opacity]="myopacity">
       </div>
-      <div class="right floated eight wide column" [@enterLeaveRight] *ngIf="APPEARED[0]">
-        <div class="ui huge header">Huge Header</div>
-        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
-          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
-          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
-          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
-        <br/>
-        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
-          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
-          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
-          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+      <div tracking-scroll (scrolled)="onScrollll($event.value)" class="right floated eight wide column easy"  [style.right.px]="position">
+        <div class="ui huge header">Facile</div>
+        <p>Avec Assur+ constituez en un clin d’œil votre coffre-fort de biens assurables.
+          Choisissez, parmi les nombreux modes d’ajout, celui qui vous convient le mieux.
+          Découvrez le mode photo, basé sur un algorithme de reconnaissance d’images,
+          qui vous fera gagner un temps colossal dans la constitution de votre panier de biens.</p>
+        <h2 class="ui huge header">Avec Assur+, fini la paperasse !</h2>
+        <div class="ui bulleted list">
+          <div class="item">Votre bien est automatiquement identifié parmi de nombreux produits.</div>
+          <div class="item">Sa valeur est immédiatement estimée.</div>
+          <div class="item">Signez votre contrat d’assurance en un clic.</div>
+        </div>
+             <app-carousel></app-carousel>
+        <div class="ui info message">
+            <div class="header">
+              Information :
+            </div>
+            <ul class="list">
+              Vous pourrez être en mesure d'ajouter les informations qui vous semblent pertinentes après avoir enregistré votre produit.
+            </ul>
+          </div>
       </div>
     </div>
   </div>
@@ -184,25 +195,22 @@
 <div class="ui divider"></div>
 
 <div tracking-scroll (scrolled)="onScrolll($event.value, 890, 1)" class="content_section2" >
-  <div class="ui grid container">
+  <div class="ui stackable grid container">
     <div class="three column row">
 
-      <div class="left floated eight wide column here" [@enterLeaveLeft] *ngIf="APPEARED[1]">
-        <div class="ui huge header">Huge Header</div>
-        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
-          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
-          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
-          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
-        <br/>
-        <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
-          De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
-          quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
-          aequaliterque respondeat, tertiam, ut, quanti quisque se ipse facit, tanti fiat ab amicis.</p>
+      <div class="left floated eight wide column here easy" [@enterLeaveLeft] *ngIf="APPEARED[1]">
+        <div class="ui huge header">Sécurisé</div>
+        <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>
+        <h2 class="ui huge header">Sécurisez vos données</h2>
+        <p>Avec Assur+ les données contenues dans votre coffre-fort sont protégées par une méthode de chiffrement.
+        Vos données personnelles ne sont jamais transmises à un tiers sans votre accord préalable</p>
+
       </div>
 
       <div class="right floated column">
         <img class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
-        [@scaleOut]="SCALED[1]" (mouseenter)="scaleIn(1)" (mouseleave)="scaleOut(1)">
+        [@scaleOut]="SCALED[1]" (mouseenter)="scaleIn(1)" (mouseleave)="scaleOut(1)"
+        [@fadeInOut] *ngIf="APPEARED[1]">
       </div>
     </div>
   </div>
@@ -210,15 +218,16 @@
 
 <div class="ui divider"></div>
 
-<div tracking-scroll (scrolled)="onScrolll($event.value, 1500, 2)" class="content_section">
-  <div class="ui grid container">
+<div tracking-scroll (scrolled)="onScrolll($event.value, 1400, 2)" class="content_section">
+  <div class="ui stackable grid container">
     <div class="three column row">
       <div class="left floated column">
         <img class=" ui image rounded bosch" src="/src/assets/images/bosch.jpg"
-        [@scaleOut]="SCALED[2]" (mouseenter)="scaleIn(2)" (mouseleave)="scaleOut(2)">
+        [@scaleOut]="SCALED[2]" (mouseenter)="scaleIn(2)" (mouseleave)="scaleOut(2)"
+        [@fadeInOut] *ngIf="APPEARED[2]">
       </div>
       <div class="right floated eight wide column" [@enterLeaveRight] *ngIf="APPEARED[2]">
-        <div class="ui huge header">Huge Header</div>
+        <div class="ui huge header">Flexible</div>
         <p>Constituendi autem sunt qui sint in amicitia fines et quasi termini diligendi.
           De quibus tres video sententias ferri, quarum nullam probo, unam, ut eodem modo erga amicum adfecti simus,
           quo erga nosmet ipsos, alteram, ut nostra in amicos benevolentia illorum erga nos benevolentiae pariter
@@ -232,8 +241,3 @@
     </div>
   </div>
 </div>
-
-<h4 class="ui horizontal divider header text container">
-  <i class="icon comment"></i>
-  Article Section
-</h4>

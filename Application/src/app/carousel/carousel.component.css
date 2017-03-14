@@ -1,0 +1,66 @@
+app-carousel {
+	display: block ;
+}
+
+a {
+	color: #7e8890 ;
+	cursor: pointer ;
+	text-decoration: none ;
+	user-select: none ;
+		-moz-user-select: none ;
+		-webkit-user-select: none ;
+}
+
+a:hover{
+  color : #333c4e;
+}
+
+div.container {
+	height: 220px ;
+	margin: 20px 0px 20px 0px ;
+	position: relative ;
+}
+
+div.friend {
+	background-color: #FAFAFA ;
+	border: 1px solid #CCCCCC ;
+	border-radius: 6px ;
+	height: 220px ;
+	left: 0px ;
+	position: absolute ;
+	text-align: center ;
+	padding-top: 20px;
+	width: 100% ;
+}
+
+div.friend .sub.header {
+  margin-top : 15px;
+}
+
+p.controls {
+	text-align: center ;
+	width: 350px ;
+}
+
+.test1{
+}
+
+.test2{
+}
+
+.test3{
+
+}
+
+.test1 i{
+  position: absolute;
+  right : -5px;
+  top : 100px;
+}
+
+.test3 i {
+  position: absolute;
+  left: 0;
+  top : 100px;
+}
+

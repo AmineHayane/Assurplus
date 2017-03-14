@@ -1,0 +1,28 @@
+<div class="container ui grid">
+          <div class="column test1">
+            <a (click)="showPrevFriend()">
+              <i [@scaleOut]="SCALED[0]" (mouseenter)="scaleIn(0)" (mouseleave)="scaleOut(0)" class="big icon chevron left"></i></a>
+          </div>
+
+  <div class="fourteen wide column test2">
+    <template ngFor let-friend [ngForOf]="[ selectedFriend ]">
+                <div [@friendAnimation]="orientation" class="friend">
+                  <h2 class="ui icon header">
+                    <i class="{{friend.img}} icon"></i>
+                    <div class="content">
+                      {{friend.title}}
+                      <div class="sub header">{{friend.description}}</div>
+                    </div>
+                  </h2>
+                </div>
+            </template>
+  </div>
+
+          <div class="column test3">
+            <a (click)="showNextFriend()">
+              <i [@scaleOut]="SCALED[1]" (mouseenter)="scaleIn(1)" (mouseleave)="scaleOut(1)" class="big icon chevron right"></i></a>
+          </div>
+
+</div>
+
+

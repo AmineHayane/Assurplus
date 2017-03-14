@@ -6,7 +6,7 @@ import { Animations } from '../animations/animations';
   selector: 'app-testngsem',
   templateUrl: './testngsem.component.html',
   styleUrls: ['./testngsem.component.css'],
-  animations: [Animations.enterLeaveLeft, Animations.enterLeaveRight, Animations.scale(1.1),
+  animations: [Animations.enterLeaveLeft, Animations.enterLeaveRight, Animations.scale(1.1), Animations.fadeInOut,
   trigger('changeBngColor', [
       state('inactive', style({
         backgroundColor : '#008080'
@@ -29,6 +29,9 @@ import { Animations } from '../animations/animations';
 export class TestngsemComponent implements OnInit {
   constructor(private elref : ElementRef) { }
 
+  position : number = -600;
+  myopacity : number = 0;
+
   SCALED : string[] = ['inactive', 'inactive', 'inactive'];
   scaleIn(i : number) {this.SCALED[i] = 'active'}
   scaleOut(i : number) {this.SCALED[i] = 'inactive'}
@@ -37,6 +40,23 @@ export class TestngsemComponent implements OnInit {
 
   onScrolll(event : Event, menuChangePos : number, i : number) {
     if (window.pageYOffset >= menuChangePos) {this.APPEARED[i] = true;} else {this.APPEARED[i] = false;}
+  }
+
+  onScrollll(event : Event) {
+
+    if (this.position <= -13) {
+      this.position = -600 + window.pageYOffset;
+      this.myopacity = window.pageYOffset/500;
+    } else {
+      if (window.pageYOffset < 591 ) {
+      this.position = -13;
+    }
+    }
+
+
+    console.log(window.pageYOffset);
+    console.log(this.position);
+    console.log(this.myopacity);
   }
 
   bngChanged ='inactive';
@@ -65,11 +85,11 @@ export class TestngsemComponent implements OnInit {
 
   ngOnInit() : any {
 
-    jQuery(this.elref.nativeElement).find('.special.cards .image').dimmer({
+    jQuery(this.elref.nativeElement).find('.cards').dimmer({
     on : 'hover'
   });
-
-
   }
+
+
 }
 
