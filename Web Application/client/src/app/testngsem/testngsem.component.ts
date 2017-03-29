@@ -6,7 +6,7 @@ import { Animations } from '../animations/animations';
   selector: 'app-testngsem',
   templateUrl: './testngsem.component.html',
   styleUrls: ['./testngsem.component.css'],
-  animations: [Animations.enterLeaveLeft, Animations.enterLeaveRight, Animations.scale(1.1), Animations.fadeInOut,
+  animations: [Animations.flyInOrOutLeft, Animations.flyInOrOutRight, Animations.scale(1.1), Animations.fadeInOut,
   trigger('changeBngColor', [
       state('inactive', style({
         backgroundColor : '#008080'
@@ -39,7 +39,7 @@ export class TestngsemComponent implements OnInit {
   APPEARED : boolean[] = [false, false, false];
 
   onScrolll(event : Event, menuChangePos : number, i : number) {
-    if (window.pageYOffset >= menuChangePos) {this.APPEARED[i] = true;} else {this.APPEARED[i] = false;}
+    if (window.pageYOffset >= menuChangePos) {this.APPEARED[i] = true;}
   }
 
   onScrollll(event : Event) {
@@ -54,15 +54,12 @@ export class TestngsemComponent implements OnInit {
     }
 
 
-    console.log(window.pageYOffset);
+    /*console.log(window.pageYOffset);
     console.log(this.position);
-    console.log(this.myopacity);
+    console.log(this.myopacity);*/
   }
 
   bngChanged ='inactive';
-
-
-
 
   isScrolled_50 : boolean = false;
 
@@ -85,9 +82,11 @@ export class TestngsemComponent implements OnInit {
 
   ngOnInit() : any {
 
-    jQuery(this.elref.nativeElement).find('.cards').dimmer({
-    on : 'hover'
-  });
+
+
+
+
+
   }
 
 

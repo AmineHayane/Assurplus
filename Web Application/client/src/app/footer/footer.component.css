@@ -1,0 +1,22 @@
+.ui.segment {
+  box-shadow: -5px -5px 5px #008080;
+  -webkit-transition: all 2s;
+  transition: all 2s;
+  transition-timing-function: ease-in;
+}
+
+.heightmodif {
+  height : 300px;
+}
+
+.get_started {
+  margin: auto;
+}
+
+.get_started:hover {
+  color : purple;
+}
+
+body {
+  height : 95px;
+}

@@ -219,12 +219,12 @@
 @secondaryItemTransition: color @defaultDuration @defaultEasing;
 @secondaryItemColor: @unselectedTextColor;
 
-@secondaryHoverItemBackground: @transparentBlack;
+@secondaryHoverItemBackground: none;
 @secondaryHoverItemColor: @selectedTextColor;
 
-@secondaryActiveItemBackground: @transparentBlack;
+@secondaryActiveItemBackground: none;
 @secondaryActiveItemColor: @selectedTextColor;
-@secondaryActiveHoverItemBackground: @transparentBlack;
+@secondaryActiveHoverItemBackground: none;
 @secondaryActiveHoverItemColor: @selectedTextColor;
 
 @secondaryActiveHoveredItemBackground: @transparentBlack;

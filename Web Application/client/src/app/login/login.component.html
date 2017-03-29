@@ -1,0 +1,17 @@
+  <form (ngSubmit)="loginUser(user)" class="ui inverted form">
+
+    <div class=" field">
+      <input type="email" id="email" [(ngModel)]="user.user_mail" name="email" placeholder="Email" required>
+    </div>
+
+    <div class=" field">
+      <input type="password" id="password" [(ngModel)]="user.user_password" placeholder="Password" name="password" required>
+    </div>
+
+    <button type="submit" class="ui button teal">Login</button>
+  </form>
+
+  <div *ngIf="message" class="ui warning message">
+    <i class="warning icon"></i>
+    {{message}}
+  </div>

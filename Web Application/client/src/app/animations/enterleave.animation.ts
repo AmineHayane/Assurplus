@@ -2,8 +2,8 @@ import {trigger, transition, style, animate, state} from '@angular/core';
 
 export const enterLeaveLeft = trigger('enterLeaveLeft', [
       transition('void => *', [
-        style({transform: 'translateX(-100%)'}),
-        animate('1s ease-in', style({transform: 'translateX(0)'}))
+        style({transform: 'translateX(-30%)'}),
+        animate('500ms ease-in', style({transform: 'translateX(0)'}))
       ]),
       transition('* => void', [
         style({transform: 'translateX(0)'}),

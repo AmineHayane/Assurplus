@@ -1,35 +1,76 @@
- <div class="ui main ">
-      <app-testngsem></app-testngsem>
+ <div class="ui right vertical sidebar inverted menu">
+    <a class="item">
+      1
+    </a>
+    <a class="item">
+      2
+    </a>
+    <a class="item">
+      3
+    </a>
+  </div>
 
+  <div class="pusher">
+    <div tracking-scroll (scrolled)="onScroll($event.value, 50)" class="ui top fixed menu secondary " [ngClass]= "{'five item' : isScrolled_50}">
 
-      <!--<div class="content-container ui text container">
-        <form class="ui large form segment">
-          <h3 class="ui header">Add a Link</h3>
+    <a href="/" class="item active">
+      <img class="ui tiny image" src="./assets/images/brand_logo.png">
+    </a>
+    <a *hideItSizes="{min:0,max:500}" class="item">
+      <i class="help circle outline large icon"></i>
+      Comment ça marche
+    </a>
+    <a *hideItSizes="{min:0,max:500}" class="item">
+      FAQ
+    </a>
+    <a *hideItSizes="{min:0,max:500}" class="item">
+      Contact
+    </a>
 
-          <div class="field">
-            <label for="title">Title :</label>
-            <input id="title" #newtitle>
-          </div>
+    <div class="right menu">
+      <div *ngIf="!user && !isScrolled_50" class="item">
+        <a (click)="toggleLogin()" *hideItSizes="{min:0,max:768}" class="item">
+        Se connecter
+      </a>
+      </div>
 
-          <div class="field">
-            <label for="link">Link :</label>
-            <input id="link" #newlink>
-          </div>
+      <div *ngIf="user && !isScrolled_50" class="item">
+        <a *hideItSizes="{min:0,max:768}" class="ui small basic button teal">
+        <i class="icon user"></i>
+          {{user.user_mail}}
+      </a>
+      </div>
 
-          <button (click)="addArticle(newtitle, newlink)" class="ui positive right floated button">
-            Submit link
-          </button>
-        </form>
-
-        <div class="ui grid posts" >
-          <app-article *ngFor="let foobar of sortedArticles()" [article]="foobar" ></app-article>
-        </div>
-
-      </div>-->
-
-
+      <div *hideItSizes="{min:0,max:768}"  class="item">
+          <a routerLink="/signup" *ngIf="!user && !isScrolled_50" class="ui small button teal" >S'inscrire</a>
+          <a  (click)="logout()" *ngIf="user && !isScrolled_50" class="ui small button teal" >Deconnexion</a>
+      </div>
+      <a *showItSizes="{min:0,max:768}" (click)="toggleSidebar()" class="item"><i class="icon sidebar"></i> </a>
     </div>
 
+  </div>
 
+  <div class="ui main ">
 
+    <router-outlet></router-outlet>
+    <p *ngIf="!user">Not logged in</p>
+    <p>{{message}}</p>
+  </div>
 
+     <!--<div class="section_before_footer">
+
+     </div>-->
+
+    <div class="ui page dimmer">
+      <div class="content ui text container">
+        <div class="center">
+          <app-login (notify)="onNotify($event)"></app-login>
+        </div>
+      </div>
+    </div>
+
+    <div class="ui container fluid">
+      <app-footer></app-footer>
+    </div>
+
+  </div>

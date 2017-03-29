@@ -3,7 +3,11 @@
 *******************************/
 
 .ui.top.fixed.menu.secondary .item {
-  color : #008080;
+  color : #00b5ad;
+}
+
+.ui.top.fixed.menu.secondary .item:hover {
+  color : #93278f;
 }
 
 .ui.top.fixed.menu.secondary{

@@ -71,7 +71,7 @@ module.exports = {
 
                 console.log('user',user);
                 let token = jwt.sign({data:user}, 'azertyuiopmlkjhgfdsqwxcvbn', {
-                      expiresIn : 60
+                      expiresIn : 60*60*24
                     });
                 console.log('token', token);
                 let content = {

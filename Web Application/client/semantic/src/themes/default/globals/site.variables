@@ -191,6 +191,7 @@
 --------------------*/
 
 /*---  Colors  ---*/
+@black            : #1B1C1D;
 @red              : #DB2828;
 @orange           : #F2711C;
 @yellow           : #FBBD08;
@@ -203,7 +204,7 @@
 @pink             : #E03997;
 @brown            : #A5673F;
 @grey             : #767676;
-@black            : #1B1C1D;
+
 
 /*---  Light Colors  ---*/
 @lightRed         : #FF695E;

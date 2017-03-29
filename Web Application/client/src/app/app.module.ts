@@ -7,10 +7,21 @@ import { ArticleComponent } from './article/article.component';
 import {MaterialModule} from "@angular/material";
 import 'hammerjs';
 import { TestngsemComponent } from './testngsem/testngsem.component';
-import {NgSemanticModule} from "ng-semantic/ng-semantic";
 import {TrackScrollDirective} from "./directives/trackscroll.directive";
 import { CarouselComponent } from './carousel/carousel.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
+import { FooterComponent } from './footer/footer.component';
+import { firebaseConfig } from '../environments/firebase.config';
+import {AngularFireModule} from "angularfire2";
+import {ResponsiveModule} from "ng2-responsive";
+import { SignupComponent } from './signup/signup.component';
+import { AuthenticationService } from './services/authentication.service'
+import {RouterModule} from "@angular/router";
+
+import { ROUTES } from "./routes/app.routing";
+import {SignupService} from "./signup/signup.service";
+import { LoginComponent } from './login/login.component';
+import { SUIModalComponent } from "SUI-Angular2-Modal/modal";
 
 @NgModule({
   declarations: [
@@ -18,17 +29,23 @@ import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
     ArticleComponent,
     TestngsemComponent,
     TrackScrollDirective,
-    CarouselComponent
+    CarouselComponent,
+    FooterComponent,
+    SignupComponent,
+    LoginComponent,
+    SUIModalComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule,
-    NgSemanticModule,
-    Ng2PageScrollModule.forRoot()
+    Ng2PageScrollModule.forRoot(),
+    AngularFireModule.initializeApp(firebaseConfig),
+    ResponsiveModule,
+    RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [AuthenticationService, SignupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

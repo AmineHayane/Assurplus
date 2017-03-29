@@ -32,21 +32,9 @@
   color : purple;
 }
 
-.ui.top.fixed.inverted.menu {
-  -webkit-transition: all 0.8s;
-  transition: all 0.8s;
-  transition-timing-function: ease-in;
+#here{
+  height:50px;
 }
-
-.ui.special.cards {
-  margin-top:50px;
-  margin-bottom: 50px;
-}
-
-.heightchange {
-  height : 100px;
-}
-
 .content_section{
   padding-top: 50px;
   padding-bottom: 50px;
@@ -104,4 +92,5 @@
 
 .ui.info.message {
   margin-top : 50px;
+  margin-bottom : 40px;
 }

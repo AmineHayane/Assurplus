@@ -21642,7 +21642,7 @@ Floated Menu / Item
 .ui.secondary.menu .dropdown.item:hover,
 .ui.secondary.menu .link.item:hover,
 .ui.secondary.menu a.item:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: none;
   color: rgba(0, 0, 0, 0.95);
 }
 
@@ -21650,7 +21650,7 @@ Floated Menu / Item
 
 .ui.secondary.menu .active.item {
   box-shadow: none;
-  background: rgba(0, 0, 0, 0.05);
+  background: none;
   color: rgba(0, 0, 0, 0.95);
   border-radius: 0.28571429rem;
 }
@@ -21659,7 +21659,7 @@ Floated Menu / Item
 
 .ui.secondary.menu .active.item:hover {
   box-shadow: none;
-  background: rgba(0, 0, 0, 0.05);
+  background: none;
   color: rgba(0, 0, 0, 0.95);
 }
 
@@ -22989,7 +22989,11 @@ Floated Menu / Item
 *******************************/
 
 .ui.top.fixed.menu.secondary .item {
-  color: #008080;
+  color: #00b5ad;
+}
+
+.ui.top.fixed.menu.secondary .item:hover {
+  color: #93278f;
 }
 
 .ui.top.fixed.menu.secondary {
