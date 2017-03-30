@@ -2,609 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147adb83-5b38-4371-8dc7-b5635008b9c6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/.gitignore" afterPath="$PROJECT_DIR$/Web Application/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/app.js" afterPath="$PROJECT_DIR$/Web Application/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/.angular-cli.json" afterPath="$PROJECT_DIR$/Web Application/client/.angular-cli.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/.editorconfig" afterPath="$PROJECT_DIR$/Web Application/client/.editorconfig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/README.md" afterPath="$PROJECT_DIR$/Web Application/client/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/e2e/app.e2e-spec.ts" afterPath="$PROJECT_DIR$/Web Application/client/e2e/app.e2e-spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/e2e/app.po.ts" afterPath="$PROJECT_DIR$/Web Application/client/e2e/app.po.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/e2e/tsconfig.e2e.json" afterPath="$PROJECT_DIR$/Web Application/client/e2e/tsconfig.e2e.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/karma.conf.js" afterPath="$PROJECT_DIR$/Web Application/client/karma.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/package.json" afterPath="$PROJECT_DIR$/Web Application/client/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/protractor.conf.js" afterPath="$PROJECT_DIR$/Web Application/client/protractor.conf.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic.json" afterPath="$PROJECT_DIR$/Web Application/client/semantic.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/accordion.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/ad.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/ad.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/ad.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/ad.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/api.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/api.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/api.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/breadcrumb.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/breadcrumb.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/breadcrumb.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/breadcrumb.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/button.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/button.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/button.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/button.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/card.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/card.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/card.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/card.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/checkbox.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/comment.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/comment.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/comment.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/comment.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/container.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/container.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/container.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/container.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dimmer.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/divider.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/divider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/divider.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/divider.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/dropdown.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/embed.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/feed.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/feed.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/feed.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/feed.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/flag.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/flag.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/flag.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/flag.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/form.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/grid.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/grid.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/grid.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/grid.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/header.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/header.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/header.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/header.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/icon.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/icon.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/icon.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/icon.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/image.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/image.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/image.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/image.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/input.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/input.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/input.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/input.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/item.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/item.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/item.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/item.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/label.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/label.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/label.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/label.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/list.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/list.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/list.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/list.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/loader.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/loader.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/loader.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/loader.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/menu.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/menu.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/menu.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/menu.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/message.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/message.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/message.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/message.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/modal.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/nag.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/popup.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/progress.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rail.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rail.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rail.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rail.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/rating.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reset.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reset.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reset.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reset.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reveal.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reveal.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reveal.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/reveal.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/search.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/segment.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/segment.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/segment.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/segment.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/shape.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sidebar.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/site.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/state.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/state.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/state.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/statistic.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/statistic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/statistic.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/statistic.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/step.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/step.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/step.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/step.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/sticky.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/tab.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/table.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/table.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/table.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/table.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/transition.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/visibility.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/visibility.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/visibility.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/components/visibility.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.min.css" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.min.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/semantic.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/basic/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/basic/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/default/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/default/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/github/assets/fonts/octicons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/github/assets/fonts/octicons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/material/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/dist/themes/material/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/gulpfile.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/api.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/api.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/colorize.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/colorize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/form.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/form.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/state.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/state.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/visibility.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/visibility.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/visit.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/behaviors/visit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/breadcrumb.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/breadcrumb.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/form.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/form.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/grid.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/grid.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/menu.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/menu.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/message.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/message.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/table.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/collections/table.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/button.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/button.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/container.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/container.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/divider.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/divider.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/flag.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/flag.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/header.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/header.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/icon.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/icon.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/image.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/image.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/input.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/input.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/label.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/label.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/list.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/list.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/loader.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/loader.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/rail.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/rail.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/reveal.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/reveal.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/segment.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/segment.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/step.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/elements/step.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/globals/reset.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/globals/reset.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/globals/site.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/globals/site.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/globals/site.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/globals/site.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/accordion.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/accordion.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/checkbox.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/checkbox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/checkbox.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/checkbox.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dimmer.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dimmer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dimmer.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dimmer.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dropdown.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dropdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dropdown.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/dropdown.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/embed.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/embed.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/embed.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/embed.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/modal.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/modal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/modal.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/modal.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/nag.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/nag.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/nag.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/nag.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/popup.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/popup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/popup.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/popup.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/progress.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/progress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/progress.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/progress.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/rating.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/rating.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/rating.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/rating.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/search.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/search.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/search.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/shape.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/shape.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/shape.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/shape.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sidebar.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sidebar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sidebar.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sidebar.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sticky.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sticky.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sticky.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/sticky.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/tab.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/tab.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/tab.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/tab.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/transition.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/transition.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/transition.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/modules/transition.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/ad.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/ad.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/card.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/card.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/comment.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/comment.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/feed.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/feed.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/item.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/item.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/statistic.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/definitions/views/statistic.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/semantic.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/semantic.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/breadcrumb.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/breadcrumb.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/breadcrumb.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/breadcrumb.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/form.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/form.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/form.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/form.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/grid.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/grid.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/grid.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/grid.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/menu.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/menu.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/menu.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/menu.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/message.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/message.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/message.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/message.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/table.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/table.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/table.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/collections/table.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/container.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/container.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/container.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/container.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/divider.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/divider.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/divider.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/divider.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/flag.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/flag.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/flag.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/flag.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/header.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/icon.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/icon.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/icon.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/icon.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/image.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/image.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/image.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/image.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/input.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/input.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/input.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/input.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/label.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/label.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/label.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/label.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/list.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/list.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/list.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/list.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/loader.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/loader.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/loader.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/loader.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/rail.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/rail.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/rail.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/rail.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/reveal.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/reveal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/reveal.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/reveal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/segment.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/segment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/segment.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/segment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/step.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/step.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/step.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/elements/step.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/reset.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/reset.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/reset.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/reset.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/site.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/site.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/accordion.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/accordion.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/accordion.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/accordion.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/chatroom.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/chatroom.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/chatroom.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/chatroom.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/checkbox.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/checkbox.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/checkbox.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/checkbox.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dimmer.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dimmer.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dimmer.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dimmer.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dropdown.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dropdown.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dropdown.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/dropdown.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/embed.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/embed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/modal.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/modal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/modal.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/modal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/nag.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/nag.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/nag.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/nag.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/popup.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/popup.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/popup.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/popup.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/progress.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/progress.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/progress.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/progress.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/rating.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/rating.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/rating.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/rating.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/search.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/search.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/search.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/search.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/shape.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/shape.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/shape.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/shape.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sidebar.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sidebar.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sidebar.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sidebar.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sticky.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sticky.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sticky.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/sticky.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/tab.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/tab.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/tab.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/tab.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/transition.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/transition.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/transition.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/modules/transition.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/ad.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/ad.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/ad.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/ad.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/card.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/card.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/card.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/card.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/comment.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/comment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/comment.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/comment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/feed.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/feed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/feed.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/feed.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/item.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/item.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/item.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/item.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/statistic.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/statistic.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/statistic.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/site/views/statistic.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/theme.config" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/theme.config" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/theme.less" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/theme.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/amazon/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/amazon/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/amazon/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/amazon/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/amazon/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/amazon/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/collections/table.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/collections/table.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/collections/table.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/collections/table.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/icon.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/icon.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/icon.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/icon.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/step.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/step.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/step.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/elements/step.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/globals/reset.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/globals/reset.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/globals/reset.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/globals/reset.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/modules/progress.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/modules/progress.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/modules/progress.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/modules/progress.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/views/card.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/views/card.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/views/card.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/basic/views/card.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/bookish/elements/header.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/bookish/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/bookish/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/bookish/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/bootstrap3/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/bootstrap3/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/collections/form.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/collections/form.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/collections/form.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/collections/form.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/collections/menu.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/collections/menu.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/header.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/modules/accordion.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/modules/accordion.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/modules/accordion.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/modules/accordion.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/views/comment.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/views/comment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/views/comment.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/chubby/views/comment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/collections/table.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/collections/table.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/collections/table.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/collections/table.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/header.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/modules/progress.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/modules/progress.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/modules/progress.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/modules/progress.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/views/card.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/views/card.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/views/card.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/classic/views/card.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/colored/modules/checkbox.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/colored/modules/checkbox.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/breadcrumb.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/breadcrumb.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/breadcrumb.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/breadcrumb.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/form.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/form.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/form.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/form.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/grid.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/grid.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/grid.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/grid.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/menu - Copie.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/menu - Copie.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/menu.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/menu.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/menu.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/menu.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/message.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/message.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/message.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/message.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/table.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/collections/table.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/container.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/container.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/container.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/container.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/divider.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/divider.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/divider.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/divider.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/flag.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/flag.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/flag.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/flag.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/header.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/icon.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/icon.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/icon.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/icon.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/image.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/image.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/image.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/image.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/input.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/input.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/input.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/input.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/label.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/label.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/label.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/label.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/list.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/list.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/list.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/list.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/loader.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/loader.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/loader.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/loader.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/rail.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/rail.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/rail.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/rail.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/reveal.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/reveal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/reveal.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/reveal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/segment.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/segment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/segment.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/segment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/step.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/step.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/step.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/step.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/reset.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/reset.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/reset.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/reset.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/site.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/site.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/accordion.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/accordion.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/accordion.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/accordion.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/chatroom.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/chatroom.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/chatroom.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/chatroom.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/checkbox.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/checkbox.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/checkbox.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/checkbox.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dimmer.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dimmer.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dimmer.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dimmer.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dropdown.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dropdown.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dropdown.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/dropdown.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/embed.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/embed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/embed.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/embed.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/modal.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/modal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/modal.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/modal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/nag.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/nag.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/nag.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/nag.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/popup.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/popup.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/popup.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/popup.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/progress.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/progress.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/progress.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/progress.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/rating.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/rating.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/rating.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/rating.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/search.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/search.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/search.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/search.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/shape.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/shape.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/shape.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/shape.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sidebar.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sidebar.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sidebar.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sidebar.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sticky.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sticky.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sticky.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/sticky.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/tab.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/tab.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/tab.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/tab.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/transition.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/transition.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/transition.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/modules/transition.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/ad.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/ad.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/ad.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/ad.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/card.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/card.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/card.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/card.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/comment.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/comment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/comment.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/comment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/feed.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/feed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/feed.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/feed.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/item.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/item.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/item.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/item.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/statistic.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/statistic.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/statistic.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/views/statistic.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/duo/elements/loader.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/duo/elements/loader.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/duo/elements/loader.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/duo/elements/loader.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/collections/grid.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/collections/grid.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/collections/grid.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/collections/grid.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/modules/modal.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/modules/modal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/modules/modal.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/fixed-width/modules/modal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/collections/form.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/collections/form.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/collections/form.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/collections/form.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/globals/site.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/globals/site.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/flat/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/assets/fonts/octicons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/assets/fonts/octicons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/breadcrumb.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/breadcrumb.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/form.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/form.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/form.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/form.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/grid.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/grid.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/menu.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/menu.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/menu.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/menu.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/message.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/message.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/message.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/message.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/table.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/collections/table.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/icon.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/icon.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/icon.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/icon.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/image.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/image.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/input.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/input.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/input.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/input.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/label.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/label.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/label.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/label.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/segment.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/segment.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/segment.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/segment.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/step.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/step.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/step.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/elements/step.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/modules/dropdown.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/modules/dropdown.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/modules/dropdown.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/modules/dropdown.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/modules/popup.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/github/modules/popup.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/gmail/collections/message.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/gmail/collections/message.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/instagram/views/card.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/instagram/views/card.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/instagram/views/card.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/instagram/views/card.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/collections/menu.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/collections/menu.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/collections/menu.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/collections/menu.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/header.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/header.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/header.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/header.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/icon.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/icon.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/icon.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/elements/icon.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/dropdown.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/dropdown.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/dropdown.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/dropdown.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/modal.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/modal.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/modal.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/material/modules/modal.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/pulsar/elements/loader.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/pulsar/elements/loader.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/pulsar/elements/loader.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/pulsar/elements/loader.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/raised/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/raised/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/raised/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/raised/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/resetcss/globals/reset.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/resetcss/globals/reset.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/resetcss/globals/reset.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/resetcss/globals/reset.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/round/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/round/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/rtl/globals/site.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/rtl/globals/site.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/rtl/globals/site.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/rtl/globals/site.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/striped/modules/progress.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/striped/modules/progress.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/striped/modules/progress.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/striped/modules/progress.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/timeline/views/feed.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/timeline/views/feed.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/timeline/views/feed.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/timeline/views/feed.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/twitter/elements/button.overrides" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/twitter/elements/button.overrides" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/twitter/elements/button.variables" afterPath="$PROJECT_DIR$/Web Application/client/semantic/src/themes/twitter/elements/button.variables" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/README.md" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/components/create.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/components/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/components/init.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/components/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/components/update.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/components/update.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/distributions/create.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/distributions/create.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/distributions/init.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/distributions/init.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/distributions/update.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/distributions/update.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/publish.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/publish.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/register.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/release.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/admin/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build/assets.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build/assets.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build/css.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build/css.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build/javascript.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/build/javascript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/check-install.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/check-install.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/clean.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/clean.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/README.md" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/admin.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/admin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/build.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/internal.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/internal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/rtl.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/collections/rtl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/github.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/github.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/oauth.example.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/oauth.example.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/release.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/README.md" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/bower.json" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/bower.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/component-package.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/component-package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/composer.json" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/css-package.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/css-package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/less-package.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/less-package.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/package.json" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/admin/templates/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/defaults.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/defaults.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/docs.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/docs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/npm/gulpfile.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/npm/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/project/config.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/project/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/project/install.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/project/install.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/project/release.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/project/release.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/tasks.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/tasks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/user.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/config/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/docs/build.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/docs/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/docs/metadata.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/docs/metadata.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/docs/serve.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/docs/serve.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/install.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/install.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/rtl/build.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/rtl/build.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/rtl/watch.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/rtl/watch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/version.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/version.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/semantic/tasks/watch.js" afterPath="$PROJECT_DIR$/Web Application/client/semantic/tasks/watch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/animations/animations.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/animations/animations.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/animations/enterleave.animation.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/animations/enterleave.animation.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/animations/flyInOrOut.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/animations/flyInOrOut.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.css" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.spec.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/article/article.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/article/article.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/article/article.component.spec.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/article/article.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/article/article.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/article/article.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/carousel/carousel.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/carousel/carousel.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/carousel/carousel.component.spec.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/carousel/carousel.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/carousel/carousel.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/carousel/carousel.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.css" afterPath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.spec.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/vendor/themes/default/assets/fonts/icons.svg" afterPath="$PROJECT_DIR$/Web Application/client/src/app/vendor/themes/default/assets/fonts/icons.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/environments/environment.prod.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/environments/environment.prod.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/environments/environment.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/environments/environment.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/index.html" afterPath="$PROJECT_DIR$/Web Application/client/src/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/main.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/main.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/polyfills.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/polyfills.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/test.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/test.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/tsconfig.app.json" afterPath="$PROJECT_DIR$/Web Application/client/src/tsconfig.app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/tsconfig.spec.json" afterPath="$PROJECT_DIR$/Web Application/client/src/tsconfig.spec.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/tsconfig.json" afterPath="$PROJECT_DIR$/Web Application/client/tsconfig.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/tslint.json" afterPath="$PROJECT_DIR$/Web Application/client/tslint.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/typings.json" afterPath="$PROJECT_DIR$/Web Application/client/typings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/typings/globals/jquery/index.d.ts" afterPath="$PROJECT_DIR$/Web Application/client/typings/globals/jquery/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/typings/globals/jquery/typings.json" afterPath="$PROJECT_DIR$/Web Application/client/typings/globals/jquery/typings.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/typings/index.d.ts" afterPath="$PROJECT_DIR$/Web Application/client/typings/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/controllers/users.js" afterPath="$PROJECT_DIR$/Web Application/server/controllers/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" afterPath="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/routes/index.js" afterPath="$PROJECT_DIR$/Web Application/server/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/package.json" afterPath="$PROJECT_DIR$/Web Application/package.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -619,45 +20,31 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.ts">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web Application/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="56" column="14" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#108#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+            <state relative-caret-position="629">
+              <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/login/login.component.ts">
+      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web Application/client/tsconfig.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#82#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html">
+      <file leaf-file-name="hello.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web Application/hello.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="17">
+              <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -678,16 +65,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
               <caret line="73" column="42" lean-forward="false" selection-start-line="73" selection-start-column="42" selection-end-line="73" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.component.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/login/login.component.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -721,7 +98,6 @@
         <option value="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html" />
         <option value="$PROJECT_DIR$/Web Application/client/.angular-cli.json" />
         <option value="$PROJECT_DIR$/Web Application/server/routes/index.js" />
-        <option value="$PROJECT_DIR$/Web Application/app.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.html" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/models/user.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts" />
@@ -733,11 +109,13 @@
         <option value="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.css" />
-        <option value="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html" />
         <option value="$PROJECT_DIR$/Web Application/server/controllers/users.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html" />
+        <option value="$PROJECT_DIR$/Web Application/hello.py" />
+        <option value="$PROJECT_DIR$/Web Application/app.js" />
       </list>
     </option>
   </component>
@@ -837,50 +215,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="routes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -899,157 +233,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="testngsem" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="signup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
+              <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1377,7 +561,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#108#0" expanded="true" />
+            <element signature="e#0#108#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1403,7 +587,7 @@
         <state relative-caret-position="289">
           <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
           <folding>
-            <element signature="e#0#82#0" expanded="true" />
+            <element signature="e#0#82#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1440,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/dist/flags.9c74e172f87984c48ddf.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1470,14 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1513,13 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1669,14 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/server/auth.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1693,10 +847,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html">
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="334">
+          <caret line="56" column="14" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#108#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-573">
+          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1704,27 +868,57 @@
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/login/login.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
-          <caret line="28" column="41" lean-forward="true" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+          <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
-            <element signature="e#0#82#0" expanded="true" />
+            <element signature="e#0#82#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.ts">
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="56" column="14" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#108#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="64" lean-forward="false" selection-start-line="0" selection-start-column="64" selection-end-line="0" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/Web Application/bin/www">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        <state relative-caret-position="119">
+          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/hello.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

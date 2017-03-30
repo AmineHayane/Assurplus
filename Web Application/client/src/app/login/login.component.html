@@ -1,4 +1,4 @@
-  <form (ngSubmit)="loginUser(user)" class="ui inverted form">
+  <form #loginForm (ngSubmit)="loginUser(user);loginForm.reset()" class="ui inverted form">
 
     <div class=" field">
       <input type="email" id="email" [(ngModel)]="user.user_mail" name="email" placeholder="Email" required>

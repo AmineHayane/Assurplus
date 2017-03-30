@@ -3,6 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const pythonShell = require('python-shell');
 
 // Set up the express app
 const app = express();
@@ -33,6 +34,37 @@ require('./server/routes/clientRoutes')(app);
 app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the beginning of nothingness.',
 }));*/
+
+// Uploading image
+
+
+
+var myscript = new pythonShell('hello.py');
+
+var options = {
+    mode: 'text',
+    args: ['my First Argument', 'My Second Argument', '--option=123']
+};
+
+
+//Providing data from Node.js to Python
+myscript.send(JSON.stringify(['path to image 1', 'path to image 2']));
+
+
+myscript.on('message', function (message) {
+  // received a message sent from the Python script (a simple "print" statement)
+    message = "Modified by NodeJS - " + message;
+  console.log(message);
+});
+
+// End the input stream and allow the process to exit
+myscript.end(function (err) {
+    if (err){
+        throw err;
+    };
+
+    console.log('finished');
+});
 
 
 module.exports = app;
