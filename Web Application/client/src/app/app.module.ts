@@ -11,8 +11,6 @@ import {TrackScrollDirective} from "./directives/trackscroll.directive";
 import { CarouselComponent } from './carousel/carousel.component';
 import {Ng2PageScrollModule} from 'ng2-page-scroll/ng2-page-scroll';
 import { FooterComponent } from './footer/footer.component';
-import { firebaseConfig } from '../environments/firebase.config';
-import {AngularFireModule} from "angularfire2";
 import {ResponsiveModule} from "ng2-responsive";
 import { SignupComponent } from './signup/signup.component';
 import { AuthenticationService } from './services/authentication.service'
@@ -21,7 +19,10 @@ import {RouterModule} from "@angular/router";
 import { ROUTES } from "./routes/app.routing";
 import {SignupService} from "./signup/signup.service";
 import { LoginComponent } from './login/login.component';
-import { SUIModalComponent } from "SUI-Angular2-Modal/modal";
+import {FileSelectDirective, FileDropDirective} from "ng2-file-upload/ng2-file-upload";
+import { FileuploadComponent } from './fileupload/fileupload.component';
+import {SuiProgressModule, SuiModule} from "ng2-semantic-ui";
+
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { SUIModalComponent } from "SUI-Angular2-Modal/modal";
     FooterComponent,
     SignupComponent,
     LoginComponent,
-    SUIModalComponent
+    FileSelectDirective,
+    FileDropDirective,
+    FileuploadComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +44,10 @@ import { SUIModalComponent } from "SUI-Angular2-Modal/modal";
     HttpModule,
     MaterialModule,
     Ng2PageScrollModule.forRoot(),
-    AngularFireModule.initializeApp(firebaseConfig),
     ResponsiveModule,
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    SuiModule,
+    SuiProgressModule
   ],
   providers: [AuthenticationService, SignupService],
   bootstrap: [AppComponent]

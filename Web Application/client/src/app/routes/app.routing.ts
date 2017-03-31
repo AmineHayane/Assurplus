@@ -1,7 +1,7 @@
 import { SignupComponent } from '../signup/signup.component';
 import { TestngsemComponent } from '../testngsem/testngsem.component';
 import { LoginComponent } from '../login/login.component';
-
+import { FileuploadComponent } from '../fileupload/fileupload.component';
 
 // Define the routes
 export const ROUTES = [
@@ -18,6 +18,10 @@ export const ROUTES = [
     path: 'signup',
     name : 'Signup',
     component: SignupComponent
+  },
+  {
+    path: 'fileupload',
+    component: FileuploadComponent
   }
 
 ];

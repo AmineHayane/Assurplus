@@ -1,0 +1,83 @@
+<div class="ui container">
+  <div class="ui inverted segment">
+    <h2>FileUpload Component</h2>
+  </div>
+</div>
+
+<div class="ui container">
+  <div class="ui grid">
+    <div class="row">
+      <div class="five wide column">
+        <form class="ui form">
+          <div class="field">
+            <label>Multiple Files Upload</label>
+            <input type="file" name="multiple" ng2FileSelect [uploader]="uploader" multiple >
+          </div>
+        </form>
+      </div>
+
+      <div class="eleven wide column">
+        <h3>File Upload with Angular 2 and Node</h3>
+        Queue length: {{ uploader?.queue?.length }}
+
+        <table class="ui basic table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Size</th>
+              <th>Progress</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of uploader.queue">
+              <td><strong>{{ item.file.name }}</strong></td>
+              <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
+              <td>
+                <sui-progress [value]="item.progress" [progress]="false">
+                </sui-progress>
+              </td>
+              <td>
+                <span *ngIf="item.isSuccess"><i class="checkmark icon"></i></span>
+                <span *ngIf="item.isCancel"><i class="minus circle icon"></i></span>
+                <span *ngIf="item.isError"><i class="remove icon"></i></span>
+              </td>
+              <td nowrap>
+                <button type="button" class="mini ui green button"
+                        (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                  <i class="upload icon"></i> Upload
+                </button>
+                <button type="button" class="mini ui orange button"
+                (click)="item.cancel()" [disabled]="!item.isUploading">
+                  <i class="ben icon"></i> Cancel
+                </button>
+                <button type="button" class="mini ui red button" (click)="item.remove()" >
+                  <i class="trash icon"></i> Remove
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div>
+          <div>Queue progress:
+            <sui-progress [value]="uploader.progress" [progress]="false">
+            </sui-progress>
+          </div>
+          <button type="button" class="ui green button" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+            <i class="upload icon"></i> Upload all
+          </button>
+          <button type="button" class="ui orange button" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+            <i class="ban icon"></i> Cancel all
+          </button>
+          <button type="button" class="ui red button" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+            <i class="trash icon"></i> Remove all
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

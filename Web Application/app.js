@@ -4,6 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const pythonShell = require('python-shell');
+const multer = require('multer');
 
 // Set up the express app
 const app = express();
@@ -35,9 +36,38 @@ app.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the beginning of nothingness.',
 }));*/
 
+// Array for images
+var myarray = [];
+
 // Uploading image
+var storage = multer.diskStorage({
+   destination : (req, file, cb) => {cb(null, './uploads/');},
+    filename : (req, file, cb) => {
+       var datetimestamp = Date.now();
+       cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
+    }
+});
 
+var upload = multer({
+    storage:storage
+}).single('file');
 
+/** API path that will upload the files **/
+    app.post('/upload', function(req, res) {
+        upload(req,res,function(err){
+            console.log(req.file);
+            console.log('original name', req.file.originalname);
+            console.log('new name', req.file.filename);
+            console.log('path', req.file.path);
+            myarray.push(req.file.filename);
+            console.log('ARRAY', myarray);
+            if(err){
+                 res.json({error_code:1,err_desc:err});
+                 return;
+            }
+             res.json({error_code:0,err_desc:null});
+        });
+    });
 
 var myscript = new pythonShell('hello.py');
 
