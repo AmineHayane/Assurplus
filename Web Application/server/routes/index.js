@@ -1,6 +1,7 @@
 const todosController = require('../controllers').todos;
 const todoItemsController = require('../controllers').todoItems;
 const usersController = require('../controllers').users;
+const uploadsController = require('../controllers').uploads;
 const auth = require('../auth');
 
 module.exports = (app) => {
@@ -30,5 +31,11 @@ module.exports = (app) => {
     app.post('/api/users/login', usersController.loginUser);
     app.get('/api/users/check-state', auth.verifyToken, usersController.checkState);
     app.get('/api/users', usersController.list);
+
+    // Uploads
+
+    app.post('/api/uploads', uploadsController.create);
+    app.get('/api/uploads', uploadsController.list);
+    app.delete('/api/uploads/:uploadId', uploadsController.destroy);
 
 };

@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const pythonShell = require('python-shell');
 const multer = require('multer');
+const uploadsController = require('./server/controllers').uploads;
+const http = require('http');
 
 // Set up the express app
 const app = express();
@@ -17,7 +19,7 @@ app.use(logger('dev'));
 
 // Parse incoming requests data (https://github.com/expressjs/body-parser)
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /*app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:4200');
@@ -41,10 +43,10 @@ var myarray = [];
 
 // Uploading image
 var storage = multer.diskStorage({
-   destination : (req, file, cb) => {cb(null, './uploads/');},
+   destination : (req, file, cb) => {cb(null, './client/dist/uploads/');},
     filename : (req, file, cb) => {
        var datetimestamp = Date.now();
-       cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length -1]);
+       cb(null, file.originalname);
     }
 });
 
@@ -56,11 +58,12 @@ var upload = multer({
     app.post('/upload', function(req, res) {
         upload(req,res,function(err){
             console.log(req.file);
-            console.log('original name', req.file.originalname);
             console.log('new name', req.file.filename);
             console.log('path', req.file.path);
             myarray.push(req.file.filename);
             console.log('ARRAY', myarray);
+            /*launchPostRequest(req.file.filename);*/
+            pythonFunction();
             if(err){
                  res.json({error_code:1,err_desc:err});
                  return;
@@ -69,16 +72,48 @@ var upload = multer({
         });
     });
 
-var myscript = new pythonShell('hello.py');
+var launchPostRequest = function (url) {
+    var url = url;
+    console.log('file url', url);
+    var options = {
+      hostname: 'localhost',
+      port: 8000,
+      path: '/api/uploads',
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      }
+    };
+
+    var req = http.request(options, function(res) {
+      console.log('Status: ' + res.statusCode);
+      console.log('Headers: ' + JSON.stringify(res.headers));
+      res.setEncoding('utf8');
+      res.on('data', function (body) {
+        console.log('Body: ' + body);
+      });
+    });
+
+    req.on('error', function(e) {
+      console.log('problem with request: ' + e.message);
+    });
+
+    // write data to request body
+    req.write('{"url":' + JSON.stringify(url) +'}');
+    req.end();
+    };
 
 var options = {
     mode: 'text',
     args: ['my First Argument', 'My Second Argument', '--option=123']
 };
 
+var pythonFunction = function () {
 
-//Providing data from Node.js to Python
-myscript.send(JSON.stringify(['path to image 1', 'path to image 2']));
+    var myscript = new pythonShell('hello.py');
+
+    //Providing data from Node.js to Python
+myscript.send(JSON.stringify(myarray));
 
 
 myscript.on('message', function (message) {
@@ -95,6 +130,8 @@ myscript.end(function (err) {
 
     console.log('finished');
 });
+
+}
 
 
 module.exports = app;

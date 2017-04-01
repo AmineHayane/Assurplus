@@ -22,7 +22,7 @@ import { LoginComponent } from './login/login.component';
 import {FileSelectDirective, FileDropDirective} from "ng2-file-upload/ng2-file-upload";
 import { FileuploadComponent } from './fileupload/fileupload.component';
 import {SuiProgressModule, SuiModule} from "ng2-semantic-ui";
-
+import {UploadsService} from "./fileupload/uploads.service";
 
 @NgModule({
   declarations: [
@@ -49,7 +49,7 @@ import {SuiProgressModule, SuiModule} from "ng2-semantic-ui";
     SuiModule,
     SuiProgressModule
   ],
-  providers: [AuthenticationService, SignupService],
+  providers: [AuthenticationService, SignupService, UploadsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
