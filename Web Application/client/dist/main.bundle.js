@@ -1,22 +1,20 @@
 webpackJsonp([1,5],{
 
-/***/ 1091:
+/***/ 1116:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(539);
+module.exports = __webpack_require__(549);
 
 
 /***/ }),
 
-/***/ 1095:
+/***/ 1123:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadsService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_model__ = __webpack_require__(1124);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -28,46 +26,134 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-var UploadsService = (function () {
-    function UploadsService(http) {
-        this.http = http;
+var ArticleComponent = (function () {
+    function ArticleComponent() {
+        this.scaled = 'inactive';
     }
-    UploadsService.prototype.getAllUploads = function () {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        return this.http.get('/api/uploads', { headers: headers }).map(function (res) { return res.json(); });
+    ArticleComponent.prototype.voteUp = function () {
+        this.article.voteUp();
+        return false;
     };
-    UploadsService.prototype.addUpload = function (newUpload) {
-        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
-        headers.append('Content-Type', 'application/json');
-        return this.http.post('/api/uploads', JSON.stringify(newUpload), { headers: headers })
-            .map(function (res) { return res.json(); });
+    ArticleComponent.prototype.voteDown = function () {
+        this.article.voteDown();
+        return false;
     };
-    UploadsService.prototype.deleteUpload = function (uploadId) {
-        return this.http.delete('/api/uploads/' + uploadId).map(function (res) { return res.json(); });
+    ArticleComponent.prototype.scaleIn = function () {
+        this.scaled = 'active';
     };
-    return UploadsService;
+    ArticleComponent.prototype.scaleOut = function () {
+        this.scaled = 'inactive';
+    };
+    ArticleComponent.prototype.ngOnInit = function () {
+    };
+    return ArticleComponent;
 }());
-UploadsService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
-], UploadsService);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__article_model__["a" /* Article */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__article_model__["a" /* Article */]) === "function" && _a || Object)
+], ArticleComponent.prototype, "article", void 0);
+ArticleComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'app-article',
+        template: __webpack_require__(1126),
+        styles: [__webpack_require__(1125)],
+        animations: [
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["trigger"])('flyInOut', [
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('void => *', [
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({ transform: 'translateX(-100%)' }),
+                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('500ms ease-in')
+                ]),
+            ]),
+            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["trigger"])('scaleOut', [
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('inactive', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
+                    transform: 'scale(1)',
+                })),
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('active', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
+                    transform: 'scale(1.1)',
+                    background: 'green'
+                })),
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('inactive => active', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('150ms ease-in')),
+                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('active => inactive', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('150ms ease-out'))
+            ])
+        ],
+        host: {
+            class: 'row'
+        }
+    })
+], ArticleComponent);
 
 var _a;
-//# sourceMappingURL=uploads.service.js.map
+//# sourceMappingURL=article.component.js.map
 
 /***/ }),
 
-/***/ 177:
+/***/ 1124:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Article; });
+var Article = (function () {
+    function Article(title, link, votes) {
+        this.title = title;
+        this.link = link;
+        this.votes = votes || 0;
+    }
+    Article.prototype.voteUp = function () {
+        this.votes += 1;
+    };
+    Article.prototype.voteDown = function () {
+        this.votes -= 1;
+    };
+    Article.prototype.domain = function () {
+        try {
+            var link = this.link.split('//')[1];
+            return link.split('/')[0];
+        }
+        catch (err) {
+            return null;
+        }
+    };
+    return Article;
+}());
+
+//# sourceMappingURL=article.model.js.map
+
+/***/ }),
+
+/***/ 1125:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(17)();
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ 1126:
+/***/ (function(module, exports) {
+
+module.exports = "  <div (mouseenter)=\"scaleIn()\" (mouseleave)=\"scaleOut()\" class=\"twelve wide column center aligned votes\"  [@flyInOut] [@scaleOut]=\"scaled\">\r\n    <div class=\"ui statistic\">\r\n      <div class=\"value\">\r\n        {{article.votes}}\r\n      </div>\r\n\r\n      <div class=\"label\">\r\n        Points\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"twelve wide column\">\r\n    <a class=\"ui large header\" href=\"{{article.link}}\">\r\n      {{article.title}}\r\n    </a>\r\n    <div class=\"meta\">({{article.domain()}})</div>\r\n    <ul class=\"ui big horizontal list voters\">\r\n      <li class=\"item\">\r\n        <a href (click)=\"voteUp()\">\r\n          <i class=\"arrow up icon\"></i>\r\n          upvote\r\n        </a>\r\n      </li>\r\n\r\n      <li class=\"item\">\r\n        <a href (click)=\"voteDown()\">\r\n          <i class=\"arrow down icon\"></i>\r\n          downvote\r\n        </a>\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ 178:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs__ = __webpack_require__(292);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthenticationService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -146,15 +232,15 @@ var _a;
 
 /***/ }),
 
-/***/ 452:
+/***/ 453:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enterleave_animation__ = __webpack_require__(699);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scale_animation__ = __webpack_require__(702);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__flyInOrOut__ = __webpack_require__(701);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_animation__ = __webpack_require__(698);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fadeInOut__ = __webpack_require__(700);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__enterleave_animation__ = __webpack_require__(709);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scale_animation__ = __webpack_require__(712);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__flyInOrOut__ = __webpack_require__(711);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carousel_animation__ = __webpack_require__(708);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__fadeInOut__ = __webpack_require__(710);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Animations; });
 
 
@@ -178,14 +264,14 @@ Animations.fadeInOut = __WEBPACK_IMPORTED_MODULE_4__fadeInOut__["a" /* fadeInOut
 
 /***/ }),
 
-/***/ 453:
+/***/ 455:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload__ = __webpack_require__(475);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload__ = __webpack_require__(485);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__uploads_service__ = __webpack_require__(1095);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__uploads_service__ = __webpack_require__(456);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileuploadComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -248,8 +334,8 @@ var FileuploadComponent = (function () {
 FileuploadComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-fileupload',
-        template: __webpack_require__(832),
-        styles: [__webpack_require__(770)]
+        template: __webpack_require__(849),
+        styles: [__webpack_require__(780)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__uploads_service__["a" /* UploadsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__uploads_service__["a" /* UploadsService */]) === "function" && _a || Object])
 ], FileuploadComponent);
@@ -259,14 +345,65 @@ var _a;
 
 /***/ }),
 
-/***/ 454:
+/***/ 456:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UploadsService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var UploadsService = (function () {
+    function UploadsService(http) {
+        this.http = http;
+    }
+    UploadsService.prototype.getAllUploads = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.get('/api/uploads', { headers: headers }).map(function (res) { return res.json(); });
+    };
+    UploadsService.prototype.addUpload = function (newUpload) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]();
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/uploads', JSON.stringify(newUpload), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
+    UploadsService.prototype.deleteUpload = function (uploadId) {
+        return this.http.delete('/api/uploads/' + uploadId).map(function (res) { return res.json(); });
+    };
+    return UploadsService;
+}());
+UploadsService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+], UploadsService);
+
+var _a;
+//# sourceMappingURL=uploads.service.js.map
+
+/***/ }),
+
+/***/ 460:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user__ = __webpack_require__(461);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -313,8 +450,8 @@ __decorate([
 LoginComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-login',
-        template: __webpack_require__(834),
-        styles: [__webpack_require__(772)]
+        template: __webpack_require__(854),
+        styles: [__webpack_require__(785)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["e" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["e" /* Router */]) === "function" && _b || Object])
 ], LoginComponent);
@@ -324,7 +461,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 455:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -341,13 +478,13 @@ var User = (function () {
 
 /***/ }),
 
-/***/ 456:
+/***/ 464:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_user__ = __webpack_require__(455);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_user__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(115);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -390,8 +527,8 @@ var SignupComponent = (function () {
 SignupComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-signup',
-        template: __webpack_require__(835),
-        styles: [__webpack_require__(773)]
+        template: __webpack_require__(857),
+        styles: [__webpack_require__(788)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["e" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["e" /* Router */]) === "function" && _b || Object])
 ], SignupComponent);
@@ -401,12 +538,12 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 457:
+/***/ 466:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations_animations__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations_animations__ = __webpack_require__(453);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestngsemComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -471,8 +608,8 @@ var TestngsemComponent = (function () {
 TestngsemComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-testngsem',
-        template: __webpack_require__(836),
-        styles: [__webpack_require__(774)],
+        template: __webpack_require__(859),
+        styles: [__webpack_require__(790)],
         animations: [__WEBPACK_IMPORTED_MODULE_1__animations_animations__["a" /* Animations */].flyInOrOutLeft, __WEBPACK_IMPORTED_MODULE_1__animations_animations__["a" /* Animations */].flyInOrOutRight, __WEBPACK_IMPORTED_MODULE_1__animations_animations__["a" /* Animations */].scale(1.1), __WEBPACK_IMPORTED_MODULE_1__animations_animations__["a" /* Animations */].fadeInOut,
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["trigger"])('changeBngColor', [
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('inactive', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
@@ -500,7 +637,7 @@ var _a;
 
 /***/ }),
 
-/***/ 538:
+/***/ 548:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -509,20 +646,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 538;
+webpackEmptyContext.id = 548;
 
 
 /***/ }),
 
-/***/ 539:
+/***/ 549:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(668);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(704);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(712);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(678);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(714);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(722);
 
 
 
@@ -535,7 +672,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 698:
+/***/ 708:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -598,7 +735,7 @@ var carousel = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__
 
 /***/ }),
 
-/***/ 699:
+/***/ 709:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -630,7 +767,7 @@ var enterLeaveRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular
 
 /***/ }),
 
-/***/ 700:
+/***/ 710:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -651,7 +788,7 @@ var fadeInOut = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core_
 
 /***/ }),
 
-/***/ 701:
+/***/ 711:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -683,7 +820,7 @@ var flyInOrOutRight = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular
 
 /***/ }),
 
-/***/ 702:
+/***/ 712:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -703,12 +840,12 @@ function scale(degree) {
 
 /***/ }),
 
-/***/ 703:
+/***/ 713:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(115);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -790,8 +927,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(829),
-        styles: [__webpack_require__(767)],
+        template: __webpack_require__(846),
+        styles: [__webpack_require__(777)],
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["e" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["e" /* Router */]) === "function" && _c || Object])
 ], AppComponent);
@@ -801,37 +938,37 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 704:
+/***/ 714:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(703);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__article_article_component__ = __webpack_require__(705);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__(652);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs__ = __webpack_require__(776);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(713);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__article_article_component__ = __webpack_require__(1123);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_material__ = __webpack_require__(662);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs__ = __webpack_require__(793);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_hammerjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_hammerjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__testngsem_testngsem_component__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_trackscroll_directive__ = __webpack_require__(708);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__carousel_carousel_component__ = __webpack_require__(707);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_page_scroll_ng2_page_scroll__ = __webpack_require__(781);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__footer_footer_component__ = __webpack_require__(709);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_responsive__ = __webpack_require__(794);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__testngsem_testngsem_component__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__directives_trackscroll_directive__ = __webpack_require__(717);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__carousel_carousel_component__ = __webpack_require__(715);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_page_scroll_ng2_page_scroll__ = __webpack_require__(798);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__footer_footer_component__ = __webpack_require__(718);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_responsive__ = __webpack_require__(811);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13_ng2_responsive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13_ng2_responsive__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__signup_signup_component__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_authentication_service__ = __webpack_require__(177);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__signup_signup_component__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_authentication_service__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__angular_router__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__routes_app_routing__ = __webpack_require__(710);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__signup_signup_service__ = __webpack_require__(711);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng2_file_upload_ng2_file_upload__ = __webpack_require__(780);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__routes_app_routing__ = __webpack_require__(720);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__signup_signup_service__ = __webpack_require__(721);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__login_login_component__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng2_file_upload_ng2_file_upload__ = __webpack_require__(797);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ng2_file_upload_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_20_ng2_file_upload_ng2_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__fileupload_fileupload_component__ = __webpack_require__(453);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng2_semantic_ui__ = __webpack_require__(824);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__fileupload_uploads_service__ = __webpack_require__(1095);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__fileupload_fileupload_component__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_ng2_semantic_ui__ = __webpack_require__(841);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__fileupload_uploads_service__ = __webpack_require__(456);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -903,124 +1040,12 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 705:
+/***/ 715:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__article_model__ = __webpack_require__(706);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ArticleComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var ArticleComponent = (function () {
-    function ArticleComponent() {
-        this.scaled = 'inactive';
-    }
-    ArticleComponent.prototype.voteUp = function () {
-        this.article.voteUp();
-        return false;
-    };
-    ArticleComponent.prototype.voteDown = function () {
-        this.article.voteDown();
-        return false;
-    };
-    ArticleComponent.prototype.scaleIn = function () {
-        this.scaled = 'active';
-    };
-    ArticleComponent.prototype.scaleOut = function () {
-        this.scaled = 'inactive';
-    };
-    ArticleComponent.prototype.ngOnInit = function () {
-    };
-    return ArticleComponent;
-}());
-__decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__article_model__["a" /* Article */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__article_model__["a" /* Article */]) === "function" && _a || Object)
-], ArticleComponent.prototype, "article", void 0);
-ArticleComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'app-article',
-        template: __webpack_require__(830),
-        styles: [__webpack_require__(768)],
-        animations: [
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["trigger"])('flyInOut', [
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('void => *', [
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({ transform: 'translateX(-100%)' }),
-                    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('500ms ease-in')
-                ]),
-            ]),
-            __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["trigger"])('scaleOut', [
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('inactive', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
-                    transform: 'scale(1)',
-                })),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["state"])('active', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["style"])({
-                    transform: 'scale(1.1)',
-                    background: 'green'
-                })),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('inactive => active', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('150ms ease-in')),
-                __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["transition"])('active => inactive', __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["animate"])('150ms ease-out'))
-            ])
-        ],
-        host: {
-            class: 'row'
-        }
-    })
-], ArticleComponent);
-
-var _a;
-//# sourceMappingURL=article.component.js.map
-
-/***/ }),
-
-/***/ 706:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Article; });
-var Article = (function () {
-    function Article(title, link, votes) {
-        this.title = title;
-        this.link = link;
-        this.votes = votes || 0;
-    }
-    Article.prototype.voteUp = function () {
-        this.votes += 1;
-    };
-    Article.prototype.voteDown = function () {
-        this.votes -= 1;
-    };
-    Article.prototype.domain = function () {
-        try {
-            var link = this.link.split('//')[1];
-            return link.split('/')[0];
-        }
-        catch (err) {
-            return null;
-        }
-    };
-    return Article;
-}());
-
-//# sourceMappingURL=article.model.js.map
-
-/***/ }),
-
-/***/ 707:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations_animations__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__animations_animations__ = __webpack_require__(453);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarouselComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1110,8 +1135,8 @@ var CarouselComponent = (function () {
 CarouselComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: "app-carousel",
-        template: __webpack_require__(831),
-        styles: [__webpack_require__(769)],
+        template: __webpack_require__(847),
+        styles: [__webpack_require__(778)],
         animations: [__WEBPACK_IMPORTED_MODULE_1__animations_animations__["a" /* Animations */].carousel, __WEBPACK_IMPORTED_MODULE_1__animations_animations__["a" /* Animations */].scale(1.2)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _a || Object])
@@ -1122,7 +1147,7 @@ var _a;
 
 /***/ }),
 
-/***/ 708:
+/***/ 717:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1168,7 +1193,7 @@ TrackScrollDirective = __decorate([
 
 /***/ }),
 
-/***/ 709:
+/***/ 718:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1214,8 +1239,8 @@ var FooterComponent = (function () {
 FooterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-footer',
-        template: __webpack_require__(833),
-        styles: [__webpack_require__(771)]
+        template: __webpack_require__(850),
+        styles: [__webpack_require__(781)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object])
 ], FooterComponent);
@@ -1225,14 +1250,14 @@ var _a;
 
 /***/ }),
 
-/***/ 710:
+/***/ 720:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__signup_signup_component__ = __webpack_require__(456);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__testngsem_testngsem_component__ = __webpack_require__(457);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login_component__ = __webpack_require__(454);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fileupload_fileupload_component__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__signup_signup_component__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__testngsem_testngsem_component__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login_login_component__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__fileupload_fileupload_component__ = __webpack_require__(455);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
 
 
@@ -1263,13 +1288,13 @@ var ROUTES = [
 
 /***/ }),
 
-/***/ 711:
+/***/ 721:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(46);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1306,7 +1331,7 @@ var _a;
 
 /***/ }),
 
-/***/ 712:
+/***/ 722:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1323,15 +1348,15 @@ var environment = {
 
 /***/ }),
 
-/***/ 767:
+/***/ 777:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, ".section_before_footer{\n  height : 200px;\n  margin-bottom: 20px;\n}\n\n.example-icon {\n  padding: 0 14px;\n}\n\n.example-spacer {\n  -webkit-box-flex: 1;\n      -ms-flex: 1 1 auto;\n          flex: 1 1 auto;\n}\n\n.ui.top.fixed.menu {\n  -webkit-transition: all 0.8s;\n  transition: all 0.8s;\n  -webkit-transition-timing-function: ease-in;\n          transition-timing-function: ease-in;\n}\n\na:hover {\n  color : red;\n}\n", ""]);
+exports.push([module.i, ".section_before_footer{\r\n  height : 200px;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.example-icon {\r\n  padding: 0 14px;\r\n}\r\n\r\n.example-spacer {\r\n  -webkit-box-flex: 1;\r\n      -ms-flex: 1 1 auto;\r\n          flex: 1 1 auto;\r\n}\r\n\r\n.ui.top.fixed.menu {\r\n  -webkit-transition: all 0.8s;\r\n  transition: all 0.8s;\r\n  -webkit-transition-timing-function: ease-in;\r\n          transition-timing-function: ease-in;\r\n}\r\n\r\na:hover {\r\n  color : red;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1341,15 +1366,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 768:
+/***/ 778:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "app-carousel {\r\n\tdisplay: block ;\r\n}\r\n\r\na {\r\n\tcolor: #7e8890 ;\r\n\tcursor: pointer ;\r\n\ttext-decoration: none ;\r\n\t-ms-user-select: none ;\r\n\t    user-select: none ;\r\n\t\t-moz-user-select: none ;\r\n\t\t-webkit-user-select: none ;\r\n}\r\n\r\na:hover{\r\n  color : #333c4e;\r\n}\r\n\r\ndiv.container {\r\n\theight: 220px ;\r\n\tmargin: 20px 0px 20px 0px ;\r\n\tposition: relative ;\r\n}\r\n\r\ndiv.friend {\r\n\tbackground-color: #FAFAFA ;\r\n\tborder: 1px solid #CCCCCC ;\r\n\tborder-radius: 6px ;\r\n\theight: 220px ;\r\n\tleft: 0px ;\r\n\tposition: absolute ;\r\n\ttext-align: center ;\r\n\tpadding-top: 20px;\r\n\twidth: 100% ;\r\n}\r\n\r\ndiv.friend .sub.header {\r\n  margin-top : 15px;\r\n}\r\n\r\np.controls {\r\n\ttext-align: center ;\r\n\twidth: 350px ;\r\n}\r\n\r\n.test1{\r\n}\r\n\r\n.test2{\r\n}\r\n\r\n.test3{\r\n\r\n}\r\n\r\n.test1 i{\r\n  position: absolute;\r\n  right : -5px;\r\n  top : 100px;\r\n}\r\n\r\n.test3 i {\r\n  position: absolute;\r\n  left: 0;\r\n  top : 100px;\r\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -1359,15 +1384,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 769:
+/***/ 780:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, "app-carousel {\n\tdisplay: block ;\n}\n\na {\n\tcolor: #7e8890 ;\n\tcursor: pointer ;\n\ttext-decoration: none ;\n\t-ms-user-select: none ;\n\t    user-select: none ;\n\t\t-moz-user-select: none ;\n\t\t-webkit-user-select: none ;\n}\n\na:hover{\n  color : #333c4e;\n}\n\ndiv.container {\n\theight: 220px ;\n\tmargin: 20px 0px 20px 0px ;\n\tposition: relative ;\n}\n\ndiv.friend {\n\tbackground-color: #FAFAFA ;\n\tborder: 1px solid #CCCCCC ;\n\tborder-radius: 6px ;\n\theight: 220px ;\n\tleft: 0px ;\n\tposition: absolute ;\n\ttext-align: center ;\n\tpadding-top: 20px;\n\twidth: 100% ;\n}\n\ndiv.friend .sub.header {\n  margin-top : 15px;\n}\n\np.controls {\n\ttext-align: center ;\n\twidth: 350px ;\n}\n\n.test1{\n}\n\n.test2{\n}\n\n.test3{\n\n}\n\n.test1 i{\n  position: absolute;\n  right : -5px;\n  top : 100px;\n}\n\n.test3 i {\n  position: absolute;\n  left: 0;\n  top : 100px;\n}\n\n", ""]);
+exports.push([module.i, ".ui.container{\r\n  margin-top: 100px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1377,15 +1402,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 770:
+/***/ 781:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, ".ui.container{\n  margin-top: 100px;\n}\n", ""]);
+exports.push([module.i, ".ui.segment {\r\n  box-shadow: -5px -5px 5px #008080;\r\n  -webkit-transition: all 2s;\r\n  transition: all 2s;\r\n  -webkit-transition-timing-function: ease-in;\r\n          transition-timing-function: ease-in;\r\n}\r\n\r\n.heightmodif {\r\n  height : 300px;\r\n}\r\n\r\n.get_started {\r\n  margin: auto;\r\n}\r\n\r\n.get_started:hover {\r\n  color : purple;\r\n}\r\n\r\nbody {\r\n  height : 95px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1395,15 +1420,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 771:
+/***/ 785:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, ".ui.segment {\n  box-shadow: -5px -5px 5px #008080;\n  -webkit-transition: all 2s;\n  transition: all 2s;\n  -webkit-transition-timing-function: ease-in;\n          transition-timing-function: ease-in;\n}\n\n.heightmodif {\n  height : 300px;\n}\n\n.get_started {\n  margin: auto;\n}\n\n.get_started:hover {\n  color : purple;\n}\n\nbody {\n  height : 95px;\n}\n", ""]);
+exports.push([module.i, "\r\n", ""]);
 
 // exports
 
@@ -1413,15 +1438,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 772:
+/***/ 788:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, "\n", ""]);
+exports.push([module.i, ".centered-block {\r\n  margin-top:200px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1431,15 +1456,15 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 773:
+/***/ 790:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(31)();
+exports = module.exports = __webpack_require__(17)();
 // imports
 
 
 // module
-exports.push([module.i, ".centered-block {\n  margin-top:200px;\n}\n", ""]);
+exports.push([module.i, ".header-img-container {\r\n  height : 600px;\r\n  width : 100%;\r\n  margin:0 auto;\r\n  padding:0;\r\n\r\n}\r\n\r\n.header-img-container h1 {\r\n padding-top : 0px;\r\n}\r\n\r\n.header-img-container img {\r\n padding-top : 175px;\r\n}\r\n\r\n.header-img-container h1 .library{\r\n font-size: 1.3em;\r\n}\r\n\r\n.header-img-container h1 .tagline{\r\n font-size: 1.1em;\r\n  font-weight: normal;\r\n}\r\n\r\n.get_started {\r\n  margin-top : 90px;\r\n  color : white;\r\n}\r\n\r\n.get_started:hover {\r\n  color : purple;\r\n}\r\n\r\n#here{\r\n  height:50px;\r\n}\r\n.content_section{\r\n  padding-top: 50px;\r\n  padding-bottom: 50px;\r\n}\r\n\r\n.content_section .ui.huge.header {\r\n  margin-top : 10px;\r\n}\r\n\r\n.content_section2{\r\n  padding-top: 50px;\r\n  padding-bottom: 50px;\r\n}\r\n\r\n.content_section2 .ui.huge.header {\r\n  margin-top : 10px;\r\n}\r\n\r\n.bosch {\r\n  box-shadow: 5px 5px 12px #555;\r\n}\r\n\r\n.easy {\r\n  position : relative;\r\n}\r\n\r\n.easy p,.list {\r\n  color : #7e8890;\r\n  font-style: normal;\r\n  -webkit-font-variant-ligatures: normal;\r\n          font-variant-ligatures: normal;\r\n  font-variant-caps: normal;\r\n  font-variant-numeric: normal;\r\n  font-weight: 400;\r\n  font-stretch: normal;\r\n  font-size: 15px;\r\n  font-family: \"Open Sans\", open-sans, sans-serif;\r\n}\r\n\r\n.easy .huge.header{\r\n  color : #333c4e;\r\n  font-style: normal;\r\n  -webkit-font-variant-ligatures: normal;\r\n          font-variant-ligatures: normal;\r\n  font-variant-caps: normal;\r\n  font-variant-numeric: normal;\r\n  font-weight: 400;\r\n  font-stretch: normal;\r\n  font-size: 30px;\r\n  line-height: 52px;\r\n  font-family: \"Open Sans\", open-sans, sans-serif;\r\n}\r\n\r\n.easy .bulleted.list {\r\n  margin-bottom: 30px;\r\n}\r\n\r\n.ui.info.message {\r\n  margin-top : 50px;\r\n  margin-bottom : 40px;\r\n}\r\n", ""]);
 
 // exports
 
@@ -1449,79 +1474,54 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 774:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(31)();
-// imports
-
-
-// module
-exports.push([module.i, ".header-img-container {\n  height : 600px;\n  width : 100%;\n  margin:0 auto;\n  padding:0;\n\n}\n\n.header-img-container h1 {\n padding-top : 0px;\n}\n\n.header-img-container img {\n padding-top : 175px;\n}\n\n.header-img-container h1 .library{\n font-size: 1.3em;\n}\n\n.header-img-container h1 .tagline{\n font-size: 1.1em;\n  font-weight: normal;\n}\n\n.get_started {\n  margin-top : 90px;\n  color : white;\n}\n\n.get_started:hover {\n  color : purple;\n}\n\n#here{\n  height:50px;\n}\n.content_section{\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n\n.content_section .ui.huge.header {\n  margin-top : 10px;\n}\n\n.content_section2{\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n\n.content_section2 .ui.huge.header {\n  margin-top : 10px;\n}\n\n.bosch {\n  box-shadow: 5px 5px 12px #555;\n}\n\n.easy {\n  position : relative;\n}\n\n.easy p,.list {\n  color : #7e8890;\n  font-style: normal;\n  -webkit-font-variant-ligatures: normal;\n          font-variant-ligatures: normal;\n  font-variant-caps: normal;\n  font-variant-numeric: normal;\n  font-weight: 400;\n  font-stretch: normal;\n  font-size: 15px;\n  font-family: \"Open Sans\", open-sans, sans-serif;\n}\n\n.easy .huge.header{\n  color : #333c4e;\n  font-style: normal;\n  -webkit-font-variant-ligatures: normal;\n          font-variant-ligatures: normal;\n  font-variant-caps: normal;\n  font-variant-numeric: normal;\n  font-weight: 400;\n  font-stretch: normal;\n  font-size: 30px;\n  line-height: 52px;\n  font-family: \"Open Sans\", open-sans, sans-serif;\n}\n\n.easy .bulleted.list {\n  margin-bottom: 30px;\n}\n\n.ui.info.message {\n  margin-top : 50px;\n  margin-bottom : 40px;\n}\n", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ 829:
+/***/ 846:
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"ui right vertical sidebar inverted menu\">\n    <a class=\"item\">\n      1\n    </a>\n    <a class=\"item\">\n      2\n    </a>\n    <a class=\"item\">\n      3\n    </a>\n  </div>\n\n  <div class=\"pusher\">\n    <div tracking-scroll (scrolled)=\"onScroll($event.value, 50)\" class=\"ui top fixed menu secondary \" [ngClass]= \"{'five item' : isScrolled_50}\">\n\n    <a href=\"/\" class=\"item active\">\n      <img class=\"ui tiny image\" src=\"./assets/images/brand_logo.png\">\n    </a>\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\n      <i class=\"help circle outline large icon\"></i>\n      Comment ça marche\n    </a>\n    <a routerLink=\"/fileupload\" *hideItSizes=\"{min:0,max:500}\" class=\"item\">\n      FAQ\n    </a>\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\n      Contact\n    </a>\n\n    <div class=\"right menu\">\n      <div *ngIf=\"!user && !isScrolled_50\" class=\"item\">\n        <a (click)=\"toggleLogin()\" *hideItSizes=\"{min:0,max:768}\" class=\"item\">\n        Se connecter\n      </a>\n      </div>\n\n      <div *ngIf=\"user && !isScrolled_50\" class=\"item\">\n        <a *hideItSizes=\"{min:0,max:768}\" class=\"ui small basic button teal\">\n        <i class=\"icon user\"></i>\n          {{user.user_mail}}\n      </a>\n      </div>\n\n      <div *hideItSizes=\"{min:0,max:768}\"  class=\"item\">\n          <a routerLink=\"/signup\" *ngIf=\"!user && !isScrolled_50\" class=\"ui small button teal\" >S'inscrire</a>\n          <a  (click)=\"logout()\" *ngIf=\"user && !isScrolled_50\" class=\"ui small button teal\" >Deconnexion</a>\n      </div>\n      <a *showItSizes=\"{min:0,max:768}\" (click)=\"toggleSidebar()\" class=\"item\"><i class=\"icon sidebar\"></i> </a>\n    </div>\n\n  </div>\n\n  <div class=\"ui main \">\n\n    <router-outlet></router-outlet>\n    <p *ngIf=\"!user\">Not logged in</p>\n    <p>{{message}}</p>\n  </div>\n\n     <!--<div class=\"section_before_footer\">\n\n     </div>-->\n\n    <div class=\"ui page dimmer\">\n      <div class=\"content ui text container\">\n        <div class=\"center\">\n          <app-login (notify)=\"onNotify($event)\"></app-login>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"ui container fluid\">\n      <app-footer></app-footer>\n    </div>\n\n  </div>\n"
+module.exports = " <div class=\"ui right vertical sidebar inverted menu\">\r\n    <a class=\"item\">\r\n      1\r\n    </a>\r\n    <a class=\"item\">\r\n      2\r\n    </a>\r\n    <a class=\"item\">\r\n      3\r\n    </a>\r\n  </div>\r\n\r\n  <div class=\"pusher\">\r\n    <div tracking-scroll (scrolled)=\"onScroll($event.value, 50)\" class=\"ui top fixed menu secondary \" [ngClass]= \"{'five item' : isScrolled_50}\">\r\n\r\n    <a href=\"/\" class=\"item active\">\r\n      <img class=\"ui tiny image\" src=\"./assets/images/brand_logo.png\">\r\n    </a>\r\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      <i class=\"help circle outline large icon\"></i>\r\n      Comment ça marche\r\n    </a>\r\n    <a routerLink=\"/fileupload\" *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      FAQ\r\n    </a>\r\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      Contact\r\n    </a>\r\n\r\n    <div class=\"right menu\">\r\n      <div *ngIf=\"!user && !isScrolled_50\" class=\"item\">\r\n        <a (click)=\"toggleLogin()\" *hideItSizes=\"{min:0,max:768}\" class=\"item\">\r\n        Se connecter\r\n      </a>\r\n      </div>\r\n\r\n      <div *ngIf=\"user && !isScrolled_50\" class=\"item\">\r\n        <a *hideItSizes=\"{min:0,max:768}\" class=\"ui small basic button teal\">\r\n        <i class=\"icon user\"></i>\r\n          {{user.user_mail}}\r\n      </a>\r\n      </div>\r\n\r\n      <div *hideItSizes=\"{min:0,max:768}\"  class=\"item\">\r\n          <a routerLink=\"/signup\" *ngIf=\"!user && !isScrolled_50\" class=\"ui small button teal\" >S'inscrire</a>\r\n          <a  (click)=\"logout()\" *ngIf=\"user && !isScrolled_50\" class=\"ui small button teal\" >Deconnexion</a>\r\n      </div>\r\n      <a *showItSizes=\"{min:0,max:768}\" (click)=\"toggleSidebar()\" class=\"item\"><i class=\"icon sidebar\"></i> </a>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"ui main \">\r\n\r\n    <router-outlet></router-outlet>\r\n    <p *ngIf=\"!user\">Not logged in</p>\r\n    <p>{{message}}</p>\r\n  </div>\r\n\r\n     <!--<div class=\"section_before_footer\">\r\n\r\n     </div>-->\r\n\r\n    <div class=\"ui page dimmer\">\r\n      <div class=\"content ui text container\">\r\n        <div class=\"center\">\r\n          <app-login (notify)=\"onNotify($event)\"></app-login>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"ui container fluid\">\r\n      <app-footer></app-footer>\r\n    </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ 830:
-/***/ (function(module, exports) {
-
-module.exports = "  <div (mouseenter)=\"scaleIn()\" (mouseleave)=\"scaleOut()\" class=\"twelve wide column center aligned votes\"  [@flyInOut] [@scaleOut]=\"scaled\">\n    <div class=\"ui statistic\">\n      <div class=\"value\">\n        {{article.votes}}\n      </div>\n\n      <div class=\"label\">\n        Points\n      </div>\n    </div>\n\n    <div class=\"twelve wide column\">\n    <a class=\"ui large header\" href=\"{{article.link}}\">\n      {{article.title}}\n    </a>\n    <div class=\"meta\">({{article.domain()}})</div>\n    <ul class=\"ui big horizontal list voters\">\n      <li class=\"item\">\n        <a href (click)=\"voteUp()\">\n          <i class=\"arrow up icon\"></i>\n          upvote\n        </a>\n      </li>\n\n      <li class=\"item\">\n        <a href (click)=\"voteDown()\">\n          <i class=\"arrow down icon\"></i>\n          downvote\n        </a>\n      </li>\n    </ul>\n\n  </div>\n  </div>\n\n\n\n\n"
-
-/***/ }),
-
-/***/ 831:
+/***/ 847:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container ui grid\">\n          <div class=\"column test1\">\n            <a (click)=\"showPrevFriend()\">\n              <i [@scaleOut]=\"SCALED[0]\" (mouseenter)=\"scaleIn(0)\" (mouseleave)=\"scaleOut(0)\" class=\"big icon chevron left\"></i></a>\n          </div>\n\n  <div class=\"fourteen wide column test2\">\n    <template ngFor let-friend [ngForOf]=\"[ selectedFriend ]\">\n                <div [@friendAnimation]=\"orientation\" class=\"friend\">\n                  <h2 class=\"ui icon header\">\n                    <i class=\"{{friend.img}} icon\"></i>\n                    <div class=\"content\">\n                      {{friend.title}}\n                      <div class=\"sub header\">{{friend.description}}</div>\n                    </div>\n                  </h2>\n                </div>\n            </template>\n  </div>\n\n          <div class=\"column test3\">\n            <a (click)=\"showNextFriend()\">\n              <i [@scaleOut]=\"SCALED[1]\" (mouseenter)=\"scaleIn(1)\" (mouseleave)=\"scaleOut(1)\" class=\"big icon chevron right\"></i></a>\n          </div>\n\n</div>\n\n\n"
 
 /***/ }),
 
-/***/ 832:
+/***/ 849:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui container\">\n  <div class=\"ui inverted segment\">\n    <h2>FileUpload Component</h2>\n  </div>\n</div>\n\n<div class=\"ui container\">\n  <div class=\"ui grid\">\n    <div class=\"row\">\n      <div class=\"five wide column\">\n        <form class=\"ui form\">\n          <div class=\"field\">\n            <label>Multiple Files Upload</label>\n            <input type=\"file\" name=\"multiple\" ng2FileSelect [uploader]=\"uploader\" multiple >\n          </div>\n        </form>\n      </div>\n\n      <div class=\"eleven wide column\">\n        <h3>File Upload with Angular 2 and Node</h3>\n        Queue length: {{ uploader?.queue?.length }}\n\n        <table class=\"ui basic table\">\n          <thead>\n            <tr>\n              <th>Name</th>\n              <th>Size</th>\n              <th>Progress</th>\n              <th>Status</th>\n              <th>Actions</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let item of uploader.queue\">\n              <td><strong>{{ item.file.name }}</strong></td>\n              <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>\n              <td>\n                <sui-progress [value]=\"item.progress\" [progress]=\"false\">\n                </sui-progress>\n              </td>\n              <td>\n                <span *ngIf=\"item.isSuccess\"><i class=\"checkmark icon\"></i></span>\n                <span *ngIf=\"item.isCancel\"><i class=\"minus circle icon\"></i></span>\n                <span *ngIf=\"item.isError\"><i class=\"remove icon\"></i></span>\n              </td>\n              <td nowrap>\n                <button type=\"button\" class=\"mini ui green button\"\n                        (click)=\"item.upload()\" [disabled]=\"item.isReady || item.isUploading || item.isSuccess\">\n                  <i class=\"upload icon\"></i> Upload\n                </button>\n                <button type=\"button\" class=\"mini ui orange button\"\n                (click)=\"item.cancel()\" [disabled]=\"!item.isUploading\">\n                  <i class=\"ben icon\"></i> Cancel\n                </button>\n                <button type=\"button\" class=\"mini ui red button\" (click)=\"item.remove()\" >\n                  <i class=\"trash icon\"></i> Remove\n                </button>\n              </td>\n            </tr>\n          </tbody>\n        </table>\n\n        <div>\n          <div>Queue progress:\n            <sui-progress [value]=\"uploader.progress\" [progress]=\"false\">\n            </sui-progress>\n          </div>\n          <button type=\"button\" class=\"ui green button\" (click)=\"uploader.uploadAll()\" [disabled]=\"!uploader.getNotUploadedItems().length\">\n            <i class=\"upload icon\"></i> Upload all\n          </button>\n          <button type=\"button\" class=\"ui orange button\" (click)=\"uploader.cancelAll()\" [disabled]=\"!uploader.isUploading\">\n            <i class=\"ban icon\"></i> Cancel all\n          </button>\n          <button type=\"button\" class=\"ui red button\" (click)=\"uploader.clearQueue()\" [disabled]=\"!uploader.queue.length\">\n            <i class=\"trash icon\"></i> Remove all\n          </button>\n        </div>\n\n        <div *ngFor=\"let upload of uploads\">\n          <img src=\"./uploads/{{upload.url}}\">\n          <button (click)=\"deleteUpload(upload.id)\" type=\"button\" class=\"ui red button\">\n            <i class=\"trash icon\"></i> Delete\n          </button>\n        </div>\n\n      </div>\n\n    </div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"ui container\">\r\n  <div class=\"ui inverted segment\">\r\n    <h2>FileUpload Component</h2>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"ui container\">\r\n  <div class=\"ui grid\">\r\n    <div class=\"row\">\r\n      <div class=\"five wide column\">\r\n        <form class=\"ui form\">\r\n          <div class=\"field\">\r\n            <label>Multiple Files Upload</label>\r\n            <input type=\"file\" name=\"multiple\" ng2FileSelect [uploader]=\"uploader\" multiple >\r\n          </div>\r\n        </form>\r\n      </div>\r\n\r\n      <div class=\"eleven wide column\">\r\n        <h3>File Upload with Angular 2 and Node</h3>\r\n        Queue length: {{ uploader?.queue?.length }}\r\n\r\n        <table class=\"ui basic table\">\r\n          <thead>\r\n            <tr>\r\n              <th>Name</th>\r\n              <th>Size</th>\r\n              <th>Progress</th>\r\n              <th>Status</th>\r\n              <th>Actions</th>\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <tr *ngFor=\"let item of uploader.queue\">\r\n              <td><strong>{{ item.file.name }}</strong></td>\r\n              <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>\r\n              <td>\r\n                <sui-progress [value]=\"item.progress\" [progress]=\"false\">\r\n                </sui-progress>\r\n              </td>\r\n              <td>\r\n                <span *ngIf=\"item.isSuccess\"><i class=\"checkmark icon\"></i></span>\r\n                <span *ngIf=\"item.isCancel\"><i class=\"minus circle icon\"></i></span>\r\n                <span *ngIf=\"item.isError\"><i class=\"remove icon\"></i></span>\r\n              </td>\r\n              <td nowrap>\r\n                <button type=\"button\" class=\"mini ui green button\"\r\n                        (click)=\"item.upload()\" [disabled]=\"item.isReady || item.isUploading || item.isSuccess\">\r\n                  <i class=\"upload icon\"></i> Upload\r\n                </button>\r\n                <button type=\"button\" class=\"mini ui orange button\"\r\n                (click)=\"item.cancel()\" [disabled]=\"!item.isUploading\">\r\n                  <i class=\"ben icon\"></i> Cancel\r\n                </button>\r\n                <button type=\"button\" class=\"mini ui red button\" (click)=\"item.remove()\" >\r\n                  <i class=\"trash icon\"></i> Remove\r\n                </button>\r\n              </td>\r\n            </tr>\r\n          </tbody>\r\n        </table>\r\n\r\n        <div>\r\n          <div>Queue progress:\r\n            <sui-progress [value]=\"uploader.progress\" [progress]=\"false\">\r\n            </sui-progress>\r\n          </div>\r\n          <button type=\"button\" class=\"ui green button\" (click)=\"uploader.uploadAll()\" [disabled]=\"!uploader.getNotUploadedItems().length\">\r\n            <i class=\"upload icon\"></i> Upload all\r\n          </button>\r\n          <button type=\"button\" class=\"ui orange button\" (click)=\"uploader.cancelAll()\" [disabled]=\"!uploader.isUploading\">\r\n            <i class=\"ban icon\"></i> Cancel all\r\n          </button>\r\n          <button type=\"button\" class=\"ui red button\" (click)=\"uploader.clearQueue()\" [disabled]=\"!uploader.queue.length\">\r\n            <i class=\"trash icon\"></i> Remove all\r\n          </button>\r\n        </div>\r\n\r\n        <div *ngFor=\"let upload of uploads\">\r\n          <img src=\"./uploads/{{upload.url}}\">\r\n          <button (click)=\"deleteUpload(upload.id)\" type=\"button\" class=\"ui red button\">\r\n            <i class=\"trash icon\"></i> Delete\r\n          </button>\r\n        </div>\r\n\r\n      </div>\r\n\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
-/***/ 833:
+/***/ 850:
 /***/ (function(module, exports) {
 
-module.exports = "<body tracking-scroll (scrolled)=\"onScroll($event.value, 2141)\">\n\n <div class=\"ui bottom sidebar inverted\">\n    <div class=\"ui segment teal heightmodif\">\n      <div class=\"ui grid\">\n        <div class=\" centered row\">\n          <a (click)=\"closeSidebar()\"><i class=\" large chevron down link icon get_started\"></i></a>\n        </div>\n        <div class=\"row\">\n          <div class=\"four wide column\">\n            <img class=\"ui tiny image\" src=\"assets/images/brand_logo.png\">\n          </div>\n\n          <div class=\"four wide column\">\n            <h4>Contact</h4>\n            <div class=\"ui link list\">\n              <div class=\"active item\">Home</div>\n              <a class=\"item\">About</a>\n              <a class=\"item\">Jobs</a>\n              <a class=\"item\">Team</a>\n            </div>\n          </div>\n\n          <div class=\"four wide column\">\n            <h4>Contact</h4>\n            <div class=\"ui link list\">\n              <div class=\"active item\">Home</div>\n              <a class=\"item\">About</a>\n              <a class=\"item\">Jobs</a>\n              <a class=\"item\">Team</a>\n            </div>\n          </div>\n\n          <div class=\"four wide column\">\n            <h4>Contact</h4>\n            <div class=\"ui link list\">\n              <div class=\"active item\">Home</div>\n              <a class=\"item\">About</a>\n              <a class=\"item\">Jobs</a>\n              <a class=\"item\">Team</a>\n            </div>\n          </div>\n\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"pusher\">\n    <div class=\"ui centered grid\">\n      <div class=\"row\">\n        <a (click)=\"openSidebar()\">\n          <h5 class=\"ui icon header\">\n            <i class=\" large chevron up link icon get_started\"></i>\n            <div class=\"content\">\n              Disclaimer\n            </div>\n          </h5>\n\n        </a>\n      </div>\n\n    </div>\n\n  </div>\n\n</body>\n\n"
+module.exports = "<body tracking-scroll (scrolled)=\"onScroll($event.value, 2141)\">\r\n\r\n <div class=\"ui bottom sidebar inverted\">\r\n    <div class=\"ui segment teal heightmodif\">\r\n      <div class=\"ui grid\">\r\n        <div class=\" centered row\">\r\n          <a (click)=\"closeSidebar()\"><i class=\" large chevron down link icon get_started\"></i></a>\r\n        </div>\r\n        <div class=\"row\">\r\n          <div class=\"four wide column\">\r\n            <img class=\"ui tiny image\" src=\"assets/images/brand_logo.png\">\r\n          </div>\r\n\r\n          <div class=\"four wide column\">\r\n            <h4>Contact</h4>\r\n            <div class=\"ui link list\">\r\n              <div class=\"active item\">Home</div>\r\n              <a class=\"item\">About</a>\r\n              <a class=\"item\">Jobs</a>\r\n              <a class=\"item\">Team</a>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"four wide column\">\r\n            <h4>Contact</h4>\r\n            <div class=\"ui link list\">\r\n              <div class=\"active item\">Home</div>\r\n              <a class=\"item\">About</a>\r\n              <a class=\"item\">Jobs</a>\r\n              <a class=\"item\">Team</a>\r\n            </div>\r\n          </div>\r\n\r\n          <div class=\"four wide column\">\r\n            <h4>Contact</h4>\r\n            <div class=\"ui link list\">\r\n              <div class=\"active item\">Home</div>\r\n              <a class=\"item\">About</a>\r\n              <a class=\"item\">Jobs</a>\r\n              <a class=\"item\">Team</a>\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"pusher\">\r\n    <div class=\"ui centered grid\">\r\n      <div class=\"row\">\r\n        <a (click)=\"openSidebar()\">\r\n          <h5 class=\"ui icon header\">\r\n            <i class=\" large chevron up link icon get_started\"></i>\r\n            <div class=\"content\">\r\n              Disclaimer\r\n            </div>\r\n          </h5>\r\n\r\n        </a>\r\n      </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n\r\n</body>\r\n\r\n"
 
 /***/ }),
 
-/***/ 834:
+/***/ 854:
 /***/ (function(module, exports) {
 
-module.exports = "  <form #loginForm (ngSubmit)=\"loginUser(user);loginForm.reset()\" class=\"ui inverted form\">\n\n    <div class=\" field\">\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"user.user_mail\" name=\"email\" placeholder=\"Email\" required>\n    </div>\n\n    <div class=\" field\">\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"user.user_password\" placeholder=\"Password\" name=\"password\" required>\n    </div>\n\n    <button type=\"submit\" class=\"ui button teal\">Login</button>\n  </form>\n\n  <div *ngIf=\"message\" class=\"ui warning message\">\n    <i class=\"warning icon\"></i>\n    {{message}}\n  </div>\n"
+module.exports = "  <form #loginForm (ngSubmit)=\"loginUser(user);loginForm.reset()\" class=\"ui inverted form\">\r\n\r\n    <div class=\" field\">\r\n      <input type=\"email\" id=\"email\" [(ngModel)]=\"user.user_mail\" name=\"email\" placeholder=\"Email\" required>\r\n    </div>\r\n\r\n    <div class=\" field\">\r\n      <input type=\"password\" id=\"password\" [(ngModel)]=\"user.user_password\" placeholder=\"Password\" name=\"password\" required>\r\n    </div>\r\n\r\n    <button type=\"submit\" class=\"ui button teal\">Login</button>\r\n  </form>\r\n\r\n  <div *ngIf=\"message\" class=\"ui warning message\">\r\n    <i class=\"warning icon\"></i>\r\n    {{message}}\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ 835:
+/***/ 857:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"centered-block\">\n    <h2>Register</h2>\n    <form (ngSubmit)=\"registerUser(user)\">\n\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input type=\"email\" id=\"email\" [(ngModel)]=\"user.user_mail\" name=\"email\" required>\n      </div>\n\n      <div class=\"form-group\">\n        <label for=\"email\">Password</label>\n        <input type=\"password\" id=\"password\" [(ngModel)]=\"user.user_password\" name=\"password\" required>\n      </div>\n\n      <button type=\"submit\" class=\"btn btn-default\">Submit</button>\n    </form>\n\n    <p>{{message}}</p>\n  </div>\n"
+module.exports = "<div class=\"centered-block\">\r\n    <h2>Register</h2>\r\n    <form (ngSubmit)=\"registerUser(user)\">\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"email\">Email</label>\r\n        <input type=\"email\" id=\"email\" [(ngModel)]=\"user.user_mail\" name=\"email\" required>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label for=\"email\">Password</label>\r\n        <input type=\"password\" id=\"password\" [(ngModel)]=\"user.user_password\" name=\"password\" required>\r\n      </div>\r\n\r\n      <button type=\"submit\" class=\"btn btn-default\">Submit</button>\r\n    </form>\r\n\r\n    <p>{{message}}</p>\r\n  </div>\r\n"
 
 /***/ }),
 
-/***/ 836:
+/***/ 859:
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"header-img-container\" [@changeBngColor]=\"bngChanged\" [@changeBngColorr]>\n    <div class=\"ui centered grid\">\n      <div class=\"row\">\n        <div class=\"ui container\">\n          <img class=\"ui centered image\" src=\"./assets/images/brand_logo_3.png\" >\n        </div>\n      </div>\n      <div class=\"row\">\n        <h1 class=\"ui inverted header\" >\n          <span class=\"tagline\">L'assurance sur-mesure à portée de main</span>\n        </h1>\n      </div>\n\n      <div class=\"row\">\n        <a pageScroll href=\"#here\"><i class=\" large chevron down icon get_started\"></i> </a>\n      </div>\n    </div>\n  </div>\n\n  <div id=\"here\"></div>\n\n<div tracking-scroll (scrolled)=\"onScrolll($event.value, 300, 0)\" class=\"content_section section_top\">\n  <div class=\"ui stackable grid container\">\n    <div class=\"three column row\">\n      <div class=\"left floated column\">\n        <img class=\" ui image rounded bosch\" src=\"./assets/images/bosch.jpg\"\n             [@scaleOut]=\"SCALED[0]\" (mouseenter)=\"scaleIn(0)\" (mouseleave)=\"scaleOut(0)\" [@fadeInOut] *ngIf=\"APPEARED[0]\">\n      </div>\n      <div class=\"right floated eight wide column easy\"  [@flyInOrOutRight] *ngIf=\"APPEARED[0]\">\n        <div class=\"ui piled segment\">\n        <div class=\"ui huge header\">Facile</div>\n        <p>Avec Assur+ constituez en un clin d’œil votre coffre-fort de biens assurables.\n          Choisissez, parmi les nombreux modes d’ajout, celui qui vous convient le mieux.\n          Découvrez le mode photo, basé sur un algorithme de reconnaissance d’images,\n          qui vous fera gagner un temps colossal dans la constitution de votre panier de biens.</p>\n        <h2 class=\"ui huge header\">Avec Assur+, fini la paperasse !</h2>\n        <div class=\"ui bulleted list\">\n          <div class=\"item\">Votre bien est automatiquement identifié parmi de nombreux produits.</div>\n          <div class=\"item\">Sa valeur est immédiatement estimée.</div>\n          <div class=\"item\">Signez votre contrat d’assurance en un clic.</div>\n        </div>\n             <app-carousel></app-carousel>\n        <div class=\"ui info message\">\n            <div class=\"header\">\n              Information :\n            </div>\n            <ul class=\"list\">\n              Vous pourrez être en mesure d'ajouter les informations qui vous semblent pertinentes après avoir enregistré votre produit.\n            </ul>\n          </div>\n      </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"ui divider\"></div>\n\n<div tracking-scroll (scrolled)=\"onScrolll($event.value, 1100, 1)\" class=\"content_section2\" >\n  <div class=\"ui stackable grid container\">\n    <div class=\"three column row\">\n\n\n      <div class=\"left floated eight wide column here easy\" [@flyInOrOutLeft] *ngIf=\"APPEARED[1]\">\n        <div class=\"ui piled segment\">\n        <div class=\"ui huge header\">Sécurisé</div>\n        <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>\n        <h2 class=\"ui huge header\">Sécurisez vos données</h2>\n        <p>Avec Assur+ les données contenues dans votre coffre-fort sont protégées par une méthode de chiffrement.\n        Vos données personnelles ne sont jamais transmises à un tiers sans votre accord préalable</p>\n\n      </div>\n        </div>\n\n      <div class=\"right floated column\">\n        <img class=\" ui image rounded bosch\" src=\"./assets/images/bosch.jpg\"\n        [@scaleOut]=\"SCALED[1]\" (mouseenter)=\"scaleIn(1)\" (mouseleave)=\"scaleOut(1)\"\n        [@fadeInOut] *ngIf=\"APPEARED[1]\">\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"ui divider\"></div>\n\n<div tracking-scroll (scrolled)=\"onScrolll($event.value, 1570, 2)\" class=\"content_section\">\n  <div class=\"ui stackable grid container\">\n    <div class=\"three column row\">\n      <div class=\"left floated column\">\n        <img class=\" ui image rounded bosch\" src=\"./assets/images/bosch.jpg\"\n        [@scaleOut]=\"SCALED[2]\" (mouseenter)=\"scaleIn(2)\" (mouseleave)=\"scaleOut(2)\"\n        [@fadeInOut] *ngIf=\"APPEARED[2]\">\n      </div>\n     <div class=\"right floated eight wide column here easy\" [@flyInOrOutRight] *ngIf=\"APPEARED[2]\">\n        <div class=\"ui piled segment\">\n        <div class=\"ui huge header\">Flexible</div>\n        <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>\n        <h2 class=\"ui huge header\">Sécurisez vos données</h2>\n        <p>Avec Assur+ les données contenues dans votre coffre-fort sont protégées par une méthode de chiffrement.\n        Vos données personnelles ne sont jamais transmises à un tiers sans votre accord préalable</p>\n\n      </div>\n        </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "  <div class=\"header-img-container\" [@changeBngColor]=\"bngChanged\" [@changeBngColorr]>\r\n    <div class=\"ui centered grid\">\r\n      <div class=\"row\">\r\n        <div class=\"ui container\">\r\n          <img class=\"ui centered image\" src=\"./assets/images/brand_logo_3.png\" >\r\n        </div>\r\n      </div>\r\n      <div class=\"row\">\r\n        <h1 class=\"ui inverted header\" >\r\n          <span class=\"tagline\">L'assurance sur-mesure à portée de main</span>\r\n        </h1>\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <a pageScroll href=\"#here\"><i class=\" large chevron down icon get_started\"></i> </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <div id=\"here\"></div>\r\n\r\n<div tracking-scroll (scrolled)=\"onScrolll($event.value, 300, 0)\" class=\"content_section section_top\">\r\n  <div class=\"ui stackable grid container\">\r\n    <div class=\"three column row\">\r\n      <div class=\"left floated column\">\r\n        <img class=\" ui image rounded bosch\" src=\"./assets/images/bosch.jpg\"\r\n             [@scaleOut]=\"SCALED[0]\" (mouseenter)=\"scaleIn(0)\" (mouseleave)=\"scaleOut(0)\" [@fadeInOut] *ngIf=\"APPEARED[0]\">\r\n      </div>\r\n      <div class=\"right floated eight wide column easy\"  [@flyInOrOutRight] *ngIf=\"APPEARED[0]\">\r\n        <div class=\"ui piled segment\">\r\n        <div class=\"ui huge header\">Facile</div>\r\n        <p>Avec Assur+ constituez en un clin d’œil votre coffre-fort de biens assurables.\r\n          Choisissez, parmi les nombreux modes d’ajout, celui qui vous convient le mieux.\r\n          Découvrez le mode photo, basé sur un algorithme de reconnaissance d’images,\r\n          qui vous fera gagner un temps colossal dans la constitution de votre panier de biens.</p>\r\n        <h2 class=\"ui huge header\">Avec Assur+, fini la paperasse !</h2>\r\n        <div class=\"ui bulleted list\">\r\n          <div class=\"item\">Votre bien est automatiquement identifié parmi de nombreux produits.</div>\r\n          <div class=\"item\">Sa valeur est immédiatement estimée.</div>\r\n          <div class=\"item\">Signez votre contrat d’assurance en un clic.</div>\r\n        </div>\r\n             <app-carousel></app-carousel>\r\n        <div class=\"ui info message\">\r\n            <div class=\"header\">\r\n              Information :\r\n            </div>\r\n            <ul class=\"list\">\r\n              Vous pourrez être en mesure d'ajouter les informations qui vous semblent pertinentes après avoir enregistré votre produit.\r\n            </ul>\r\n          </div>\r\n      </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"ui divider\"></div>\r\n\r\n<div tracking-scroll (scrolled)=\"onScrolll($event.value, 1100, 1)\" class=\"content_section2\" >\r\n  <div class=\"ui stackable grid container\">\r\n    <div class=\"three column row\">\r\n\r\n\r\n      <div class=\"left floated eight wide column here easy\" [@flyInOrOutLeft] *ngIf=\"APPEARED[1]\">\r\n        <div class=\"ui piled segment\">\r\n        <div class=\"ui huge header\">Sécurisé</div>\r\n        <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>\r\n        <h2 class=\"ui huge header\">Sécurisez vos données</h2>\r\n        <p>Avec Assur+ les données contenues dans votre coffre-fort sont protégées par une méthode de chiffrement.\r\n        Vos données personnelles ne sont jamais transmises à un tiers sans votre accord préalable</p>\r\n\r\n      </div>\r\n        </div>\r\n\r\n      <div class=\"right floated column\">\r\n        <img class=\" ui image rounded bosch\" src=\"./assets/images/bosch.jpg\"\r\n        [@scaleOut]=\"SCALED[1]\" (mouseenter)=\"scaleIn(1)\" (mouseleave)=\"scaleOut(1)\"\r\n        [@fadeInOut] *ngIf=\"APPEARED[1]\">\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"ui divider\"></div>\r\n\r\n<div tracking-scroll (scrolled)=\"onScrolll($event.value, 1570, 2)\" class=\"content_section\">\r\n  <div class=\"ui stackable grid container\">\r\n    <div class=\"three column row\">\r\n      <div class=\"left floated column\">\r\n        <img class=\" ui image rounded bosch\" src=\"./assets/images/bosch.jpg\"\r\n        [@scaleOut]=\"SCALED[2]\" (mouseenter)=\"scaleIn(2)\" (mouseleave)=\"scaleOut(2)\"\r\n        [@fadeInOut] *ngIf=\"APPEARED[2]\">\r\n      </div>\r\n     <div class=\"right floated eight wide column here easy\" [@flyInOrOutRight] *ngIf=\"APPEARED[2]\">\r\n        <div class=\"ui piled segment\">\r\n        <div class=\"ui huge header\">Flexible</div>\r\n        <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>\r\n        <h2 class=\"ui huge header\">Sécurisez vos données</h2>\r\n        <p>Avec Assur+ les données contenues dans votre coffre-fort sont protégées par une méthode de chiffrement.\r\n        Vos données personnelles ne sont jamais transmises à un tiers sans votre accord préalable</p>\r\n\r\n      </div>\r\n        </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ })
 
-},[1091]);
+},[1116]);
 //# sourceMappingURL=main.bundle.js.map
