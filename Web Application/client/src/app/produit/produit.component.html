@@ -1,0 +1,256 @@
+
+<div class="spacer">
+</div>
+
+
+<div class="ui ordered fluid stackable steps">
+<div class="active step">
+    <div class="content">
+      <div class="title">Votre bien</div>
+    </div>
+</div>
+
+<div class="step">
+    <div class="content">
+      <div class="title"> Vos justificatifs </div>
+    </div>
+</div>
+
+<div class="step">
+    <div class="content">
+      <div class="title"> Validation </div>
+    </div>
+</div>
+
+</div>
+
+<div class="ui link doubling stackable centered cards container">
+
+  <div class="card" (click)=changeChoixPhoto()>
+    <div class="content">
+      <i class=" big teal photo icon "></i>
+      <div class="description">
+        Reconnaissance via photographie
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="content">
+      <i class=" big teal barcode icon "></i>
+      <div class="description">
+        Scan du code barre
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="content">
+      <i class=" big teal search icon "></i>
+      <div class="description">
+        Moteur de recherche intelligent
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+
+
+<div class="ui column stackable center aligned page grid">
+
+<div class="container">
+
+<form>
+
+<div class="ui form">
+
+<div class="section">
+
+  <div class="field" *ngIf="!choixPhoto">
+    <div class="ui grid">
+
+      <div class="centered row" *ngIf="uploader?.queue?.length == 0">
+          <div class="ui text container">
+            <label for="multiple" class="ui right labeled icon button add_photo_label" (click)="fileUploadWindow=true;">
+              Ajoutez une photo de votre bien
+              <i class=" download icon"></i>
+            </label>
+          </div>
+      </div>
+
+    <div class="centered row" *ngIf="fileUploadWindow">
+        <form class="ui form">
+          <div class="field">
+            <input type="file" name="multiple" id="multiple" ng2FileSelect [uploader]="uploader" required style="display:none">
+          </div>
+        </form>
+
+      <h5>Fichiers en attente: {{ uploader?.queue?.length }}</h5>
+
+        <table class="ui basic table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Taille</th>
+              <th>Progression</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of uploader.queue">
+              <td><strong>{{ item.file.name }}</strong></td>
+              <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
+              <td>
+                <sui-progress [value]="item.progress" [progress]="false">
+                </sui-progress>
+              </td>
+              <td>
+                <span *ngIf="item.isSuccess"><i class="checkmark icon"></i></span>
+                <span *ngIf="item.isCancel"><i class="minus circle icon"></i></span>
+                <span *ngIf="item.isError"><i class="remove icon"></i></span>
+              </td>
+              <td nowrap>
+                <button type="button" class="mini ui green button"
+                        (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                  <i class="upload icon"></i> Ajouter
+                </button>
+                <button type="button" class="mini ui orange button"
+                (click)="item.cancel()" [disabled]="!item.isUploading">
+                  <i class="ban icon"></i> Annuler
+                </button>
+                <button type="button" class="mini ui red button" (click)="item.remove()" >
+                  <i class="trash icon"></i> Supprimer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!--<div>
+          <div>Progression:
+            <sui-progress [value]="uploader.progress" [progress]="false">
+            </sui-progress>
+          </div>
+          <button type="button" class="ui green button" (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+            <i class="upload icon"></i> Upload all
+          </button>
+          <button type="button" class="ui orange button" (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
+            <i class="ban icon"></i> Cancel all
+          </button>
+          <button type="button" class="ui red button" (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
+            <i class="trash icon"></i> Remove all
+          </button>
+        </div>
+
+        <div *ngFor="let upload of uploads">
+          <img class="ui medium image" src="./uploads/{{upload.imageurl}}">
+          <button (click)="deleteUpload(upload.id)" type="button" class="ui red button">
+            <i class="trash icon"></i> Delete
+          </button>
+        </div>-->
+
+    </div>
+
+      <div class="centered row" [@fadeInOut] *ngIf="predicting">
+        <div class="ui icon message">
+          <i *ngIf="!predicted" class="notched circle loading icon"></i>
+          <i *ngIf="predicted" class="checkmark green icon"></i>
+
+          <div class="content" *ngIf="!predicted">
+            <div class="header">
+              Veuillez patienter
+            </div>
+            <p>La recherche de votre appareil est en cours</p>
+          </div>
+
+
+          <div class="content" *ngIf="predicted">
+            <div class="header">
+              {{itemPrediction}}
+            </div>
+            <p>Est-ce bien votre appareil ?</p>
+            <button class="ui primary button" (click)="acceptPrediction()">
+              Oui
+            </button>
+            <button class="ui button" (click)="refusePrediction()">
+              Non
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="centered row" *ngIf="predictionAnswered && !choixPhoto" [@fadeInOut]>
+        <div class="ui text container">
+
+          <div class="section">
+            <div class="field" [ngClass]="{'disabled': predictionAccepted}">
+              <div class="ui left icon input">
+                <input type="text" placeholder= "Description du bien" required name="description" [(ngModel)]="myObjet.description">
+                <i class="info icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="field">
+              <div class="ui left icon input">
+                <input type="date" placeholder= "Date d'achat" required name="dateAchatBien" [(ngModel)]="myObjet.dateachat">
+                <i class="calendar icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="section">
+            <div class="field">
+              <div class="ui left icon input">
+                <input type="number" placeholder= "Prix d'achat" required name="prixAchatBien" [(ngModel)]="myObjet.prixachat">
+                <i class="euro icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="section button_next" *ngIf="myObjet.dateachat !== undefined && myObjet.imageurl !== undefined
+          && myObjet.prixachat !== undefined && myObjet.description !== undefined"
+               [@fadeInOut]>
+            <div class="field">
+              <button class="big ui primary animated fade button" (click)="validateObject()">
+                <div class="visible content">Suivant</div>
+                <div class="hidden content"><i class="chevron right icon"></i></div>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="centered row">
+
+      </div>
+
+      <div class="centered row">
+
+      </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</form>
+
+
+
+</div>
+
+</div>
+
+
+
+
+

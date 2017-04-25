@@ -10,18 +10,24 @@ export class UploadsService {
   getAllUploads() {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.get('/api/uploads', {headers:headers}).map(res => res.json());
+    return this.http.get('/api/objets', {headers:headers}).map(res => res.json());
     }
 
   addUpload(newUpload) {
     var headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post('/api/uploads', JSON.stringify(newUpload), {headers : headers})
+    return this.http.post('/api/ajoutobjet', JSON.stringify(newUpload), {headers : headers})
       .map(res => res.json());
   }
 
   deleteUpload(uploadId) {
-    return this.http.delete('/api/uploads/' + uploadId).map(res => res.json());
+    return this.http.delete('/api/supprimerobjet/' + uploadId).map(res => res.json());
+  }
+
+  getPrediction(newPrediction) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/prediction', JSON.stringify(newPrediction), {headers:headers}).map(res => res.json());
   }
 
 }

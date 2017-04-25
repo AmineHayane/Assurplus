@@ -21,9 +21,9 @@
 
 <div tracking-scroll (scrolled)="onScrolll($event.value, 300, 0)" class="content_section section_top">
   <div class="ui stackable grid container">
-    <div class="three column row">
-      <div class="left floated column">
-        <img class=" ui image rounded bosch" src="./assets/images/bosch.jpg"
+    <div class="row">
+      <div class="left floated eight wide column">
+        <img class=" ui image large rounded bosch" src="./assets/images/iPhonecapture3.png"
              [@scaleOut]="SCALED[0]" (mouseenter)="scaleIn(0)" (mouseleave)="scaleOut(0)" [@fadeInOut] *ngIf="APPEARED[0]">
       </div>
       <div class="right floated eight wide column easy"  [@flyInOrOutRight] *ngIf="APPEARED[0]">
@@ -54,14 +54,13 @@
   </div>
 </div>
 
-<div class="ui divider"></div>
-
 <div tracking-scroll (scrolled)="onScrolll($event.value, 1100, 1)" class="content_section2" >
+
+  <div class="landscape" [@fadeInOut] *ngIf="APPEARED[1]">
+  </div>
+
   <div class="ui stackable grid container">
-    <div class="three column row">
-
-
-      <div class="left floated eight wide column here easy" [@flyInOrOutLeft] *ngIf="APPEARED[1]">
+    <div class="row here easy" [@flyInOrOutLeft] *ngIf="APPEARED[1]">
         <div class="ui piled segment">
         <div class="ui huge header">Sécurisé</div>
         <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>
@@ -70,28 +69,22 @@
         Vos données personnelles ne sont jamais transmises à un tiers sans votre accord préalable</p>
 
       </div>
-        </div>
 
-      <div class="right floated column">
-        <img class=" ui image rounded bosch" src="./assets/images/bosch.jpg"
-        [@scaleOut]="SCALED[1]" (mouseenter)="scaleIn(1)" (mouseleave)="scaleOut(1)"
-        [@fadeInOut] *ngIf="APPEARED[1]">
-      </div>
     </div>
   </div>
 </div>
 
 <div class="ui divider"></div>
 
-<div tracking-scroll (scrolled)="onScrolll($event.value, 1570, 2)" class="content_section">
+<div tracking-scroll (scrolled)="onScrolll($event.value, 1700, 2)" class="content_section">
   <div class="ui stackable grid container">
-    <div class="three column row">
-      <div class="left floated column">
-        <img class=" ui image rounded bosch" src="./assets/images/bosch.jpg"
+    <div class="row">
+      <div class="left floated eight wide column">
+        <img class=" ui image fluid" src="./assets/images/ipadmini2.png"
         [@scaleOut]="SCALED[2]" (mouseenter)="scaleIn(2)" (mouseleave)="scaleOut(2)"
         [@fadeInOut] *ngIf="APPEARED[2]">
       </div>
-     <div class="right floated eight wide column here easy" [@flyInOrOutRight] *ngIf="APPEARED[2]">
+     <div class="right floated seven wide column here easy bottom_segment" [@flyInOrOutRight] *ngIf="APPEARED[2]">
         <div class="ui piled segment">
         <div class="ui huge header">Flexible</div>
         <p>Soyez protégés en cas de sinistre, vos biens précieux restent à l’abri dans votre coffre-fort. </p>
@@ -104,3 +97,38 @@
     </div>
   </div>
 </div>
+
+  <div class="ui divider"></div>
+
+  <div class="ui center aligned container">
+    <img class="ui image fluid" src="../../assets/images/respo3.png">
+    <h2 class="ui center aligned header">
+      Retrouvez le contenu intégral de notre service sur une multitude d'appareils différents.
+    </h2>
+    <div class="ui centered grid devices">
+      <div class="ui text container ">
+        <div class="centered row">
+          <div class="ui attached center aligned segment">
+            <i class=" big android link icon popup " data-content="Android" data-variation="mini"></i>
+            <i class=" big apple link icon popup " data-content="iOS" data-variation="mini"></i>
+            <i class=" big windows link icon popup " data-content="Windows Phone" data-variation="mini"></i>
+          </div>
+          <h4 class="ui bottom attached center aligned header">
+            Appareils Mobiles
+          </h4>
+        </div>
+        <div class="centered row">
+          <div class="ui attached center aligned segment middle">
+            <i class=" big google chrome link icon popup " data-content="Google Chrome" data-variation="mini"></i>
+            <i class=" big safari link icon popup " data-content="Safari" data-variation="mini"></i>
+            <i class=" big firefox link icon popup " data-content="Firefox" data-variation="mini"></i>
+            <i class=" big internet explorer link icon popup " data-content="Internet Explorer" data-variation="mini"></i>
+            <i class=" big microsoft edge link icon popup " data-content="Microsoft Edge" data-variation="mini"></i>
+          </div>
+          <h4 class="ui bottom attached center aligned header">
+            Navigateurs Web
+          </h4>
+        </div>
+      </div>
+    </div>
+  </div>

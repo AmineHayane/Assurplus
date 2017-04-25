@@ -10,6 +10,22 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 
+app.get('/coffrefort', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
+
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
+
+app.get('/signup', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
+
+app.get('/justificatifs', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
+
 app.get('/posts', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });

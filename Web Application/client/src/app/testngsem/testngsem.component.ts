@@ -1,12 +1,13 @@
-import { Component, OnInit, ElementRef, trigger, transition, style, animate, state, keyframes, HostListener} from '@angular/core';
+import { Component, OnInit, ElementRef, trigger, transition, style, animate, state} from '@angular/core';
 declare var jQuery : any;
 import { Animations } from '../animations/animations';
+declare var jQuery:any;
 
 @Component({
   selector: 'app-testngsem',
   templateUrl: './testngsem.component.html',
   styleUrls: ['./testngsem.component.css'],
-  animations: [Animations.flyInOrOutLeft, Animations.flyInOrOutRight, Animations.scale(1.1), Animations.fadeInOut,
+  animations: [Animations.flyInOrOutLeft, Animations.flyInOrOutRight, Animations.scale(1, 1.1), Animations.fadeInOut,
   trigger('changeBngColor', [
       state('inactive', style({
         backgroundColor : '#008080'
@@ -52,11 +53,6 @@ export class TestngsemComponent implements OnInit {
       this.position = -13;
     }
     }
-
-
-    /*console.log(window.pageYOffset);
-    console.log(this.position);
-    console.log(this.myopacity);*/
   }
 
   bngChanged ='inactive';
@@ -81,12 +77,7 @@ export class TestngsemComponent implements OnInit {
   }
 
   ngOnInit() : any {
-
-
-
-
-
-
+    jQuery(this.elref.nativeElement).find('.popup').popup();
   }
 
 

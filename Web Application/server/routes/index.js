@@ -3,6 +3,8 @@ const todoItemsController = require('../controllers').todoItems;
 const usersController = require('../controllers').users;
 const uploadsController = require('../controllers').uploads;
 const auth = require('../auth');
+const BienController = require('../controllers').biens;
+const predictionController = require('../controllers').prediction;
 
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
@@ -37,5 +39,17 @@ module.exports = (app) => {
     app.post('/api/uploads', uploadsController.create);
     app.get('/api/uploads', uploadsController.list);
     app.delete('/api/uploads/:uploadId', uploadsController.destroy);
+
+    // Coffre Fort
+
+    app.get('/api/objets', BienController.list);
+    app.get('/api/calculpatrimoine', BienController.calculPatrimoine);
+
+    app.post('/api/ajoutobjet', BienController.create);
+    app.delete('/api/supprimerobjet/:id', BienController.delete);
+
+    // Predictions
+
+    app.post('/api/prediction', predictionController.predict);
 
 };

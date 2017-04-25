@@ -7,6 +7,10 @@ const pythonShell = require('python-shell');
 const multer = require('multer');
 const uploadsController = require('./server/controllers').uploads;
 const http = require('http');
+/*var vision = require('@google-cloud/vision')({
+  projectId: 'vision-test-163908',
+  keyFilename: './Vision Test-2ac8bbb3b7e4.json'
+});*/
 
 // Set up the express app
 const app = express();
@@ -60,10 +64,11 @@ var upload = multer({
             console.log(req.file);
             console.log('new name', req.file.filename);
             console.log('path', req.file.path);
-            myarray.push(req.file.filename);
+            myarray.push(req.file.path);
             console.log('ARRAY', myarray);
+            /*cloudVisionLabelDetect(req.file.path);*/
             /*launchPostRequest(req.file.filename);*/
-            pythonFunction();
+            /*pythonFunction();*/
             if(err){
                  res.json({error_code:1,err_desc:err});
                  return;
@@ -108,30 +113,54 @@ var options = {
     args: ['my First Argument', 'My Second Argument', '--option=123']
 };
 
-var pythonFunction = function () {
+/*// Performs label detection on the image file
+var opts = {
+  verbose: true
+};
 
-    var myscript = new pythonShell('hello.py');
-
-    //Providing data from Node.js to Python
-myscript.send(JSON.stringify(myarray));
-
-
-myscript.on('message', function (message) {
-  // received a message sent from the Python script (a simple "print" statement)
-    message = "Modified by NodeJS - " + message;
-  console.log(message);
-});
-
-// End the input stream and allow the process to exit
-myscript.end(function (err) {
-    if (err){
-        throw err;
-    };
-
-    console.log('finished');
-});
-
+var cloudVisionLabelDetect = function (fileName) {
+    var highestLabel = '';
+    var highestScore = 0;
+   vision.detectLabels(fileName, opts)
+  .then((results) => {
+    const labels = results[0];
+    console.log('Labels:');
+    labels.forEach((label) => {
+       console.log(label);
+       if (label.score > highestScore) {
+           highestScore = label.score;
+           highestLabel = label.desc;
+       }
+    });
+    console.log('Highest Label:');
+    console.log(highestLabel);
+    console.log('Highest Score:');
+    console.log(highestScore);
+  });
 }
 
+var pythonFunction = function () {
+
+    var myscript = new pythonShell('Prediction.py');
+
+    //Providing data from Node.js to Python
+    myscript.send(JSON.stringify(myarray));
+
+
+    myscript.on('message', function (message) {
+      // received a message sent from the Python script (a simple "print" statement)
+      console.log(message);
+      app.put('/api/predictions', (req, res) => res.status(200).send({
+        prediction: message,
+        }));
+    });
+
+    // End the input stream and allow the process to exit
+    myscript.end(function () {
+
+        console.log('finished');
+    });
+
+}*/
 
 module.exports = app;

@@ -3,7 +3,6 @@
   width : 100%;
   margin:0 auto;
   padding:0;
-
 }
 
 .header-img-container h1 {
@@ -49,6 +48,10 @@
   padding-bottom: 50px;
 }
 
+.content_section2 .container{
+  margin-top:50px;
+}
+
 .content_section2 .ui.huge.header {
   margin-top : 10px;
 }
@@ -75,6 +78,7 @@
 
 .easy .huge.header{
   color : #333c4e;
+
   font-style: normal;
   font-variant-ligatures: normal;
   font-variant-caps: normal;
@@ -93,4 +97,29 @@
 .ui.info.message {
   margin-top : 50px;
   margin-bottom : 40px;
+}
+
+.landscape{
+  width:100%;
+  height: 600px;
+  background-image: url("../../assets/images/Index2.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bottom_segment .ui.piled.segment{
+  margin-top:50px;
+}
+
+i{
+  color: #4d4d4d;
+}
+
+.devices{
+  margin-top:30px;
+}
+
+.ui.attached.segment.middle{
+  margin-top : 30px;
 }

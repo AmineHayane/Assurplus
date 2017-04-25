@@ -1,14 +1,42 @@
- <div class="ui right vertical sidebar inverted menu">
-    <a class="item">
-      1
-    </a>
-    <a class="item">
-      2
-    </a>
-    <a class="item">
-      3
-    </a>
-  </div>
+ <div class="ui right vertical sidebar labeled icon menu">
+
+  <a class="item" routerLink="/board" routerLinkActive="active" (click)="closeSidenav()">
+    <i class="teal dashboard icon"></i>
+    Tableau de bord
+  </a>
+
+  <a class="item" routerLink="/moncompte" routerLinkActive="active" (click)="closeSidenav()">
+    <i class="teal user icon"></i>
+    Mon compte
+  </a>
+
+  <a class=" item" routerLink="/coffrefort" routerLinkActive="active" (click)="closeSidenav()">
+    <i class="teal lock icon"></i>
+    Mon coffre-fort
+  </a>
+
+  <a *ngIf="!user" class="item" (click)="closeSidenav(); toggleLogin()">
+    <i class="teal power icon"></i>
+       Se connecter
+  </a>
+
+   <a *ngIf="user" class="item" (click)="closeSidenav()">
+    <i class="teal user icon"></i>
+       {{user.user_mail}}
+   </a>
+
+
+  <a routerLink="/signup" *ngIf="!user" class="item" (click)="closeSidenav()">
+      <i class="teal road icon"></i>
+       S'inscrire
+  </a>
+
+   <a *ngIf="user" class="item" (click)="closeSidenav(); logout()">
+      <i class="teal power icon"></i>
+       Deconnexion
+  </a>
+
+</div>
 
   <div class="pusher">
     <div tracking-scroll (scrolled)="onScroll($event.value, 50)" class="ui top fixed menu secondary " [ngClass]= "{'five item' : isScrolled_50}">
@@ -20,12 +48,20 @@
       <i class="help circle outline large icon"></i>
       Comment ça marche
     </a>
-    <a routerLink="/fileupload" *hideItSizes="{min:0,max:500}" class="item">
+    <a *hideItSizes="{min:0,max:500}" class="item">
       FAQ
     </a>
-    <a *hideItSizes="{min:0,max:500}" class="item">
-      Contact
-    </a>
+
+      <div class="ui dropdown item" >
+        <div *hideItSizes="{min:0,max:500}" class="text">Services</div>
+        <div class="menu">
+          <!--<div routerLink="/fileupload" class="item"><i class="cloud upload icon"></i>
+              File Upload
+          </div>-->
+          <div routerLink="/coffrefort" routerLinkActive="active" class="item"><i class="protect icon"></i>Coffre fort</div>
+          <div routerLink="/board" class="item"><i class="dashboard icon"></i>Dashboard</div>
+        </div>
+      </div>
 
     <div class="right menu">
       <div *ngIf="!user && !isScrolled_50" class="item">
@@ -53,18 +89,19 @@
   <div class="ui main ">
 
     <router-outlet></router-outlet>
-    <p *ngIf="!user">Not logged in</p>
-    <p>{{message}}</p>
+    <!--<p *ngIf="!user">Not logged in</p>
+    <p>{{message}}</p>-->
   </div>
 
      <!--<div class="section_before_footer">
 
      </div>-->
-
-    <div class="ui page dimmer">
-      <div class="content ui text container">
+    <div class="ui page dimmer uno">
+      <div class="content ">
         <div class="center">
-          <app-login (notify)="onNotify($event)"></app-login>
+          <div class="ui text container">
+            <app-login (notify)="onNotify($event)"></app-login>
+          </div>
         </div>
       </div>
     </div>

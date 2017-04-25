@@ -6,7 +6,7 @@
 }
 
 .heightmodif {
-  height : 300px;
+  height : 200px;
 }
 
 .get_started {
@@ -15,6 +15,10 @@
 
 .get_started:hover {
   color : purple;
+}
+
+.chevron.up {
+  margin-top:50px;
 }
 
 body {

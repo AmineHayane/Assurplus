@@ -1,4 +1,4 @@
-import {Component, trigger, animate, transition, style, ElementRef, OnInit, OnDestroy} from '@angular/core';
+import {Component, transition, ElementRef, OnInit, OnDestroy} from '@angular/core';
 import {Subscription} from "rxjs";
 import {User} from "./models/user";
 import {AuthenticationService} from "./services/authentication.service";
@@ -12,7 +12,7 @@ declare var jQuery : any;
 
 })
 export class AppComponent implements OnInit, OnDestroy{
-  title = 'My Post App!';
+  title = 'Assur+';
   user : User;
   message:String;
   subscription:Subscription;
@@ -35,6 +35,8 @@ export class AppComponent implements OnInit, OnDestroy{
       }
     }
     );
+
+    jQuery(this.elref.nativeElement).find('.ui.dropdown.item').dropdown({on : 'hover', transition : 'drop'});
   }
 
   ngOnDestroy() {
@@ -48,8 +50,9 @@ export class AppComponent implements OnInit, OnDestroy{
     this.message = "Logged out";
     this.router.navigateByUrl('http://google.fr');
   }
+
   toggleLogin() : any {
-        jQuery(this.elref.nativeElement).find('.ui.page.dimmer').dimmer('setting', {opacity : 1})
+        jQuery(this.elref.nativeElement).find('.ui.page.dimmer.uno').dimmer('setting', {opacity : 1})
           .dimmer('setting', {transition : 'slide down'}).dimmer('show');
   }
 
@@ -67,10 +70,13 @@ export class AppComponent implements OnInit, OnDestroy{
      jQuery(this.elref.nativeElement).find('.ui.sidebar.right').sidebar('setting', 'transition', 'overlay').sidebar('toggle');
     }
 
+    closeSidenav() : any {
+      jQuery(this.elref.nativeElement).find('.ui.sidebar.right').sidebar('setting', 'transition', 'overlay').sidebar('hide');
+    }
+
   isScrolled_50 : boolean = false;
 
   onScroll(event : Event, menuChangePos : number) {
-    /*console.log(window.pageYOffset);*/
     if (window.pageYOffset >= menuChangePos) {
       this.isScrolled_50 = true;
     } else {

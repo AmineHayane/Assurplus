@@ -77,7 +77,7 @@
         </div>
 
         <div *ngFor="let upload of uploads">
-          <img src="./uploads/{{upload.url}}">
+          <img class="ui medium image" src="./uploads/{{upload.url}}">
           <button (click)="deleteUpload(upload.id)" type="button" class="ui red button">
             <i class="trash icon"></i> Delete
           </button>

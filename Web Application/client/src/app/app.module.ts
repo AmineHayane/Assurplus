@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { ArticleComponent } from './article/article.component';
 import {MaterialModule} from "@angular/material";
 import 'hammerjs';
 import { TestngsemComponent } from './testngsem/testngsem.component';
@@ -23,11 +22,21 @@ import {FileSelectDirective, FileDropDirective} from "ng2-file-upload/ng2-file-u
 import { FileuploadComponent } from './fileupload/fileupload.component';
 import {SuiProgressModule, SuiModule} from "ng2-semantic-ui";
 import {UploadsService} from "./fileupload/uploads.service";
+import {MaDirectiveDirective} from "./directives/ma-directive.directive";
+import {CoffrefortComponent} from "./coffrefort/coffrefort.component";
+import {MoncompteComponent} from "./moncompte/moncompte.component";
+import {FormulaireInscriptionComponent} from "./formulaire-inscription/formulaire-inscription.component";
+import {TableauDeBordComponent} from "./tableau-de-bord/tableau-de-bord.component";
+import {ProduitComponent} from "./produit/produit.component";
+import {InformationsProduitComponent} from "./informations-produit/informations-produit.component";
+import {ValidationComponent} from "./validation/validation.component";
+import {MonserviceService} from "./monservice.service";
+import { JustificatifsComponent } from './justificatifs/justificatifs.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
     TestngsemComponent,
     TrackScrollDirective,
     CarouselComponent,
@@ -36,7 +45,16 @@ import {UploadsService} from "./fileupload/uploads.service";
     LoginComponent,
     FileSelectDirective,
     FileDropDirective,
-    FileuploadComponent
+    FileuploadComponent,
+    MaDirectiveDirective,
+    CoffrefortComponent,
+    MoncompteComponent,
+    FormulaireInscriptionComponent,
+    TableauDeBordComponent,
+    ProduitComponent,
+    InformationsProduitComponent,
+    ValidationComponent,
+    JustificatifsComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +67,7 @@ import {UploadsService} from "./fileupload/uploads.service";
     SuiModule,
     SuiProgressModule
   ],
-  providers: [AuthenticationService, SignupService, UploadsService],
+  providers: [AuthenticationService, SignupService, UploadsService, MonserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -17,6 +17,8 @@
   transition-timing-function: ease-in;
 }
 
-a:hover {
-  color : red;
+.ui.dropdown a:hover {
+  text-decoration: none;
 }
+
+

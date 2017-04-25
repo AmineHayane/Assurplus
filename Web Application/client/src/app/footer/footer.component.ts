@@ -27,12 +27,14 @@ export class FooterComponent implements OnInit {
 
     toggledBottomSidebar : boolean = false;
 
-    onScroll(event : Event, changePos : number) {
-    if (window.pageYOffset >= changePos) {
+    onScroll(event : Event) {
+      var yLeftToGo = document.body.scrollHeight - (window.pageYOffset + window.innerHeight);
+      console.log(yLeftToGo);
+    /*if (yLeftToGo === 0) {
       this.openSidebar();
     } else {
       this.closeSidebar();
-    }
+    }*/
   }
 
   ngOnInit() {

@@ -1,0 +1,62 @@
+.ui.tabular.menu{
+  margin-top:68px;
+}
+
+.ui.icon.header{
+  margin-top:100px;
+}
+
+img {
+    width:70px;
+}
+
+.boutonajout{
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.actionscoffre{
+
+    display:flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+}
+
+.description{
+
+    margin-bottom: 14px;
+}
+
+.cards{
+    margin-top:10px;
+}
+
+.eltlist{
+
+    color:black;
+}
+
+.buttonAction{
+
+    position:fixed;
+    bottom: 30px;
+    right:30px;
+    z-index:10;
+}
+
+.Actions{
+
+    padding-top: 5px;
+}
+
+.actionsContainer{
+
+    position:fixed;
+    bottom: 90px;
+    right:34px;
+    z-index:10;
+
+}
+
+
