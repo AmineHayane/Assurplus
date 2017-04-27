@@ -1,5 +1,5 @@
 import { Component, OnInit, Input} from '@angular/core';
-import{MonserviceService} from '../monservice.service'; 
+import{MonserviceService} from '../monservice.service';
 
 
 @Component({
@@ -10,29 +10,31 @@ import{MonserviceService} from '../monservice.service';
 })
 export class TableauDeBordComponent implements OnInit {
 
-  patrimoine; 
+  patrimoine;
+  biens = [];
 
-  constructor(private serviceCalcul:MonserviceService) {}
+  constructor(private serviceBiens:MonserviceService) {}
 
-  ngOnInit() { 
+  ngOnInit() {
 
-    this.calculPatrimoine(); 
+    this.serviceBiens.getData().subscribe(biens => {
+     this.biens = biens;
+     this.calculPatrimoine();
+     console.log(this.biens);
+    });
 
   }
 
 
+
 calculPatrimoine() {
+    this.patrimoine = 0;
 
-this.serviceCalcul.calculPatrimoine().subscribe(
-
-patrimoine => {
-    
-     this.patrimoine = patrimoine;
-
+    for (let bien of this.biens) {
+      this.patrimoine = this.patrimoine + Number(bien.prixachat);
     }
-); 
-
-}
+    console.log('patrimoine', this.patrimoine);
+  }
 
 
 

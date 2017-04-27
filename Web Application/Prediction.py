@@ -18,7 +18,6 @@ lines = read_in()
 name = lines[-1]
 
 clf = joblib.load('svm.pkl')
-print(name)
 
 ##################### Fonctions : graph + extraction ############################
 
@@ -27,7 +26,6 @@ def create_graph():
         graph_def = tf.GraphDef()
         graph_def.ParseFromString(f.read())
         _ = tf.import_graph_def(graph_def, name='')
-
 
 create_graph()
 
@@ -58,11 +56,12 @@ def extract_features(list_images, label):
 
 #Image path
 images_test =[]
-path = 'client/dist/uploads/' + name
+path = 'client/dist/uploads/Biens/' + name
 images_test.append(path)
 
 #Features extraction
 features,labels = extract_features(images_test,'')
+print(features, labels)
 
 #Prediction
 X = features

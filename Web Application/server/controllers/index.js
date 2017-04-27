@@ -4,7 +4,8 @@ const users = require('./users');
 const uploads = require('./uploads');
 const biens = require('./bien');
 const prediction = require('./prediction');
+const justificatifs = require('./justificatifs');
 
 module.exports = {
-  todos, todoItems, users, uploads, biens, prediction
+  todos, todoItems, users, uploads, biens, prediction, justificatifs
 };

@@ -3,8 +3,8 @@ import {trigger, state, style, transition, animate } from '@angular/core';
 import {Http} from '@angular/http';
 import{MonserviceService} from '../monservice.service';
 import {Animations} from '../animations/animations';
-
-
+import {UploadsService} from '../fileupload/uploads.service';
+import {DomSanitizer} from "@angular/platform-browser";
 declare var jQuery : any;
 
 @Component({
@@ -84,24 +84,35 @@ export class CoffrefortComponent implements OnInit, AfterViewChecked {
 
   state: string = 'inactive';
   biens=[];
+  justifs = [];
+  baseUrl = './uploads/Justificatifs/';
+  safeUrl : any;
+  justifsUrlSanitized = [];
   patrimoine;
-  statebis : string = 'inactive';
+  choixTabularMenu : string = 'Biens';
 
-  constructor(private serviceBiens:MonserviceService, private elRef:ElementRef, private http:Http) { }
+  constructor(private serviceBiens:MonserviceService, private elRef:ElementRef, private http:Http,
+  private uploadsService : UploadsService, private sanitizer : DomSanitizer) { }
 
   ngOnInit()  {
-
-     // Retrieve posts from the API
     this.serviceBiens.getData().subscribe(biens => {
      this.biens = biens;
      this.calculPatrimoine();
      console.log(this.biens);
     });
+
+    this.uploadsService.getJustificatifs().subscribe(justifs => {
+      this.justifs = justifs;
+      console.log(this.justifs);
+      this.justifsUrlSanitized = justifs;
+      console.log(this.justifsUrlSanitized);
+
+    });
+
   }
 
   ngAfterViewChecked() {
       jQuery(this.elRef.nativeElement).find('.special.cards .image').dimmer({on : 'hover'});
-
   }
 
   calculPatrimoine() {
@@ -121,15 +132,35 @@ export class CoffrefortComponent implements OnInit, AfterViewChecked {
     this.serviceBiens.deleteObject(id).subscribe();
   }
 
+  deleteJustif(id) {
+    this.uploadsService.deleteJustificatif(id).subscribe();
+  }
 
   deleteOnView(i){
     this.biens.splice(i,1);
   }
 
-  showModal() {
-    jQuery(this.elRef.nativeElement).find('.ui.page.dimmer.dos')
+  deleteJOnView(i) {
+    this.justifs.splice(i,1);
+  }
+
+  showModal(url) {
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.baseUrl + url);
+    console.log(this.safeUrl);
+    jQuery(this.elRef.nativeElement).find('.ui.page.dimmer.pdf_file')
           .dimmer('setting', {transition : 'fade'}).dimmer('show');
-    this.statebis='active';
+  }
+
+  closeModal() {
+    jQuery(this.elRef.nativeElement).find('.ui.page.dimmer.pdf_file').dimmer('hide');
+  }
+
+  toggleJustifs() {
+    this.choixTabularMenu = 'Justifs';
+  }
+
+  toggleBiens() {
+    this.choixTabularMenu = 'Biens';
   }
 
 

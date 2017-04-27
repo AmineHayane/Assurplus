@@ -1,6 +1,5 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {objet} from './objet';
-import{MonserviceService} from '../monservice.service';
 import {FileUploader} from "ng2-file-upload";
 import {UploadsService} from "../fileupload/uploads.service";
 import {Router} from "@angular/router";

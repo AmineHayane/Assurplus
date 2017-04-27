@@ -1,3 +1,167 @@
-<p>
-  justificatifs works!
-</p>
+
+<div class="spacer">
+</div>
+
+
+<div class="ui ordered fluid stackable steps">
+<div class="step">
+    <div class="content">
+      <div class="title">Votre bien</div>
+    </div>
+</div>
+
+<div class="active step">
+    <div class="content">
+      <div class="title"> Vos justificatifs </div>
+    </div>
+</div>
+
+<div class="step">
+    <div class="content">
+      <div class="title"> Validation </div>
+    </div>
+</div>
+
+</div>
+
+<div class="ui column stackable center aligned page grid">
+
+<div class="container">
+
+<form>
+
+<div class="ui form">
+
+<div class="section">
+
+  <div class="field">
+    <div class="ui grid">
+
+      <div class="centered row" *ngIf="uploader?.queue?.length == 0">
+          <div class="ui text container">
+            <label for="multiple" class="ui right labeled icon button add_photo_label" (click)="fileUploadWindow=true;">
+              Ajoutez un justificatif (Fichiers PDF uniquement)
+              <i class=" download icon"></i>
+            </label>
+          </div>
+      </div>
+
+    <div class="centered row" *ngIf="fileUploadWindow">
+        <form class="ui form">
+          <div class="field">
+            <input type="file" accept=".pdf" name="multiple" id="multiple" ng2FileSelect [uploader]="uploader" required style="display:none">
+          </div>
+        </form>
+
+      <h5>Fichiers en attente: {{ uploader?.queue?.length }}</h5>
+
+        <table class="ui basic table">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Taille</th>
+              <th>Progression</th>
+              <th>Statut</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of uploader.queue">
+              <td><strong>{{ item.file.name }}</strong></td>
+              <td nowrap>{{ item.file.size/1024/1024 | number:'.2' }} MB</td>
+              <td>
+                <sui-progress [value]="item.progress" [progress]="false">
+                </sui-progress>
+              </td>
+              <td>
+                <span *ngIf="item.isSuccess"><i class="checkmark icon"></i></span>
+                <span *ngIf="item.isCancel"><i class="minus circle icon"></i></span>
+                <span *ngIf="item.isError"><i class="remove icon"></i></span>
+              </td>
+              <td nowrap>
+                <button type="button" class="mini ui green button"
+                        (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                  <i class="upload icon"></i> Ajouter
+                </button>
+                <button type="button" class="mini ui orange button"
+                (click)="item.cancel()" [disabled]="!item.isUploading">
+                  <i class="ban icon"></i> Annuler
+                </button>
+                <button type="button" class="mini ui red button" (click)="item.remove()" >
+                  <i class="trash icon"></i> Supprimer
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+    </div>
+
+
+      <div class="centered row">
+        <div class="ui text container">
+
+          <div class="section">
+            <div class="disabled field" >
+              <div class="ui left icon input">
+                <input type="text" placeholder= "Type du justificatif" required name="type" [(ngModel)]="myJustif.type">
+                <i class="info icon"></i>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="ui page dimmer pdf_file">
+            <div class="content ">
+              <div class="center">
+                <div class="row" *ngIf="myJustif.fileurl !== undefined" [@modal]="statebis">
+                  <embed [src]="safeUrl" width="500" height="500" type='application/pdf'>
+                </div>
+                <div class="row">
+                  <button class="ui primary animated fade button" (click)="saveJustificatif()">
+                    <div class="visible content">Enregistrer</div>
+                    <div class="hidden content"><i class="checkmark icon"></i></div>
+                  </button>
+                  <button class="ui red animated fade button" (click)="cancelJustificatif()">
+                    <div class="visible content">Annuler</div>
+                    <div class="hidden content"><i class="ban icon"></i></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!--<div class="section button_next">
+            <div class="field">
+              <button class="big ui primary animated fade button">
+                <div class="visible content">Suivant</div>
+                <div class="hidden content"><i class="chevron right icon"></i></div>
+              </button>
+            </div>
+          </div>-->
+
+        </div>
+      </div>
+
+  </div>
+
+  </div>
+
+</div>
+
+  </div>
+
+</form>
+
+
+
+</div>
+
+</div>
+
+
+
+
+

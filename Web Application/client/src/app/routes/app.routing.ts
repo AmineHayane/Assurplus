@@ -38,6 +38,6 @@ export const ROUTES = [
   { path: 'board',  component: TableauDeBordComponent },
   { path: 'ajoutProduit', component: ProduitComponent },
   { path: 'informationsProduit', component: InformationsProduitComponent },
-  { path: 'justificatifs', component: JustificatifsComponent },
+  { path: 'ajoutJustifs', component: JustificatifsComponent },
   { path: 'validationProduit', component: ValidationComponent}
 ];

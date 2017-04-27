@@ -1,11 +1,22 @@
 <div class="ui tabular menu">
-  <a class="item active">
-    Multimédia
+  <a class="item" [ngClass]="{'active': choixTabularMenu == 'Biens'}" (click)="toggleBiens()">
+    Biens
   </a>
+  <a class="item" [ngClass]="{'active': choixTabularMenu == 'Justifs'}" (click)="toggleJustifs()">
+    Justificatifs
+  </a>
+  <div class="right menu">
+    <div class="item">
+      <button class="ui small basic button teal">
+        <i class="teal lock icon"></i>
+        Mon coffre fort
+      </button>
+    </div>
+  </div>
 </div>
 
 
- <div class="ui four link doubling stackable special cards container">
+ <div class="ui four link doubling stackable special cards container" *ngIf="choixTabularMenu == 'Biens'">
 
      <div class="card" *ngFor="let bien of biens; let i = index">
 
@@ -41,7 +52,7 @@
            </div>
         </div>
 
-      <img src="./uploads/{{bien.imageurl}}">
+      <img src="./uploads/Biens/{{bien.imageurl}}">
 
   </div>
 
@@ -87,51 +98,114 @@
 
  </div>
 
-<div class="ui page dimmer dos">
-      <div class="content ">
-        <div class="center">
-          <div class="ui text container" [@modal]="statebis">
-            <div class="ui attached message">
-  <div class="header">
-    Welcome to our site!
+
+
+<div class="ui four link doubling stackable special cards container" *ngIf="choixTabularMenu == 'Justifs'">
+
+
+     <div class="card" *ngFor="let justif of justifs; let i = index">
+
+      <div class="blurring dimmable image">
+
+       <div class="ui inverted dimmer">
+           <div class="content">
+          <div class="center">
+
+            <div class="ui buttons">
+
+            <div class="ui teal button" data-tooltip="Modifier">
+
+              <i class="material-icons"> create </i>
+
+              </div>
+
+              <div class="ui teal button" data-tooltip="Justificatifs">
+
+              <i class="material-icons">insert_drive_file</i>
+
+              </div>
+
+              <div class="ui teal button" data-tooltip="Supprimer" (click) ="deleteJustif(justif.id); deleteJOnView(i);">
+
+              <i class="material-icons">delete</i>
+
+              </div>
+
+            </div>
+
+          </div>
+           </div>
+        </div>
+
+        <!--<embed [src]="justifsUrlSanitized[i].fileurl" width="500" height="500" type='application/pdf'>-->
+
   </div>
-  <p>Fill out the form below to sign-up for a new account</p>
+
+
+  <div class="content">
+
+    <a class="header" MaDirective>{{justif.fileurl.split('.')[0]}}</a>
+
+    <div class="meta">
+      Fichier PDF
+    </div>
+
+    <div class="description">
+
+      <div class="ui left aligned animated list">
+
+        <div class="item">
+           <a class="eltlist"> <i class="calendar icon"></i>Date de depot: {{justif.datedepot.split('T')[0]}} </a>
+        </div>
+
+        <div class="item">
+
+         <a class="eltlist"> <i class="file icon"></i>Type: {{justif.type}}</a>
+
+        </div>
+
+      </div>
+
+   </div>
+
+    <pdf-viewer [src]="baseUrl + justif.fileurl" [render-text]="false"
+                [page]="1"  [zoom]="1" [original-size]="false" style="display: block;"></pdf-viewer>
+
 </div>
-<form class="ui form attached fluid segment">
-  <div class="two fields">
-    <div class="field">
-      <label>First Name</label>
-      <input placeholder="First Name" type="text">
-    </div>
-    <div class="field">
-      <label>Last Name</label>
-      <input placeholder="Last Name" type="text">
-    </div>
-  </div>
-  <div class="field">
-    <label>Username</label>
-    <input placeholder="Username" type="text">
-  </div>
-  <div class="field">
-    <label>Password</label>
-    <input type="password">
-  </div>
-  <div class="inline field">
-    <div class="ui checkbox">
-      <input type="checkbox" id="terms">
-      <label for="terms">I agree to the terms and conditions</label>
-    </div>
-  </div>
-  <div class="ui blue submit button">Submit</div>
-</form>
-<div class="ui bottom attached warning message">
-  <i class="icon help"></i>
-  Already signed up? <a href="#">Login here</a> instead.
-</div>
+
+        <div class="extra content">
+          <div class="ui two buttons">
+            <button class="ui basic green button" (click)="showModal(justif.fileurl)">Document</button>
+            <button class="ui basic red button" (click) ="deleteJustif(justif.id); deleteJOnView(i);">Supprimer</button>
           </div>
         </div>
-      </div>
-</div>
+
+ </div>
+
+ </div>
+
+        <div class="ui page dimmer pdf_file">
+            <div class="content">
+              <div class="center">
+                <div class="row">
+                  <embed [src]="safeUrl" width="600" height="500" type='application/pdf'>
+                </div>
+                <div class="row">
+                  <button class="ui primary animated fade button" (click)="closeModal()">
+                    <div class="visible content">Fermer</div>
+                    <div class="hidden content"><i class="remove icon"></i></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+
 
 <div class="buttonAction">
 
@@ -161,9 +235,9 @@
 
 <div class="Actions">
 
-  <div class="ui circular large icon button"  data-tooltip="Supprimer des biens" data-position="left center" [@showAction2]='state'>
+  <div class="ui circular large icon button"  data-tooltip="Ajouter un justificatif" data-position="left center" [@showAction2]='state' routerLink="/ajoutJustifs" routerLinkActive="active">
 
-     <i class="trash  icon"></i>
+     <i class="file pdf outline icon"></i>
 
 </div>
 </div>
@@ -172,9 +246,9 @@
 
 <div class="Actions">
 
-  <div class="ui circular large icon button"  data-tooltip="Voir mes justificatifs" data-position="left center"[@showAction1]='state'>
+  <div class="ui circular large icon button"  data-tooltip="Supprimer des biens" data-position="left center"[@showAction1]='state'>
 
-  <i class="file pdf outline  icon"></i>
+  <i class="trash icon"></i>
 
 </div>
 

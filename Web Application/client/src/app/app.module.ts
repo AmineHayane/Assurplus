@@ -32,6 +32,7 @@ import {InformationsProduitComponent} from "./informations-produit/informations-
 import {ValidationComponent} from "./validation/validation.component";
 import {MonserviceService} from "./monservice.service";
 import { JustificatifsComponent } from './justificatifs/justificatifs.component';
+import { PdfViewerComponent } from 'ng2-pdf-viewer';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { JustificatifsComponent } from './justificatifs/justificatifs.component'
     ProduitComponent,
     InformationsProduitComponent,
     ValidationComponent,
-    JustificatifsComponent
+    JustificatifsComponent,
+    PdfViewerComponent
   ],
   imports: [
     BrowserModule,

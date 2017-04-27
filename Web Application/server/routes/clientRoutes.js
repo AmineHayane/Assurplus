@@ -14,7 +14,7 @@ app.get('/coffrefort', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 
-app.get('/dashboard', (req, res) => {
+app.get('/board', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 
@@ -22,15 +22,7 @@ app.get('/signup', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 
-app.get('/justificatifs', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
-});
-
-app.get('/posts', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
-});
-
-app.get('/test', (req, res) => {
+app.get('/ajoutJustifs', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 

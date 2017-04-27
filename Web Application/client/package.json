@@ -32,6 +32,7 @@
     "ng2-file-upload": "^1.2.0",
     "ng2-page-scroll": "^4.0.0-beta.5",
     "ng2-page-slider": "^0.9.0",
+    "ng2-pdf-viewer": "^1.0.2",
     "ng2-responsive": "^0.8.3",
     "ng2-semantic-ui": "^0.6.1",
     "responsive-directives-angular2": "^0.4.2",

@@ -5,6 +5,7 @@ const uploadsController = require('../controllers').uploads;
 const auth = require('../auth');
 const BienController = require('../controllers').biens;
 const predictionController = require('../controllers').prediction;
+const justificatifsController = require('../controllers').justificatifs;
 
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
@@ -47,6 +48,12 @@ module.exports = (app) => {
 
     app.post('/api/ajoutobjet', BienController.create);
     app.delete('/api/supprimerobjet/:id', BienController.delete);
+
+    // Justificatifs
+
+    app.get('/api/justificatifs', justificatifsController.list);
+    app.post('/api/ajoutjustificatif', justificatifsController.create);
+    app.delete('/api/supprimerjustificatif/:id', justificatifsController.delete);
 
     // Predictions
 

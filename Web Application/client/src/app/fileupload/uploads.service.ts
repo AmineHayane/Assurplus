@@ -20,6 +20,28 @@ export class UploadsService {
       .map(res => res.json());
   }
 
+
+  // Justificatifs
+
+  addUploadJustif(newJustif) {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/ajoutjustificatif', JSON.stringify(newJustif), {headers : headers})
+      .map(res => res.json());
+  }
+
+  getJustificatifs() {
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.get('/api/justificatifs', {headers:headers}).map(res => res.json());
+  }
+
+  deleteJustificatif(justifID) {
+    return this.http.delete('/api/supprimerjustificatif/' + justifID).map(res => res.json());
+  }
+
+
+
   deleteUpload(uploadId) {
     return this.http.delete('/api/supprimerobjet/' + uploadId).map(res => res.json());
   }

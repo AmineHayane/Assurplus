@@ -47,7 +47,7 @@ var myarray = [];
 
 // Uploading image
 var storage = multer.diskStorage({
-   destination : (req, file, cb) => {cb(null, './client/dist/uploads/');},
+   destination : (req, file, cb) => {cb(null, './client/dist/uploads/Biens/');},
     filename : (req, file, cb) => {
        var datetimestamp = Date.now();
        cb(null, file.originalname);
@@ -56,9 +56,22 @@ var storage = multer.diskStorage({
 
 var upload = multer({
     storage:storage
-}).single('file');
+}).single('file')
 
-/** API path that will upload the files **/
+// Uploading Justif
+var storageJustif = multer.diskStorage({
+   destination : (req, file, cb) => {cb(null, './client/dist/uploads/Justificatifs/');},
+    filename : (req, file, cb) => {
+       var datetimestamp = Date.now();
+       cb(null, file.originalname);
+    }
+});
+
+var uploadJustif = multer({
+    storage: storageJustif
+}).single('file')
+
+/** API path that will upload the images **/
     app.post('/upload', function(req, res) {
         upload(req,res,function(err){
             console.log(req.file);
@@ -69,6 +82,20 @@ var upload = multer({
             /*cloudVisionLabelDetect(req.file.path);*/
             /*launchPostRequest(req.file.filename);*/
             /*pythonFunction();*/
+            if(err){
+                 res.json({error_code:1,err_desc:err});
+                 return;
+            }
+             res.json({error_code:0,err_desc:null});
+        });
+    });
+
+    /** API path that will upload the Justifs **/
+    app.post('/uploadJustifs', function(req, res) {
+        uploadJustif(req,res,function(err){
+            console.log(req.file);
+            console.log('new name', req.file.filename);
+            console.log('path', req.file.path);
             if(err){
                  res.json({error_code:1,err_desc:err});
                  return;

@@ -29,7 +29,7 @@ export class FooterComponent implements OnInit {
 
     onScroll(event : Event) {
       var yLeftToGo = document.body.scrollHeight - (window.pageYOffset + window.innerHeight);
-      console.log(yLeftToGo);
+      /*console.log(yLeftToGo);*/
     /*if (yLeftToGo === 0) {
       this.openSidebar();
     } else {
