@@ -9,26 +9,46 @@
   </div>
 </div>
 
-  <div class="ui four doubling stackable cards container">
+  <div class="ui three doubling stackable cards container">
 
     <div class="card" >
+
         <div class="content">
+
           <div class="left floated header">
             Mon patrimoine
           </div>
-
         </div>
+      <div class="content">
 
-          <div class="extra content">
-            <div class="ui statistics">
-                <div class="teal statistic">
+            <div class="description">
+
+              <div class="ui statistics">
+
+                <div class="ui blue statistic">
                    <div class="value">
-                         {{patrimoine}}
-                     <i class=" teal euro icon"></i>
-                   </div>
+                        {{patrimoine}}
+                       <i class=" blue euro icon"></i>
+                      </div>
+
+                      <div class=" label">
+                        Patrimoine total
+                      </div>
+                 </div>
+
+                 <div class=" ui orange statistic">
+                   <div class="value">
+                      1000
+                       <i class="orange euro icon"></i>
+                      </div>
+
+                      <div class=" label">
+                        Patrimoine assuré
+                      </div>
                  </div>
               </div>
-          </div>
+           </div>
+        </div>
     </div>
 
     <div class="card">
@@ -38,7 +58,40 @@
           <div class="left floated header">
             Mes contrats en cours
           </div>
-
+      </div>
+      <div class="content">
+        <div class="description">
+          <div class="ui middle aligned selection list">
+            <div class="item">
+              <i class=" circle green aligned icon"></i>
+              <div class="content">
+                <div class="header">Contrat BNP Paribas</div>
+                <div class="description">Actif</div>
+              </div>
+            </div>
+            <div class="item">
+              <i class=" circle green middle aligned icon"></i>
+              <div class="content">
+                <div class="header">Contrat AXA Assurance</div>
+                <div class="description">Actif</div>
+              </div>
+            </div>
+            <div class="item">
+              <i class=" circle yellow middle aligned icon"></i>
+              <div class="content">
+                <div class="header">Contrat MMA</div>
+                <div class="description">En pause</div>
+              </div>
+            </div>
+            <div class="item">
+              <i class=" circle red middle aligned icon"></i>
+              <div class="content">
+                <div class="header">Contrat Maif</div>
+                <div class="description">Résilié</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         </div>
 
@@ -53,6 +106,67 @@
           <div class="left floated header">
             Mes prochains prélèvements
           </div>
+         <div class="meta"></div>
+       </div>
+       <div class="content">
+
+          <div class="description">
+            <div class="ui middle aligned selection list">
+              <div class="item">
+                <div class="right floated content">
+                  <h2 class="ui sub header">
+                    Montant
+                  </h2>
+                  <span>20€</span>
+                </div>
+                <i class=" large money middle aligned icon"></i>
+                <div class="content">
+                  <a class="header">Contrat BNP Paribas</a>
+                  <div class="description">Prélèvement le 11/05/2017</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="right floated content">
+                  <h2 class="ui sub header">
+                    Montant
+                  </h2>
+                  <span>30€</span>
+                </div>
+                <i class="large money middle aligned icon"></i>
+                <div class="content">
+                  <a class="header">Contrat AXA Assurance</a>
+                  <div class="description">Prélèvement le 13/05/2017</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="right floated content">
+                  <h2 class="ui sub header">
+                    Montant
+                  </h2>
+                  <span>15€</span>
+                </div>
+                <i class="large money middle aligned icon"></i>
+                <div class="content">
+                  <a class="header">Contrat MMA</a>
+                  <div class="description">Prélèvement le 15/05/2017</div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="right floated content">
+                  <h2 class="ui sub header">
+                    Montant
+                  </h2>
+                  <span>18€</span>
+                </div>
+                <i class="large money middle aligned icon"></i>
+                <div class="content">
+                  <a class="header">Contrat Maif</a>
+                  <div class="description">Prélèvement le 17/05/2017</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
 
         </div>
 
@@ -66,6 +180,14 @@
             Evolution de mon patrimoine
           </div>
 
+            <canvas baseChart width="200" height="200"
+
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                chartType="line">
+
+            </canvas>
 
         </div>
 
@@ -78,6 +200,11 @@
           <div class="left floated header">
             Analyse de mon patrimoine
           </div>
+
+          <canvas baseChart width="200" height="200"
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          chartType="pie"></canvas>
 
 
         </div>
@@ -112,19 +239,5 @@
         </div>
 
     </div>
-
-     <div class="card">
-
-        <div class="content">
-
-
-        </div>
-
-    </div>
-
-
-
-
-
 
   </div>

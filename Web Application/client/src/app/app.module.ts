@@ -33,6 +33,7 @@ import {ValidationComponent} from "./validation/validation.component";
 import {MonserviceService} from "./monservice.service";
 import { JustificatifsComponent } from './justificatifs/justificatifs.component';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
+import {ChartsModule} from "ng2-charts";
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { PdfViewerComponent } from 'ng2-pdf-viewer';
     ResponsiveModule,
     RouterModule.forRoot(ROUTES),
     SuiModule,
-    SuiProgressModule
+    SuiProgressModule,
+    ChartsModule
   ],
   providers: [AuthenticationService, SignupService, UploadsService, MonserviceService],
   bootstrap: [AppComponent]

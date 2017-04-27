@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147adb83-5b38-4371-8dc7-b5635008b9c6" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/image_35.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/image_42.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/image_5.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/Prediction.py" afterPath="$PROJECT_DIR$/Web Application/Prediction.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/app.js" afterPath="$PROJECT_DIR$/Web Application/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/.gitignore" afterPath="$PROJECT_DIR$/Web Application/client/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/index.html" afterPath="$PROJECT_DIR$/Web Application/client/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/inline.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/inline.bundle.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js" afterPath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js.map" />
@@ -20,25 +17,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js" afterPath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/package.json" afterPath="$PROJECT_DIR$/Web Application/client/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/fileupload/uploads.service.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/fileupload/uploads.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.css" afterPath="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.css" afterPath="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/produit/produit.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/produit/produit.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/routes/app.routing.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/routes/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.css" afterPath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.css" afterPath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.spec.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/controllers/index.js" afterPath="$PROJECT_DIR$/Web Application/server/controllers/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" afterPath="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/routes/index.js" afterPath="$PROJECT_DIR$/Web Application/server/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/index.html" afterPath="$PROJECT_DIR$/Web Application/client/src/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,61 +37,26 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="Assurplus" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="coffrefort.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.html">
+      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="6" />
-              <folding>
-                <element signature="n#style#0;n#pdf-viewer#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tableau-de-bord.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="coffrefort.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="117" column="2" lean-forward="false" selection-start-line="117" selection-start-column="2" selection-end-line="124" selection-end-column="3" />
+            <state relative-caret-position="234">
+              <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tableau-de-bord.component.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monservice.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/monservice.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-510">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#42#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -134,6 +86,7 @@
       <find>class</find>
       <find>ngCl</find>
       <find>input</find>
+      <find>change</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,13 +109,11 @@
         <option value="$PROJECT_DIR$/Web Application/client/src/app/login/login.component.html" />
         <option value="$PROJECT_DIR$/Web Application/hello.py" />
         <option value="$PROJECT_DIR$/Web Application/package.json" />
-        <option value="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/fileupload/fileupload.component.css" />
         <option value="$PROJECT_DIR$/Web Application/client/package.json" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/fileupload/fileupload.component.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/fileupload/fileupload.component.html" />
         <option value="$PROJECT_DIR$/Web Application/server/controllers/prediction.js" />
-        <option value="$PROJECT_DIR$/Web Application/client/src/index.html" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/routes/app.routing.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/justificatifs/justificatifs.component.css" />
         <option value="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" />
@@ -183,12 +134,16 @@
         <option value="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.css" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.ts" />
-        <option value="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/footer/footer.component.css" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.html" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.css" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/app/monservice.service.ts" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.ts" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/index.html" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
       </list>
     </option>
   </component>
@@ -210,9 +165,10 @@
     <handled-path value="$PROJECT_DIR$/postgresal+nodejs+postman/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1378" />
-    <option name="height" value="735" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -444,7 +400,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="footer" />
+              <option name="myItemId" value="moncompte" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,36 +444,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Web Application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coffrefort" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assurplus" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="Design" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -547,7 +473,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="editor.config.accepted" value="true" />
@@ -792,15 +718,25 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1378" height="735" extended-state="1" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2496329" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22693998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -812,30 +748,29 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25296736" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40675476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -857,20 +792,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/globals/site.variables">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/input.overrides">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/semantic/src/themes/default/elements/button.overrides">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1122,16 +1043,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#58#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/testngsem/testngsem.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1152,14 +1063,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="14" lean-forward="false" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="73" column="8" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -1204,48 +1107,84 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.html">
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="6" />
+        <state relative-caret-position="576">
+          <caret line="71" column="16" lean-forward="false" selection-start-line="71" selection-start-column="16" selection-end-line="71" selection-end-column="16" />
           <folding>
-            <element signature="n#style#0;n#pdf-viewer#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/monservice.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#58#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="117" column="2" lean-forward="false" selection-start-line="117" selection-start-column="2" selection-end-line="124" selection-end-column="3" />
+        <state relative-caret-position="1972">
+          <caret line="122" column="5" lean-forward="false" selection-start-line="122" selection-start-column="5" selection-end-line="122" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="158" column="26" lean-forward="false" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="47" column="29" lean-forward="false" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html">
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/coffrefort/coffrefort.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#pdf-viewer#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <caret line="15" column="89" lean-forward="false" selection-start-line="15" selection-start-column="89" selection-end-line="15" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/monservice.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#42#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#117#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="64" column="12" lean-forward="false" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="12" />
           <folding />
         </state>
       </provider>

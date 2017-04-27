@@ -1,0 +1,38 @@
+.spacer{
+
+    height: 50px; 
+}
+
+
+.spacer2{
+
+    height: 15px;
+}
+
+.segment{
+
+    background-color:white; 
+}
+
+
+img{
+
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.ui input[disabled] {
+  opacity: 1;
+}
+
+.ui input{
+    font-weight: bold;
+}
+
+.ui.input.focus input,
+.ui input:focus {
+  border-color: teal;
+  background: #FFFFFF;
+  color: black;
+  box-shadow: none;
+}
