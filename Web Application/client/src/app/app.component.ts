@@ -13,7 +13,7 @@ declare var jQuery : any;
 })
 export class AppComponent implements OnInit, OnDestroy{
   title = 'Assur+';
-  user : User;
+  user : any;
   message:String;
   subscription:Subscription;
   constructor(private elref:ElementRef, private authService:AuthenticationService, private router:Router) {
@@ -48,7 +48,7 @@ export class AppComponent implements OnInit, OnDestroy{
     this.authService.logout();
     this.user = null;
     this.message = "Logged out";
-    this.router.navigateByUrl('http://google.fr');
+    this.router.navigateByUrl('/');
   }
 
   toggleLogin() : any {

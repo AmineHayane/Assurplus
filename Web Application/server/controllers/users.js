@@ -5,7 +5,6 @@ const auth = require('../auth');
 const bcrypt = require('bcrypt-nodejs');
 
 
-
 module.exports = {
 
     checkState(req, res) {
@@ -90,5 +89,85 @@ module.exports = {
     .findAll()
     .then(users => res.status(200).send(users))
     .catch(error => res.status(400).send(error));
-}
+},
+    retrieve(req, res) {
+        return User
+            .findOne({where: {user_mail: req.body.user_mail}})
+            .then((user) => {
+            if (!user) {
+                return res.send({
+                    success : false,
+                    message: 'User does not exist',
+                });
+            } else {
+                return res.status(200).send(user)
+            }
+
+            }).catch(error => res.status(400).send(error));
+    },
+
+    update(req ,res)  {
+        return User
+            .findOne({where : {user_mail : req.body.user_mail}})
+            .then((user) => {
+                if (!user) {
+                    return res.status(404).send({
+                      message: 'User does not exist',
+                    });
+                  }
+                  return user
+                      .update({
+                          UserLastName : req.body.UserLastName || user.UserLastName,
+                          UserFirstName : req.body.UserFirstName || user.UserFirstName,
+                          user_mail : req.body.user_mail || user.user_mail,
+                          user_password : req.body.user_password || user.user_password,
+                          UserGender : req.body.UserGender || user.UserGender,
+                          UserLivingSituation : req.body.UserLivingSituation || user.UserLivingSituation,
+                          UserJob : req.body.UserJob || user.UserJob,
+                          UserPaymentType : req.body.UserPaymentType || user.UserPaymentType,
+                          UserIncome : req.body.UserIncome || user.UserIncome,
+                          UserIdentityDocument : req.body.UserIdentityDocument || user.UserIdentityDocument,
+                          UserBirthDate : req.body.UserBirthDate || user.UserBirthDate
+                      })
+                      .then(() => res.status(200).send(user))
+                      .catch((error) => res.status(400).send(error));
+            }).catch(error => res.status(400).send(error));
+    },
+    changemail(req, res) {
+        return User
+            .findOne({where: {user_mail : req.body.UserEmail}})
+            .then((user) => {
+                if (!user) {
+                    return res.send({
+                        success : false,
+                        message: 'User does not exist',
+                    });
+                  }
+
+                  if (!bcrypt.compareSync(req.body.passwordCheck, user.user_password)) {
+                      return res.send({
+                          success : false,
+                          message : 'Incorrect password',
+                      });
+                  } else {
+                    return user
+                        .update({
+                            user_mail : req.body.newUserEmail
+                        })
+                        .then(() => {
+                        let token = jwt.sign({data:user}, 'azertyuiopmlkjhgfdsqwxcvbn', {
+                          expiresIn : 60*60*24
+                        });
+                        let content = {
+                                  user: user,
+                                  success: true,
+                                  message: 'Email successfully changed',
+                                    token : token
+                                };
+                        res.status(200).send(content);
+                        })
+                        .catch((error) => res.status(400).send(error));
+                  }
+            }).catch(error => res.status(400).send(error));
+    }
 };

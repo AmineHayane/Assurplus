@@ -34,6 +34,9 @@ module.exports = (app) => {
     app.post('/api/users/login', usersController.loginUser);
     app.get('/api/users/check-state', auth.verifyToken, usersController.checkState);
     app.get('/api/users', usersController.list);
+    app.post('/api/users', usersController.retrieve);
+    app.put('/api/users', usersController.update);
+    app.put('/api/users/changeEmail', usersController.changemail);
 
     // Uploads
 

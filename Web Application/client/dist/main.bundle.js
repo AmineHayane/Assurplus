@@ -184,7 +184,7 @@ var _a;
 
 /***/ }),
 
-/***/ 180:
+/***/ 121:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -232,6 +232,31 @@ var AuthenticationService = (function () {
         return this.http.post('/api/users/login', JSON.stringify(user), { headers: headers })
             .map(function (res) { return _this.setToken(res); });
     };
+    AuthenticationService.prototype.retrieveUser = function (userEmail) {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */];
+        headers.append('Content-Type', 'application/json');
+        return this.http.post('/api/users', JSON.stringify(userEmail), { headers: headers })
+            .map(function (res) { return _this.clearPassword(res); });
+    };
+    AuthenticationService.prototype.clearPassword = function (res) {
+        var body = JSON.parse(res['_body']);
+        delete body.user_password;
+        return body;
+    };
+    AuthenticationService.prototype.changeEmail = function (newUserEmail) {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */];
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/users/changeEmail', JSON.stringify(newUserEmail), { headers: headers })
+            .map(function (res) { return _this.resetToken(res); });
+    };
+    AuthenticationService.prototype.updateUser = function (user) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */];
+        headers.append('Content-Type', 'application/json');
+        return this.http.put('/api/users', JSON.stringify(user), { headers: headers })
+            .map(function (res) { return res.json(); });
+    };
     AuthenticationService.prototype.logout = function () {
         this.token = null;
         localStorage.removeItem('currentUser');
@@ -247,6 +272,18 @@ var AuthenticationService = (function () {
         console.log('setToken', res);
         var body = JSON.parse(res['_body']);
         if (body['success'] == true) {
+            this.token = body['token'];
+            localStorage.setItem('currentUser', JSON.stringify({
+                user_mail: body['user']['user_mail'],
+                token: this.token
+            }));
+        }
+        return body;
+    };
+    AuthenticationService.prototype.resetToken = function (res) {
+        var body = JSON.parse(res['_body']);
+        if (body['success'] == true) {
+            this.logout();
             this.token = body['token'];
             localStorage.setItem('currentUser', JSON.stringify({
                 user_mail: body['user']['user_mail'],
@@ -709,7 +746,7 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_user__ = __webpack_require__(463);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
@@ -792,6 +829,8 @@ var User = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__monservice_service__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__ = __webpack_require__(121);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(74);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoncompteComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -804,10 +843,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var MoncompteComponent = (function () {
-    function MoncompteComponent(elRef, servicePassword) {
+    function MoncompteComponent(elRef, servicePassword, authService, router) {
+        var _this = this;
         this.elRef = elRef;
         this.servicePassword = servicePassword;
+        this.authService = authService;
+        this.router = router;
         this.isModified1 = false;
         this.isModified2 = false;
         this.isModified3 = false;
@@ -815,6 +859,7 @@ var MoncompteComponent = (function () {
         this.responsePassword = "";
         this.samePasswords = true;
         this.changePasswordsuccess = false;
+        this.keysUserObject = [];
         this.fakeUser = {
             UserGender: "Homme",
             UserFirstName: "Amine",
@@ -834,8 +879,26 @@ var MoncompteComponent = (function () {
             AdressCity: "CHAMPS-SUR-MARNE",
             AdressCountry: "FRANCE",
         };
+        this.subscription = authService.user$.subscribe(function (user) {
+            _this.userToken = user;
+        });
     }
     MoncompteComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.userToken = JSON.parse(localStorage.getItem('currentUser'));
+        console.log(JSON.parse(localStorage.getItem('currentUser')));
+        var userEmail = {
+            user_mail: this.userToken.user_mail,
+        };
+        this.authService.retrieveUser(userEmail).subscribe(function (user) {
+            _this.User = user;
+            _this.User.UserBirthDate = _this.User.UserBirthDate.split('T')[0];
+            console.log(_this.User);
+            for (var prop in _this.User) {
+                _this.keysUserObject.push(prop);
+            }
+            console.log(_this.keysUserObject);
+        });
     };
     MoncompteComponent.prototype.getNewUserInfos = function () {
         /* On récupère les infos du user photo, données perso etc */
@@ -854,11 +917,39 @@ var MoncompteComponent = (function () {
     };
     MoncompteComponent.prototype.onSubmitInfos = function (data) {
         console.log(data);
-        var newUserInfos = data;
+        for (var prop in data) {
+            if (prop === this.keysUserObject[this.keysUserObject.indexOf(prop)]) {
+                if (data[prop] !== undefined && data[prop] !== "") {
+                    this.User[prop] = data[prop];
+                }
+            }
+            else {
+                console.log('out');
+            }
+        }
+        console.log(this.User);
+        this.authService.updateUser(this.User).subscribe(function (user) {
+            console.log(user);
+        });
     };
     MoncompteComponent.prototype.onSubmitEmail = function (data) {
-        console.log(data);
+        var _this = this;
         var newUserEmail = data;
+        newUserEmail.UserEmail = this.User.user_mail;
+        console.log(newUserEmail);
+        if (newUserEmail.newUserEmail == newUserEmail.newUserEmailConfirm) {
+            this.authService.changeEmail(newUserEmail).subscribe(function (res) {
+                console.log(res);
+                if (res['success'] == true) {
+                    _this.User.user_mail = res['user']['user_mail'];
+                    _this.subscription.unsubscribe();
+                    window.location.assign('http://localhost:8000');
+                }
+            });
+        }
+        else {
+            console.log('Les deux Emails ne correspondent pas');
+        }
     };
     MoncompteComponent.prototype.onSubmitPassword = function (data) {
         console.log(data);
@@ -881,10 +972,10 @@ MoncompteComponent = __decorate([
             ])
         ]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__monservice_service__["a" /* MonserviceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__monservice_service__["a" /* MonserviceService */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__monservice_service__["a" /* MonserviceService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__monservice_service__["a" /* MonserviceService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__["a" /* AuthenticationService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_router__["e" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_router__["e" /* Router */]) === "function" && _d || Object])
 ], MoncompteComponent);
 
-var _a, _b;
+var _a, _b, _c, _d;
 //# sourceMappingURL=moncompte.component.js.map
 
 /***/ }),
@@ -1028,7 +1119,7 @@ var _a, _b;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__models_user__ = __webpack_require__(463);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_authentication_service__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__(74);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1507,7 +1598,7 @@ function modal(degree_in, degree_out) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_authentication_service__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(74);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1557,7 +1648,7 @@ var AppComponent = (function () {
         this.authService.logout();
         this.user = null;
         this.message = "Logged out";
-        this.router.navigateByUrl('http://google.fr');
+        this.router.navigateByUrl('/');
     };
     AppComponent.prototype.toggleLogin = function () {
         jQuery(this.elref.nativeElement).find('.ui.page.dimmer.uno').dimmer('setting', { opacity: 1 })
@@ -1623,7 +1714,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng2_responsive__ = __webpack_require__(817);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ng2_responsive___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_ng2_responsive__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__signup_signup_component__ = __webpack_require__(466);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_authentication_service__ = __webpack_require__(180);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__services_authentication_service__ = __webpack_require__(121);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__angular_router__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__routes_app_routing__ = __webpack_require__(722);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__signup_signup_service__ = __webpack_require__(723);
@@ -2051,7 +2142,9 @@ var objet = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__informations_produit_informations_produit_component__ = __webpack_require__(460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__justificatifs_justificatifs_component__ = __webpack_require__(461);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__validation_validation_component__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__app_component__ = __webpack_require__(714);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
+
 
 
 
@@ -2070,6 +2163,11 @@ var ROUTES = [
         path: '',
         component: __WEBPACK_IMPORTED_MODULE_1__testngsem_testngsem_component__["a" /* TestngsemComponent */],
         useAsDefault: true
+    },
+    {
+        path: 'root',
+        component: __WEBPACK_IMPORTED_MODULE_12__app_component__["a" /* AppComponent */],
+        redirectTo: ''
     },
     {
         path: 'login',
@@ -2430,7 +2528,7 @@ module.exports = module.exports.toString();
 /***/ 852:
 /***/ (function(module, exports) {
 
-module.exports = " <div class=\"ui right vertical sidebar labeled icon menu\">\r\n\r\n  <a class=\"item\" routerLink=\"/board\" routerLinkActive=\"active\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal dashboard icon\"></i>\r\n    Tableau de bord\r\n  </a>\r\n\r\n  <a class=\"item\" routerLink=\"/moncompte\" routerLinkActive=\"active\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal user icon\"></i>\r\n    Mon compte\r\n  </a>\r\n\r\n  <a class=\" item\" routerLink=\"/coffrefort\" routerLinkActive=\"active\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal lock icon\"></i>\r\n    Mon coffre-fort\r\n  </a>\r\n\r\n  <a *ngIf=\"!user\" class=\"item\" (click)=\"closeSidenav(); toggleLogin()\">\r\n    <i class=\"teal power icon\"></i>\r\n       Se connecter\r\n  </a>\r\n\r\n   <a *ngIf=\"user\" class=\"item\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal user icon\"></i>\r\n       {{user.user_mail}}\r\n   </a>\r\n\r\n\r\n  <a routerLink=\"/signup\" *ngIf=\"!user\" class=\"item\" (click)=\"closeSidenav()\">\r\n      <i class=\"teal road icon\"></i>\r\n       S'inscrire\r\n  </a>\r\n\r\n   <a *ngIf=\"user\" class=\"item\" (click)=\"closeSidenav(); logout()\">\r\n      <i class=\"teal power icon\"></i>\r\n       Deconnexion\r\n  </a>\r\n\r\n</div>\r\n\r\n  <div class=\"pusher\">\r\n    <div tracking-scroll (scrolled)=\"onScroll($event.value, 50)\" class=\"ui top fixed menu secondary \" [ngClass]= \"{'five item' : isScrolled_50}\">\r\n\r\n    <a href=\"/\" class=\"item active\">\r\n      <img class=\"ui tiny image\" src=\"./assets/images/brand_logo.png\">\r\n    </a>\r\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      <i class=\"help circle outline large icon\"></i>\r\n      Comment ça marche\r\n    </a>\r\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      FAQ\r\n    </a>\r\n\r\n      <div class=\"ui dropdown item\" >\r\n        <div *hideItSizes=\"{min:0,max:500}\" class=\"text\">Services</div>\r\n        <div class=\"menu\">\r\n          <!--<div routerLink=\"/fileupload\" class=\"item\"><i class=\"cloud upload icon\"></i>\r\n              File Upload\r\n          </div>-->\r\n          <div routerLink=\"/coffrefort\" routerLinkActive=\"active\" class=\"item\"><i class=\"protect icon\"></i>Coffre fort</div>\r\n          <div routerLink=\"/board\" class=\"item\"><i class=\"dashboard icon\"></i>Dashboard</div>\r\n          <div routerLink=\"/moncompte\" class=\"item\"><i class=\"user icon\"></i>Mon compte</div>\r\n        </div>\r\n      </div>\r\n\r\n    <div class=\"right menu\">\r\n      <div *ngIf=\"!user && !isScrolled_50\" class=\"item\">\r\n        <a (click)=\"toggleLogin()\" *hideItSizes=\"{min:0,max:768}\" class=\"item\">\r\n        Se connecter\r\n      </a>\r\n      </div>\r\n\r\n      <div *ngIf=\"user && !isScrolled_50\" class=\"item\">\r\n        <a *hideItSizes=\"{min:0,max:768}\" class=\"ui small basic button teal\">\r\n        <i class=\"icon user\"></i>\r\n          {{user.user_mail}}\r\n      </a>\r\n      </div>\r\n\r\n      <div *hideItSizes=\"{min:0,max:768}\"  class=\"item\">\r\n          <a routerLink=\"/signup\" *ngIf=\"!user && !isScrolled_50\" class=\"ui small button teal\" >S'inscrire</a>\r\n          <a  (click)=\"logout()\" *ngIf=\"user && !isScrolled_50\" class=\"ui small button teal\" >Deconnexion</a>\r\n      </div>\r\n      <a *showItSizes=\"{min:0,max:768}\" (click)=\"toggleSidebar()\" class=\"item\"><i class=\"icon sidebar\"></i> </a>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"ui main \">\r\n\r\n    <router-outlet></router-outlet>\r\n    <!--<p *ngIf=\"!user\">Not logged in</p>\r\n    <p>{{message}}</p>-->\r\n  </div>\r\n\r\n     <!--<div class=\"section_before_footer\">\r\n\r\n     </div>-->\r\n    <div class=\"ui page dimmer uno\">\r\n      <div class=\"content \">\r\n        <div class=\"center\">\r\n          <div class=\"ui text container\">\r\n            <app-login (notify)=\"onNotify($event)\"></app-login>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"ui container fluid\">\r\n      <app-footer></app-footer>\r\n    </div>\r\n\r\n  </div>\r\n"
+module.exports = " <div class=\"ui right vertical sidebar labeled icon menu\">\r\n\r\n  <a class=\"item\" routerLink=\"/board\" routerLinkActive=\"active\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal dashboard icon\"></i>\r\n    Tableau de bord\r\n  </a>\r\n\r\n  <a class=\"item\" routerLink=\"/moncompte\" routerLinkActive=\"active\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal user icon\"></i>\r\n    Mon compte\r\n  </a>\r\n\r\n  <a class=\" item\" routerLink=\"/coffrefort\" routerLinkActive=\"active\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal lock icon\"></i>\r\n    Mon coffre-fort\r\n  </a>\r\n\r\n  <a *ngIf=\"!user\" class=\"item\" (click)=\"closeSidenav(); toggleLogin()\">\r\n    <i class=\"teal power icon\"></i>\r\n       Se connecter\r\n  </a>\r\n\r\n   <a *ngIf=\"user\" class=\"item\" (click)=\"closeSidenav()\">\r\n    <i class=\"teal user icon\"></i>\r\n       {{user.user_mail}}\r\n   </a>\r\n\r\n\r\n  <a routerLink=\"/signup\" *ngIf=\"!user\" class=\"item\" (click)=\"closeSidenav()\">\r\n      <i class=\"teal road icon\"></i>\r\n       S'inscrire\r\n  </a>\r\n\r\n   <a *ngIf=\"user\" class=\"item\" (click)=\"closeSidenav(); logout()\">\r\n      <i class=\"teal power icon\"></i>\r\n       Deconnexion\r\n  </a>\r\n\r\n</div>\r\n\r\n  <div class=\"pusher\">\r\n    <div tracking-scroll (scrolled)=\"onScroll($event.value, 50)\" class=\"ui top fixed menu secondary \" [ngClass]= \"{'five item' : isScrolled_50}\">\r\n\r\n    <a href=\"/\" class=\"item active\">\r\n      <img class=\"ui tiny image\" src=\"./assets/images/brand_logo.png\">\r\n    </a>\r\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      <i class=\"help circle outline large icon\"></i>\r\n      Comment ça marche\r\n    </a>\r\n    <a *hideItSizes=\"{min:0,max:500}\" class=\"item\">\r\n      FAQ\r\n    </a>\r\n\r\n      <div class=\"ui dropdown item\" >\r\n        <div *hideItSizes=\"{min:0,max:500}\" class=\"text\">Services</div>\r\n        <div class=\"menu\">\r\n          <!--<div routerLink=\"/fileupload\" class=\"item\"><i class=\"cloud upload icon\"></i>\r\n              File Upload\r\n          </div>-->\r\n          <div routerLink=\"/coffrefort\" routerLinkActive=\"active\" class=\"item\"><i class=\"protect icon\"></i>Coffre fort</div>\r\n          <div routerLink=\"/board\" class=\"item\"><i class=\"dashboard icon\"></i>Dashboard</div>\r\n          <div routerLink=\"/moncompte\" class=\"item\"><i class=\"user icon\"></i>Mon compte</div>\r\n        </div>\r\n      </div>\r\n\r\n    <div class=\"right menu\">\r\n      <div *ngIf=\"!user && !isScrolled_50\" class=\"item\">\r\n        <a (click)=\"toggleLogin()\" *hideItSizes=\"{min:0,max:768}\" class=\"item\">\r\n        Se connecter\r\n      </a>\r\n      </div>\r\n\r\n      <div *ngIf=\"user && !isScrolled_50\" class=\"item\">\r\n        <a *hideItSizes=\"{min:0,max:768}\" class=\"ui small basic button teal\" routerLink=\"/moncompte\">\r\n        <i class=\"icon user\"></i>\r\n          {{user.user_mail}}\r\n      </a>\r\n      </div>\r\n\r\n      <div *hideItSizes=\"{min:0,max:768}\"  class=\"item\">\r\n          <a routerLink=\"/signup\" *ngIf=\"!user && !isScrolled_50\" class=\"ui small button teal\" >S'inscrire</a>\r\n          <a  (click)=\"logout()\" *ngIf=\"user && !isScrolled_50\" class=\"ui small button teal\" >Deconnexion</a>\r\n      </div>\r\n      <a *showItSizes=\"{min:0,max:768}\" (click)=\"toggleSidebar()\" class=\"item\"><i class=\"icon sidebar\"></i> </a>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"ui main \">\r\n\r\n    <router-outlet></router-outlet>\r\n    <!--<p *ngIf=\"!user\">Not logged in</p>\r\n    <p>{{message}}</p>-->\r\n  </div>\r\n\r\n     <!--<div class=\"section_before_footer\">\r\n\r\n     </div>-->\r\n    <div class=\"ui page dimmer uno\">\r\n      <div class=\"content \">\r\n        <div class=\"center\">\r\n          <div class=\"ui text container\">\r\n            <app-login (notify)=\"onNotify($event)\"></app-login>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"ui container fluid\">\r\n      <app-footer></app-footer>\r\n    </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 
@@ -2493,7 +2591,7 @@ module.exports = "  <form #loginForm (ngSubmit)=\"loginUser(user);loginForm.rese
 /***/ 861:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"spacer\">\n</div>\n\n\n <div class=\"spacer2\">\n\n</div>\n\n<div class=\"ui one column centered stackable grid container \">\n\n    <div class=\"four wide column\"> \n\n <div class=\"blurring dimmable image\">\n\n       <div class=\"ui inverted dimmer\">\n           \n           <div class=\"content\">\n          <div class=\"center\">\n\n               <label for =\"userProfilPicture\">\n            \n              <div class=\"ui circular teal icon button\" >\n\n\n                <i class=\"material-icons\">add_a_photo</i> \n            \n              </div>\n\n               </label>\n\n          </div>\n           </div>\n       </div>\n\n    <img class=\"ui small centered circular image\" src=\"assets\\images\\user.jpg\">\n\n    <input type=\"file\" id=\"userProfilPicture\" accept=\"image/*\" style=\"display:none\" >\n\n </div>\n</div>\n</div>\n\n\n  \n<div class=\"ui one column centered stackable grid container \">\n\n<div class=\"ten wide column\"> \n            \n<div class=\"ui clearing segment\">\n     \n<form class=\"ui form\" #form=\"ngForm\">\n\n<h2 class=\"ui teal dividing header\" > Mes coordonnées </h2>\n\n\n  <div class=\"field\">\n\n    <div class=\"two fields\">\n      <div class=\"field\">\n          <label> NOM </label>\n            <input type=\"text\" name=\"UserLastName\" placeholder={{fakeUser.UserLastName}} [(ngModel)]=\"UserLastName\" (keypress)=\"showButton1()\">\n      \n      </div>\n      <div class=\"field\">\n          <label> Prénom </label>\n          <input type=\"text\" name= \"UserFirstName\" placeholder={{fakeUser.UserFirstName}} [(ngModel)]=\"UserFirstName\" (keypress)=showButton1() >\n      \n      </div>\n\n    </div>\n  </div>\n\n\n  <div class=\"field\">\n\n      <label> Adresse </label>\n\n\n      <div class=\"three fields\">\n      <div class=\"field\">\n        <input type=\"text\" name=\"Adress\" placeholder={{fakeUser.AdressNumber}}{{fakeUser.AdressLabel}}{{fakeUser.AdressLabelName}} [(ngModel)]=\"Adress\" (keypress)=showButton1() >\n      </div>\n      <div class=\"field\">\n        <input type=\"number\" name=\"AdressZIPcode\" placeholder={{fakeUser.AdressZIPcode}} [(ngModel)]=\"AdressZIPcode\" (keypress)=showButton1()>\n      </div>\n       <div class=\"field\">\n        <input type=\"text\" name=\"AdressCity\" placeholder={{fakeUser.AdressCity}} [(ngModel)]=\"AdressCity\" (keypress)=showButton1()>\n      </div>\n    </div>\n\n\n  </div>\n\n  <div class=\"two fields\">\n\n    <div class=\"field\">\n        <label> Téléphone </label>\n\n        <input type=\"tel\" name=\"UserPhoneNumber\" placeholder={{fakeUser.UserPhoneNumber}} [(ngModel)]=\"UserPhoneNumber\" (keypress)=showButton1()>\n    </div>\n\n    <div class=\"field\">\n\n        <label> Date de naissance </label>\n\n        <input type=\"text\" name=\"UserBirthDate\" placeholder={{fakeUser.UserBirthDate}} [(ngModel)]=\"UserBirthDate\" (keypress)=showButton1()>\n    </div>\n\n  </div>\n\n  <div class=\"field\">\n\n              <div class=\"ui left floated teal button\"  *ngIf=\"isModified1\" (click)=\"onSubmitInfos(form.value)\"  [@button]> Valider </div>\n              <div class=\"ui left floated teal button\"  *ngIf=\"isModified1\" [@button] > Annuler  </div>\n\n  </div>\n\n\n\n</form>\n\n</div>\n\n\n<div class=\"ui center clearing segment\">\n\n <h2 class=\"ui teal dividing header\"> Mes adresses </h2>\n\n</div>\n\n\n\n<div class=\"ui clearing segment\">\n\n    <form class=\"ui form\" #form2=\"ngForm\">\n\n  <h2 class=\"ui teal dividing header\"> Email </h2>\n\n  <div class=\"field\">\n\n    <div class=\"two fields\">\n      <div class=\"field\">\n        <input type=\"text\" required name=\"UserEmail\" placeholder={{fakeUser.UserEmail}} [(ngModel)]=\"email\" disabled>\n      </div>\n      <div class=\"field\" *ngIf=\"!isModified2\">\n\n           <div class=\"ui right floated teal button\" (click)=\"showEmailModification()\"> Modifier </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"two fields\" *ngIf=\"isModified2\">\n  <div class=\"field\">\n      <input type=\"text\" required name=\"newUserEmail\" placeholder= \"Votre nouvel email\" [(ngModel)]=\"newUserEmail\">\n  </div>\n\n  </div>\n\n   <div class=\"two fields\"  *ngIf=\"isModified2\">\n  <div class=\"field\">\n      <input type=\"text\" required name=\"newUserEmailConfirm\" placeholder= \"Confirmer le nouvel email\" [(ngModel)]=\"newUserEmailConfirm\">\n  </div>\n\n  </div>\n\n  <div class=\"two fields\"  *ngIf=\"isModified2\">\n\n  <div class=\"field\">\n      <input type=\"text\" required name=\"passwordCheck\" placeholder=\"Mot de passe\" [(ngModel)]=\"passwordCheck\">\n  </div>\n\n  </div>\n\n\n  <div class=\"two fields\"  *ngIf=\"wrongPassword1\" [@button]> \n      \n   <div class=\"field\">\n\n    <div class=\"ui small negative message\" >\n\n     <div class=\"header\">\n\n     Le mot de passe entré est erroné !\n\n    </div>\n\n    </div>\n    \n      </div>\n\n    </div> \n\n\n  <div class=\"field\"  *ngIf=\"isModified2\">\n\n           {{responsePassword}}\n        <div class=\"ui left floated teal button\" (click)=\"onSubmitEmail(form2.value)\" > Valider </div>\n        <div class=\"ui left floated teal button\" (click)=\"showEmailModification()\" > Annuler  </div>\n    \n\n  </div>\n\n\n\n\n</form>\n\n</div>\n\n<div class=\"ui center clearing segment\">\n\n <form class=\"ui form\" #form3=\"ngForm\">\n\n  <h2 class=\"ui teal dividing header\"> Mot de passe </h2>\n\n  <div class=\"field\"  *ngIf = \"changePasswordsuccess\" [@button]> \n      \n    <div class=\"ui small positive message\"  >\n\n     <div class=\"header\">\n      \n         {{responsePassword}}\n     \n    </div>\n\n    </div>\n\n    \n    </div>\n\n  <div class=\"field\">\n\n    <div class=\"two fields\">\n\n      <div class=\"field\">\n\n      <input type=\"password\" name=UserPassword placeholder=**********  *ngIf=\"!isModified3\" disabled>\n\n            </div> \n            \n\n      <div class=\"field\">\n \n         <div class=\"ui right floated teal button\" (click)=\"showPasswordModification()\" *ngIf=\"!isModified3\" > Modifier </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"two fields\" *ngIf=\"isModified3\"> \n\n\n      <div class=\"field\">\n\n             <input type=\"password\" name=newUserPasswordConfirm placeholder=\"Mot de passe actuel\"  [(ngModel)]=\"newUserPasswordConfirm\" >          \n        \n      </div>\n\n     </div>\n      \n       <div class=\"two fields\"  *ngIf=\"wrongPassword2\" [@button]> \n      \n   <div class=\"field\">\n\n    <div class=\"ui small negative message\" >\n\n     <div class=\"header\">\n\n     Le mot de passe entré est erroné\n\n    </div>\n\n    </div>\n\n      </div>\n\n    </div> \n\n\n\n     <div class=\"two fields\" *ngIf=\"isModified3\">\n\n      <div class=\"field\">\n\n             <input type=\"password\" name=newUserPassword placeholder=\"Votre nouveau mot de passe\"   [(ngModel)]=\"newUserPassword\" >          \n        \n      </div>\n\n\n\n     </div>\n\n      <div class=\"two fields\" *ngIf=\"isModified3\">\n\n\n      <div class=\"field\">\n\n             <input type=\"password\" name=UserPasswordConfirm placeholder=\"Confirmer le nouveau mot de passe\"  [(ngModel)]=\"UserPasswordConfirm\" >          \n        \n      </div>\n\n     </div>\n\n\n  <div class=\"two fields\"  *ngIf=\"!samePasswords\" [@button]> \n      \n   <div class=\"field\">\n\n    <div class=\"ui small negative message\" >\n\n     <div class=\"header\">\n\n     Les mots de passe ne correspondent pas !\n\n    </div>\n\n    </div>\n\n      </div>\n\n    </div> \n\n    \n\n\n     <div class=\"field\"  *ngIf=\"isModified3\">\n\n        <div class=\"ui left floated teal button\" (click)=\"changePassword(form3.value)\" > Valider </div>\n        <div class=\"ui left floated teal button\" (click)=\"showPasswordModification()\" > Annuler  </div>\n\n  </div>\n\n\n    </div>\n  \n</form>\n\n\n</div>\n\n\n\n\n\n</div>\n\n\n\n\n</div>\n\n\n\n\n\n"
+module.exports = "<div class=\"spacer\">\n</div>\n\n\n <div class=\"spacer2\">\n\n</div>\n\n<div class=\"ui one column centered stackable grid container\" >\n\n    <div class=\"four wide column\">\n\n <div class=\"blurring dimmable image\">\n\n       <div class=\"ui inverted dimmer\">\n\n           <div class=\"content\">\n          <div class=\"center\">\n\n               <label for =\"userProfilPicture\">\n\n              <div class=\"ui circular teal icon button\" >\n\n\n                <i class=\"material-icons\">add_a_photo</i>\n\n              </div>\n\n               </label>\n\n          </div>\n           </div>\n       </div>\n\n    <img class=\"ui small centered circular image\" src=\"./assets/images/user.png\">\n\n    <input type=\"file\" id=\"userProfilPicture\" accept=\"image/*\" style=\"display:none\" >\n\n </div>\n</div>\n</div>\n\n\n\n<div *ngIf=\"User !== undefined\" class=\"ui one column centered stackable grid container \">\n\n<div class=\"ten wide column\">\n\n<div class=\"ui clearing segment\">\n\n<form class=\"ui form\" #form=\"ngForm\">\n\n<h2 class=\"ui teal dividing header\" > Mes coordonnées </h2>\n\n\n  <div class=\"field\">\n\n    <div class=\"two fields\">\n      <div class=\"field\">\n          <label>Nom</label>\n            <input type=\"text\" name=\"UserLastName\" placeholder={{User.UserLastName}} [(ngModel)]=\"UserLastName\" (keypress)=\"showButton1()\">\n\n      </div>\n      <div class=\"field\">\n          <label>Prénom</label>\n          <input type=\"text\" name= \"UserFirstName\" placeholder={{User.UserFirstName}} [(ngModel)]=\"UserFirstName\" (keypress)=showButton1() >\n\n      </div>\n\n    </div>\n  </div>\n\n\n  <div class=\"field\">\n\n      <label> Adresse </label>\n\n\n      <div class=\"three fields\">\n      <div class=\"field\">\n        <input type=\"text\" name=\"Adress\" placeholder={{fakeUser.AdressNumber}}{{fakeUser.AdressLabel}}{{fakeUser.AdressLabelName}} [(ngModel)]=\"Adress\" (keypress)=showButton1() >\n      </div>\n      <div class=\"field\">\n        <input type=\"number\" name=\"AdressZIPcode\" placeholder={{fakeUser.AdressZIPcode}} [(ngModel)]=\"AdressZIPcode\" (keypress)=showButton1()>\n      </div>\n       <div class=\"field\">\n        <input type=\"text\" name=\"AdressCity\" placeholder={{fakeUser.AdressCity}} [(ngModel)]=\"AdressCity\" (keypress)=showButton1()>\n      </div>\n    </div>\n\n\n  </div>\n\n  <div class=\"two fields\">\n\n    <div class=\"field\">\n        <label> Téléphone </label>\n\n        <input type=\"tel\" name=\"UserPhoneNumber\" placeholder={{fakeUser.UserPhoneNumber}} [(ngModel)]=\"UserPhoneNumber\"\n               (keypress)=showButton1()>\n    </div>\n\n    <div class=\"field\">\n\n        <label> Date de naissance </label>\n\n        <input type=\"text\" name=\"UserBirthDate\" placeholder={{User.UserBirthDate}} [(ngModel)]=\"UserBirthDate\"\n               (keypress)=showButton1()>\n    </div>\n\n  </div>\n\n  <div class=\"field\">\n\n              <div class=\"ui left floated teal button\"  *ngIf=\"isModified1\" (click)=\"onSubmitInfos(form.value)\"  [@button]> Valider </div>\n              <div class=\"ui left floated teal button\"  *ngIf=\"isModified1\" [@button] > Annuler  </div>\n\n  </div>\n\n\n\n</form>\n\n</div>\n\n\n<div class=\"ui center clearing segment\">\n\n <h2 class=\"ui teal dividing header\"> Mes adresses </h2>\n\n</div>\n\n\n\n<div class=\"ui clearing segment\">\n\n    <form class=\"ui form\" #form2=\"ngForm\">\n\n  <h2 class=\"ui teal dividing header\"> Email </h2>\n\n  <div class=\"field\">\n\n    <div class=\"two fields\">\n      <div class=\"field\">\n        <input type=\"email\" required name=\"UserEmail\" placeholder={{User.user_mail}} [(ngModel)]=\"UserEmail\" disabled>\n      </div>\n      <div class=\"field\" *ngIf=\"!isModified2\">\n\n           <div class=\"ui right floated teal button\" (click)=\"showEmailModification()\"> Modifier </div>\n      </div>\n    </div>\n  </div>\n\n  <div class=\"two fields\" *ngIf=\"isModified2\">\n  <div class=\"field\">\n      <input type=\"email\" required name=\"newUserEmail\" placeholder= \"Votre nouvel email\" [(ngModel)]=\"newUserEmail\">\n  </div>\n\n  </div>\n\n   <div class=\"two fields\"  *ngIf=\"isModified2\">\n  <div class=\"field\">\n      <input type=\"email\" required name=\"newUserEmailConfirm\" placeholder= \"Confirmer le nouvel email\" [(ngModel)]=\"newUserEmailConfirm\">\n  </div>\n\n  </div>\n\n  <div class=\"two fields\"  *ngIf=\"isModified2\">\n\n  <div class=\"field\">\n      <input type=\"password\" required name=\"passwordCheck\" placeholder=\"Mot de passe\" [(ngModel)]=\"passwordCheck\">\n  </div>\n\n  </div>\n\n\n  <div class=\"two fields\"  *ngIf=\"wrongPassword1\" [@button]>\n\n   <div class=\"field\">\n\n    <div class=\"ui small negative message\" >\n\n     <div class=\"header\">\n\n     Le mot de passe entré est erroné !\n\n    </div>\n\n    </div>\n\n      </div>\n\n    </div>\n\n\n  <div class=\"field\"  *ngIf=\"isModified2\">\n\n           {{responsePassword}}\n        <div class=\"ui left floated teal button\" (click)=\"onSubmitEmail(form2.value)\" > Valider </div>\n        <div class=\"ui left floated teal button\" (click)=\"showEmailModification()\" > Annuler  </div>\n\n\n  </div>\n\n\n\n\n</form>\n\n</div>\n\n<div class=\"ui center clearing segment\">\n\n <form class=\"ui form\" #form3=\"ngForm\">\n\n  <h2 class=\"ui teal dividing header\"> Mot de passe </h2>\n\n  <div class=\"field\"  *ngIf = \"changePasswordsuccess\" [@button]>\n\n    <div class=\"ui small positive message\"  >\n\n     <div class=\"header\">\n\n         {{responsePassword}}\n\n    </div>\n\n    </div>\n\n\n    </div>\n\n  <div class=\"field\">\n\n    <div class=\"two fields\">\n\n      <div class=\"field\">\n\n      <input type=\"password\" name=UserPassword placeholder=**********  *ngIf=\"!isModified3\" disabled>\n\n            </div>\n\n\n      <div class=\"field\">\n\n         <div class=\"ui right floated teal button\" (click)=\"showPasswordModification()\" *ngIf=\"!isModified3\" > Modifier </div>\n\n      </div>\n\n    </div>\n\n    <div class=\"two fields\" *ngIf=\"isModified3\">\n\n\n      <div class=\"field\">\n\n             <input type=\"password\" name=newUserPasswordConfirm placeholder=\"Mot de passe actuel\"  [(ngModel)]=\"newUserPasswordConfirm\" >\n\n      </div>\n\n     </div>\n\n       <div class=\"two fields\"  *ngIf=\"wrongPassword2\" [@button]>\n\n   <div class=\"field\">\n\n    <div class=\"ui small negative message\" >\n\n     <div class=\"header\">\n\n     Le mot de passe entré est erroné\n\n    </div>\n\n    </div>\n\n      </div>\n\n    </div>\n\n\n\n     <div class=\"two fields\" *ngIf=\"isModified3\">\n\n      <div class=\"field\">\n\n             <input type=\"password\" name=newUserPassword placeholder=\"Votre nouveau mot de passe\"   [(ngModel)]=\"newUserPassword\" >\n\n      </div>\n\n\n\n     </div>\n\n      <div class=\"two fields\" *ngIf=\"isModified3\">\n\n\n      <div class=\"field\">\n\n             <input type=\"password\" name=UserPasswordConfirm placeholder=\"Confirmer le nouveau mot de passe\"  [(ngModel)]=\"UserPasswordConfirm\" >\n\n      </div>\n\n     </div>\n\n\n  <div class=\"two fields\"  *ngIf=\"!samePasswords\" [@button]>\n\n   <div class=\"field\">\n\n    <div class=\"ui small negative message\" >\n\n     <div class=\"header\">\n\n     Les mots de passe ne correspondent pas !\n\n    </div>\n\n    </div>\n\n      </div>\n\n    </div>\n\n\n\n\n     <div class=\"field\"  *ngIf=\"isModified3\">\n\n        <div class=\"ui left floated teal button\" (click)=\"changePassword(form3.value)\" > Valider </div>\n        <div class=\"ui left floated teal button\" (click)=\"showPasswordModification()\" > Annuler  </div>\n\n  </div>\n\n\n    </div>\n\n</form>\n\n\n</div>\n\n\n\n\n\n</div>\n\n\n\n\n</div>\n\n\n\n\n\n"
 
 /***/ }),
 
@@ -2514,7 +2612,7 @@ module.exports = "<div class=\"ui text container\">\r\n\r\n  <form class=\"ui fo
 /***/ 864:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui tabular menu\">\r\n  <div class=\"right menu\">\r\n    <div class=\"item\">\r\n      <button class=\"ui small basic button teal\">\r\n        <i class=\"teal dashboard icon\"></i>\r\n        Mon tableau de bord\r\n      </button>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n  <div class=\"ui three doubling stackable cards container\">\r\n\r\n    <div class=\"card\" >\r\n\r\n        <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Mon patrimoine\r\n          </div>\r\n        </div>\r\n      <div class=\"content\">\r\n\r\n            <div class=\"description\">\r\n\r\n              <div class=\"ui statistics\">\r\n\r\n                <div class=\"ui blue statistic\">\r\n                   <div class=\"value\">\r\n                        {{patrimoine}}\r\n                       <i class=\" blue euro icon\"></i>\r\n                      </div>\r\n\r\n                      <div class=\" label\">\r\n                        Patrimoine total\r\n                      </div>\r\n                 </div>\r\n\r\n                 <div class=\" ui orange statistic\">\r\n                   <div class=\"value\">\r\n                      1000\r\n                       <i class=\"orange euro icon\"></i>\r\n                      </div>\r\n\r\n                      <div class=\" label\">\r\n                        Patrimoine assuré\r\n                      </div>\r\n                 </div>\r\n              </div>\r\n           </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"card\">\r\n\r\n      <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Mes contrats en cours\r\n          </div>\r\n      </div>\r\n      <div class=\"content\">\r\n        <div class=\"description\">\r\n          <div class=\"ui middle aligned selection list\">\r\n            <div class=\"item\">\r\n              <i class=\" circle green aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat BNP Paribas</div>\r\n                <div class=\"description\">Actif</div>\r\n              </div>\r\n            </div>\r\n            <div class=\"item\">\r\n              <i class=\" circle green middle aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat AXA Assurance</div>\r\n                <div class=\"description\">Actif</div>\r\n              </div>\r\n            </div>\r\n            <div class=\"item\">\r\n              <i class=\" circle yellow middle aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat MMA</div>\r\n                <div class=\"description\">En pause</div>\r\n              </div>\r\n            </div>\r\n            <div class=\"item\">\r\n              <i class=\" circle red middle aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat Maif</div>\r\n                <div class=\"description\">Résilié</div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        </div>\r\n\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n\r\n          <div class=\"left floated header\">\r\n            Mes prochains prélèvements\r\n          </div>\r\n         <div class=\"meta\"></div>\r\n       </div>\r\n       <div class=\"content\">\r\n\r\n          <div class=\"description\">\r\n            <div class=\"ui middle aligned selection list\">\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>20€</span>\r\n                </div>\r\n                <i class=\" large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat BNP Paribas</a>\r\n                  <div class=\"description\">Prélèvement le 11/05/2017</div>\r\n                </div>\r\n              </div>\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>30€</span>\r\n                </div>\r\n                <i class=\"large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat AXA Assurance</a>\r\n                  <div class=\"description\">Prélèvement le 13/05/2017</div>\r\n                </div>\r\n              </div>\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>15€</span>\r\n                </div>\r\n                <i class=\"large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat MMA</a>\r\n                  <div class=\"description\">Prélèvement le 15/05/2017</div>\r\n                </div>\r\n              </div>\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>18€</span>\r\n                </div>\r\n                <i class=\"large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat Maif</a>\r\n                  <div class=\"description\">Prélèvement le 17/05/2017</div>\r\n                </div>\r\n              </div>\r\n\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Evolution de mon patrimoine\r\n          </div>\r\n\r\n            <canvas baseChart width=\"200\" height=\"200\"\r\n\r\n                [datasets]=\"lineChartData\"\r\n                [labels]=\"lineChartLabels\"\r\n                [options]=\"lineChartOptions\"\r\n                chartType=\"line\">\r\n\r\n            </canvas>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Analyse de mon patrimoine\r\n          </div>\r\n\r\n          <canvas baseChart width=\"200\" height=\"200\"\r\n          [data]=\"pieChartData\"\r\n          [labels]=\"pieChartLabels\"\r\n          chartType=\"pie\"></canvas>\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n         <div class=\"left floated header\">\r\n\r\n          Documents / contrats\r\n\r\n          </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n         <div class=\"left floated header\">\r\n\r\n              Mes ajouts récents\r\n\r\n          </div>\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n"
+module.exports = "<div class=\"ui tabular menu\">\r\n  <div class=\"right menu\">\r\n    <div class=\"item\">\r\n      <button class=\"ui small basic button teal\">\r\n        <i class=\"teal dashboard icon\"></i>\r\n        Mon tableau de bord\r\n      </button>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n  <div class=\"ui three doubling stackable cards container\">\r\n\r\n    <div class=\"card\" >\r\n\r\n        <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Mon patrimoine\r\n          </div>\r\n        </div>\r\n      <div class=\"content\">\r\n\r\n            <div class=\"description\">\r\n\r\n              <div class=\"ui statistics\">\r\n\r\n                <div class=\"ui blue statistic\">\r\n                   <div class=\"value\">\r\n                        {{patrimoine}}\r\n                       <i class=\" blue euro icon\"></i>\r\n                      </div>\r\n\r\n                      <div class=\" label\">\r\n                        Patrimoine total\r\n                      </div>\r\n                 </div>\r\n\r\n                 <div class=\" ui orange statistic\">\r\n                   <div class=\"value\">\r\n                      1000\r\n                       <i class=\"orange euro icon\"></i>\r\n                      </div>\r\n\r\n                      <div class=\" label\">\r\n                        Patrimoine assuré\r\n                      </div>\r\n                 </div>\r\n              </div>\r\n           </div>\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"card\">\r\n\r\n      <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Mes contrats en cours\r\n          </div>\r\n      </div>\r\n      <div class=\"content\">\r\n        <div class=\"description\">\r\n          <div class=\"ui middle aligned selection list\">\r\n            <div class=\"item\">\r\n              <i class=\" circle green aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat BNP Paribas</div>\r\n                <div class=\"description\">Actif</div>\r\n              </div>\r\n            </div>\r\n            <div class=\"item\">\r\n              <i class=\" circle green middle aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat AXA Assurance</div>\r\n                <div class=\"description\">Actif</div>\r\n              </div>\r\n            </div>\r\n            <div class=\"item\">\r\n              <i class=\" circle yellow middle aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat MMA</div>\r\n                <div class=\"description\">En attente de validation</div>\r\n              </div>\r\n            </div>\r\n            <div class=\"item\">\r\n              <i class=\" circle red middle aligned icon\"></i>\r\n              <div class=\"content\">\r\n                <div class=\"header\">Contrat Maif</div>\r\n                <div class=\"description\">Résilié</div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n\r\n        </div>\r\n\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n\r\n          <div class=\"left floated header\">\r\n            Mes prochains prélèvements\r\n          </div>\r\n         <div class=\"meta\"></div>\r\n       </div>\r\n       <div class=\"content\">\r\n\r\n          <div class=\"description\">\r\n            <div class=\"ui middle aligned selection list\">\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>20€</span>\r\n                </div>\r\n                <i class=\" large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat BNP Paribas</a>\r\n                  <div class=\"description\">Prélèvement le 11/05/2017</div>\r\n                </div>\r\n              </div>\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>30€</span>\r\n                </div>\r\n                <i class=\"large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat AXA Assurance</a>\r\n                  <div class=\"description\">Prélèvement le 13/05/2017</div>\r\n                </div>\r\n              </div>\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>15€</span>\r\n                </div>\r\n                <i class=\"large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat MMA</a>\r\n                  <div class=\"description\">Prélèvement le 15/05/2017</div>\r\n                </div>\r\n              </div>\r\n              <div class=\"item\">\r\n                <div class=\"right floated content\">\r\n                  <h2 class=\"ui sub header\">\r\n                    Montant\r\n                  </h2>\r\n                  <span>18€</span>\r\n                </div>\r\n                <i class=\"large money middle aligned icon\"></i>\r\n                <div class=\"content\">\r\n                  <a class=\"header\">Contrat Maif</a>\r\n                  <div class=\"description\">Prélèvement le 17/05/2017</div>\r\n                </div>\r\n              </div>\r\n\r\n            </div>\r\n          </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Evolution de mon patrimoine\r\n          </div>\r\n\r\n            <canvas baseChart width=\"200\" height=\"200\"\r\n\r\n                [datasets]=\"lineChartData\"\r\n                [labels]=\"lineChartLabels\"\r\n                [options]=\"lineChartOptions\"\r\n                chartType=\"line\">\r\n\r\n            </canvas>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n          <div class=\"left floated header\">\r\n            Analyse de mon patrimoine\r\n          </div>\r\n\r\n          <canvas baseChart width=\"200\" height=\"200\"\r\n          [data]=\"pieChartData\"\r\n          [labels]=\"pieChartLabels\"\r\n          chartType=\"pie\"></canvas>\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n         <div class=\"left floated header\">\r\n\r\n          Documents / contrats\r\n\r\n          </div>\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n     <div class=\"card\">\r\n\r\n       <div class=\"content\">\r\n\r\n         <div class=\"left floated header\">\r\n\r\n              Mes ajouts récents\r\n\r\n          </div>\r\n\r\n\r\n        </div>\r\n\r\n    </div>\r\n\r\n  </div>\r\n"
 
 /***/ }),
 

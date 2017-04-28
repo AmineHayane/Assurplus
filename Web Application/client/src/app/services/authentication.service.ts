@@ -32,6 +32,34 @@ export class AuthenticationService {
       .map(res => this.setToken(res));
   }
 
+  retrieveUser(userEmail : any) {
+    var headers = new Headers;
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/users', JSON.stringify(userEmail), {headers:headers})
+      .map((res) => this.clearPassword(res));
+  }
+
+  clearPassword(res) {
+    let body = JSON.parse(res['_body']);
+    delete body.user_password;
+    return body;
+  }
+
+
+  changeEmail(newUserEmail) {
+    var headers = new Headers;
+    headers.append('Content-Type', 'application/json');
+    return this.http.put('/api/users/changeEmail', JSON.stringify(newUserEmail),{headers:headers})
+      .map((res) => this.resetToken(res));
+  }
+
+  updateUser(user : any) {
+    var headers = new Headers;
+    headers.append('Content-Type', 'application/json');
+    return this.http.put('/api/users', JSON.stringify(user), {headers:headers})
+      .map(res => res.json());
+  }
+
   logout() {
     this.token = null;
     localStorage.removeItem('currentUser');
@@ -54,6 +82,19 @@ export class AuthenticationService {
       localStorage.setItem('currentUser', JSON.stringify({
         user_mail: body['user']['user_mail'],
         token: this.token
+      }));
+    }
+    return body;
+  }
+
+  resetToken(res) {
+    let body = JSON.parse(res['_body']);
+    if (body['success'] == true) {
+      this.logout();
+      this.token = body['token'];
+      localStorage.setItem('currentUser', JSON.stringify({
+        user_mail : body['user']['user_mail'],
+        token : this.token
       }));
     }
     return body;

@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 
+app.get('/root', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
+
 app.get('/coffrefort', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
@@ -23,6 +27,10 @@ app.get('/signup', (req, res) => {
 });
 
 app.get('/ajoutJustifs', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
+});
+
+app.get('/moncompte', (req, res) => {
     res.sendFile(path.join(__dirname, '../../client/dist/index.html'));
 });
 

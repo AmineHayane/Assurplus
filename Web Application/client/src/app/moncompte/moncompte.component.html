@@ -6,24 +6,24 @@
 
 </div>
 
-<div class="ui one column centered stackable grid container ">
+<div class="ui one column centered stackable grid container" >
 
-    <div class="four wide column"> 
+    <div class="four wide column">
 
  <div class="blurring dimmable image">
 
        <div class="ui inverted dimmer">
-           
+
            <div class="content">
           <div class="center">
 
                <label for ="userProfilPicture">
-            
+
               <div class="ui circular teal icon button" >
 
 
-                <i class="material-icons">add_a_photo</i> 
-            
+                <i class="material-icons">add_a_photo</i>
+
               </div>
 
                </label>
@@ -32,7 +32,7 @@
            </div>
        </div>
 
-    <img class="ui small centered circular image" src="assets\images\user.jpg">
+    <img class="ui small centered circular image" src="./assets/images/user.png">
 
     <input type="file" id="userProfilPicture" accept="image/*" style="display:none" >
 
@@ -41,13 +41,13 @@
 </div>
 
 
-  
-<div class="ui one column centered stackable grid container ">
 
-<div class="ten wide column"> 
-            
+<div *ngIf="User !== undefined" class="ui one column centered stackable grid container ">
+
+<div class="ten wide column">
+
 <div class="ui clearing segment">
-     
+
 <form class="ui form" #form="ngForm">
 
 <h2 class="ui teal dividing header" > Mes coordonnées </h2>
@@ -57,14 +57,14 @@
 
     <div class="two fields">
       <div class="field">
-          <label> NOM </label>
-            <input type="text" name="UserLastName" placeholder={{fakeUser.UserLastName}} [(ngModel)]="UserLastName" (keypress)="showButton1()">
-      
+          <label>Nom</label>
+            <input type="text" name="UserLastName" placeholder={{User.UserLastName}} [(ngModel)]="UserLastName" (keypress)="showButton1()">
+
       </div>
       <div class="field">
-          <label> Prénom </label>
-          <input type="text" name= "UserFirstName" placeholder={{fakeUser.UserFirstName}} [(ngModel)]="UserFirstName" (keypress)=showButton1() >
-      
+          <label>Prénom</label>
+          <input type="text" name= "UserFirstName" placeholder={{User.UserFirstName}} [(ngModel)]="UserFirstName" (keypress)=showButton1() >
+
       </div>
 
     </div>
@@ -96,14 +96,16 @@
     <div class="field">
         <label> Téléphone </label>
 
-        <input type="tel" name="UserPhoneNumber" placeholder={{fakeUser.UserPhoneNumber}} [(ngModel)]="UserPhoneNumber" (keypress)=showButton1()>
+        <input type="tel" name="UserPhoneNumber" placeholder={{fakeUser.UserPhoneNumber}} [(ngModel)]="UserPhoneNumber"
+               (keypress)=showButton1()>
     </div>
 
     <div class="field">
 
         <label> Date de naissance </label>
 
-        <input type="text" name="UserBirthDate" placeholder={{fakeUser.UserBirthDate}} [(ngModel)]="UserBirthDate" (keypress)=showButton1()>
+        <input type="text" name="UserBirthDate" placeholder={{User.UserBirthDate}} [(ngModel)]="UserBirthDate"
+               (keypress)=showButton1()>
     </div>
 
   </div>
@@ -140,7 +142,7 @@
 
     <div class="two fields">
       <div class="field">
-        <input type="text" required name="UserEmail" placeholder={{fakeUser.UserEmail}} [(ngModel)]="email" disabled>
+        <input type="email" required name="UserEmail" placeholder={{User.user_mail}} [(ngModel)]="UserEmail" disabled>
       </div>
       <div class="field" *ngIf="!isModified2">
 
@@ -151,14 +153,14 @@
 
   <div class="two fields" *ngIf="isModified2">
   <div class="field">
-      <input type="text" required name="newUserEmail" placeholder= "Votre nouvel email" [(ngModel)]="newUserEmail">
+      <input type="email" required name="newUserEmail" placeholder= "Votre nouvel email" [(ngModel)]="newUserEmail">
   </div>
 
   </div>
 
    <div class="two fields"  *ngIf="isModified2">
   <div class="field">
-      <input type="text" required name="newUserEmailConfirm" placeholder= "Confirmer le nouvel email" [(ngModel)]="newUserEmailConfirm">
+      <input type="email" required name="newUserEmailConfirm" placeholder= "Confirmer le nouvel email" [(ngModel)]="newUserEmailConfirm">
   </div>
 
   </div>
@@ -166,14 +168,14 @@
   <div class="two fields"  *ngIf="isModified2">
 
   <div class="field">
-      <input type="text" required name="passwordCheck" placeholder="Mot de passe" [(ngModel)]="passwordCheck">
+      <input type="password" required name="passwordCheck" placeholder="Mot de passe" [(ngModel)]="passwordCheck">
   </div>
 
   </div>
 
 
-  <div class="two fields"  *ngIf="wrongPassword1" [@button]> 
-      
+  <div class="two fields"  *ngIf="wrongPassword1" [@button]>
+
    <div class="field">
 
     <div class="ui small negative message" >
@@ -185,10 +187,10 @@
     </div>
 
     </div>
-    
+
       </div>
 
-    </div> 
+    </div>
 
 
   <div class="field"  *ngIf="isModified2">
@@ -196,7 +198,7 @@
            {{responsePassword}}
         <div class="ui left floated teal button" (click)="onSubmitEmail(form2.value)" > Valider </div>
         <div class="ui left floated teal button" (click)="showEmailModification()" > Annuler  </div>
-    
+
 
   </div>
 
@@ -213,19 +215,19 @@
 
   <h2 class="ui teal dividing header"> Mot de passe </h2>
 
-  <div class="field"  *ngIf = "changePasswordsuccess" [@button]> 
-      
+  <div class="field"  *ngIf = "changePasswordsuccess" [@button]>
+
     <div class="ui small positive message"  >
 
      <div class="header">
-      
+
          {{responsePassword}}
-     
-    </div>
 
     </div>
 
-    
+    </div>
+
+
     </div>
 
   <div class="field">
@@ -236,30 +238,30 @@
 
       <input type="password" name=UserPassword placeholder=**********  *ngIf="!isModified3" disabled>
 
-            </div> 
-            
+            </div>
+
 
       <div class="field">
- 
+
          <div class="ui right floated teal button" (click)="showPasswordModification()" *ngIf="!isModified3" > Modifier </div>
 
       </div>
 
     </div>
 
-    <div class="two fields" *ngIf="isModified3"> 
+    <div class="two fields" *ngIf="isModified3">
 
 
       <div class="field">
 
-             <input type="password" name=newUserPasswordConfirm placeholder="Mot de passe actuel"  [(ngModel)]="newUserPasswordConfirm" >          
-        
+             <input type="password" name=newUserPasswordConfirm placeholder="Mot de passe actuel"  [(ngModel)]="newUserPasswordConfirm" >
+
       </div>
 
      </div>
-      
-       <div class="two fields"  *ngIf="wrongPassword2" [@button]> 
-      
+
+       <div class="two fields"  *ngIf="wrongPassword2" [@button]>
+
    <div class="field">
 
     <div class="ui small negative message" >
@@ -274,7 +276,7 @@
 
       </div>
 
-    </div> 
+    </div>
 
 
 
@@ -282,8 +284,8 @@
 
       <div class="field">
 
-             <input type="password" name=newUserPassword placeholder="Votre nouveau mot de passe"   [(ngModel)]="newUserPassword" >          
-        
+             <input type="password" name=newUserPassword placeholder="Votre nouveau mot de passe"   [(ngModel)]="newUserPassword" >
+
       </div>
 
 
@@ -295,15 +297,15 @@
 
       <div class="field">
 
-             <input type="password" name=UserPasswordConfirm placeholder="Confirmer le nouveau mot de passe"  [(ngModel)]="UserPasswordConfirm" >          
-        
+             <input type="password" name=UserPasswordConfirm placeholder="Confirmer le nouveau mot de passe"  [(ngModel)]="UserPasswordConfirm" >
+
       </div>
 
      </div>
 
 
-  <div class="two fields"  *ngIf="!samePasswords" [@button]> 
-      
+  <div class="two fields"  *ngIf="!samePasswords" [@button]>
+
    <div class="field">
 
     <div class="ui small negative message" >
@@ -318,9 +320,9 @@
 
       </div>
 
-    </div> 
+    </div>
 
-    
+
 
 
      <div class="field"  *ngIf="isModified3">
@@ -332,7 +334,7 @@
 
 
     </div>
-  
+
 </form>
 
 

@@ -10,6 +10,33 @@ module.exports = (sequelize, DataTypes) => {
       type : DataTypes.STRING,
         allowNull : false,
     },
+      UserGender: {
+      type : DataTypes.STRING,
+      },
+      UserFirstName: {
+      type : DataTypes.STRING,
+      },
+      UserLastName: {
+      type : DataTypes.STRING,
+      },
+      UserLivingSituation: {
+      type : DataTypes.STRING,
+      },
+      UserJob: {
+      type : DataTypes.STRING,
+      },
+      UserPaymentType: {
+      type : DataTypes.STRING,
+      },
+      UserIncome: {
+      type : DataTypes.STRING,
+      },
+      UserIdentityDocument: {
+      type : DataTypes.STRING,
+      },
+      UserBirthDate: {
+      type : DataTypes.DATEONLY,
+      },
   }, {
     classMethods: {
       associate: (models) => {

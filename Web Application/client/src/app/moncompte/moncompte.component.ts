@@ -1,5 +1,8 @@
 import { Component, OnInit, ElementRef, state, style, transition, animate, keyframes, trigger } from '@angular/core';
 import{MonserviceService} from '../monservice.service';
+import {Subscription} from "rxjs";
+import {AuthenticationService} from "../services/authentication.service";
+import {Router} from "@angular/router";
 
 declare var jQuery : any;
 
@@ -28,7 +31,12 @@ declare var jQuery : any;
 })
 export class MoncompteComponent implements OnInit {
 
-  constructor(private elRef : ElementRef, private servicePassword : MonserviceService) { }
+  constructor(private elRef : ElementRef, private servicePassword : MonserviceService,
+  private authService : AuthenticationService, private router:Router) {
+    this.subscription = authService.user$.subscribe((user) => {
+      this.userToken = user;
+    });
+  }
 
   isModified1 : Boolean = false;
   isModified2 : Boolean = false;
@@ -40,6 +48,10 @@ export class MoncompteComponent implements OnInit {
   samePasswords: Boolean = true;
   changePasswordsuccess : Boolean = false;
 
+  userToken : any;
+  User : any;
+  subscription:Subscription;
+  keysUserObject = [];
 
   fakeUser =
 
@@ -68,6 +80,21 @@ export class MoncompteComponent implements OnInit {
 
 
   ngOnInit() {
+    this.userToken = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(JSON.parse(localStorage.getItem('currentUser')));
+    var userEmail = {
+      user_mail : this.userToken.user_mail,
+    }
+    this.authService.retrieveUser(userEmail).subscribe((user) => {
+      this.User = user;
+      this.User.UserBirthDate = this.User.UserBirthDate.split('T')[0];
+      console.log(this.User);
+      for (var prop in this.User) {
+        this.keysUserObject.push(prop);
+      }
+      console.log(this.keysUserObject);
+
+    });
 
   }
 
@@ -85,8 +112,6 @@ showEmailModification(){
 
   this.isModified2 = (this.isModified2 === false ? true : false);
 
-
-
 }
 
 showPasswordModification(){
@@ -99,28 +124,52 @@ showPasswordModification(){
 
 }
 
-
 onSubmitInfos(data){
 
-console.log(data)
+console.log(data);
 
-var newUserInfos = data
-
+for (var prop in data) {
+      if (prop === this.keysUserObject[this.keysUserObject.indexOf(prop)]) {
+        if (data[prop] !== undefined && data[prop] !== "") {
+          this.User[prop] = data[prop];
+        }
+      } else {
+        console.log('out');
+      }
+    }
+  console.log(this.User);
+this.authService.updateUser(this.User).subscribe((user) =>{
+  console.log(user);
+});
 }
 
 onSubmitEmail(data){
 
- console.log(data)
+ var newUserEmail = data;
 
- var newUserEmail = data
+ newUserEmail.UserEmail = this.User.user_mail;
+ console.log(newUserEmail);
 
+if (newUserEmail.newUserEmail == newUserEmail.newUserEmailConfirm) {
+  this.authService.changeEmail(newUserEmail).subscribe((res)=> {
+   console.log(res);
+   if (res['success'] == true) {
+     this.User.user_mail = res['user']['user_mail'];
+     this.subscription.unsubscribe();
+     window.location.assign('http://localhost:8000');
+   }
+ });
+} else {
+  console.log('Les deux Emails ne correspondent pas');
+}
 }
 
 onSubmitPassword(data){
 
- console.log(data)
+ console.log(data);
 
 }
+
 
 /*changePassword(dataPassword){
 

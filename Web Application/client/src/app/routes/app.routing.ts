@@ -10,6 +10,7 @@ import { ProduitComponent } from '../produit/produit.component';
 import { InformationsProduitComponent } from '../informations-produit/informations-produit.component';
 import { JustificatifsComponent } from '../justificatifs/justificatifs.component';
 import { ValidationComponent } from '../validation/validation.component';
+import {AppComponent} from "../app.component";
 
 
 // Define the routes
@@ -18,6 +19,11 @@ export const ROUTES = [
     path: '',
     component : TestngsemComponent,
     useAsDefault : true
+  },
+  {
+    path: 'root',
+    component: AppComponent,
+    redirectTo : ''
   },
   {
     path: 'login',
