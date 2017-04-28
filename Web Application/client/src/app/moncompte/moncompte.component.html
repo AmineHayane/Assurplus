@@ -254,7 +254,7 @@
 
       <div class="field">
 
-             <input type="password" name=newUserPasswordConfirm placeholder="Mot de passe actuel"  [(ngModel)]="newUserPasswordConfirm" >
+             <input type="password" name=oldUserPassword placeholder="Mot de passe actuel"  [(ngModel)]="oldUserPassword" >
 
       </div>
 
@@ -297,7 +297,7 @@
 
       <div class="field">
 
-             <input type="password" name=UserPasswordConfirm placeholder="Confirmer le nouveau mot de passe"  [(ngModel)]="UserPasswordConfirm" >
+             <input type="password" name=newUserPasswordConfirm placeholder="Confirmer le nouveau mot de passe"  [(ngModel)]="newUserPasswordConfirm" >
 
       </div>
 
@@ -327,7 +327,7 @@
 
      <div class="field"  *ngIf="isModified3">
 
-        <div class="ui left floated teal button" (click)="changePassword(form3.value)" > Valider </div>
+        <div class="ui left floated teal button" (click)="onSubmitPassword(form3.value)" > Valider </div>
         <div class="ui left floated teal button" (click)="showPasswordModification()" > Annuler  </div>
 
   </div>

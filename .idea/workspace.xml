@@ -2,26 +2,69 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="147adb83-5b38-4371-8dc7-b5635008b9c6" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/Index2.737bde6837673d402322.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/Index.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/Index2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/Space Gray iPhone 6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/bosch.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/brand_logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/brand_logo_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/brand_logo_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iPhone4inHandmockup.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iPhone4inHandmockup2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iPhoneBlack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iPhonecapture1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iPhonecapture2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iPhonecapture3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/image9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/ipadmini.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/ipadmini2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iphone_desk.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/iphone_desk_right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/respo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/respo3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/assets/images/semantic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/flags.9c74e172f87984c48ddf.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/icons.674f50d287a8c48dc19b.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/icons.912ec66d7572ff821749.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/icons.af7ae505a9eed503f8b8.woff2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/icons.b06871f281fee6b241d6.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/icons.fee66e712a8a08eef580.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/inline.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/inline.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/polyfills.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/polyfills.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/scripts.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/scripts.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/styles.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/styles.bundle.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/Biens/image_35.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/Biens/image_42.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/Biens/image_5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/Justificatifs/CV EL KOUHENE Boubker.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/Justificatifs/Formulaire_declaration_non_reception_Beneficiaires_reader.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/uploads/Justificatifs/attestation.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js.map" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/.gitignore" afterPath="$PROJECT_DIR$/Web Application/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/.gitignore" afterPath="$PROJECT_DIR$/Web Application/client/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/inline.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/inline.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js" afterPath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/main.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/polyfills.bundle.js" afterPath="$PROJECT_DIR$/Web Application/client/dist/polyfills.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/polyfills.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/polyfills.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js" afterPath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js.map" afterPath="$PROJECT_DIR$/Web Application/client/dist/vendor.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/app.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/app.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/routes/app.routing.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/routes/app.routing.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts" afterPath="$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html" afterPath="$PROJECT_DIR$/Web Application/client/src/app/tableau-de-bord/tableau-de-bord.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/controllers/users.js" afterPath="$PROJECT_DIR$/Web Application/server/controllers/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/models/user.js" afterPath="$PROJECT_DIR$/Web Application/server/models/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" afterPath="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web Application/server/routes/index.js" afterPath="$PROJECT_DIR$/Web Application/server/routes/index.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -61,8 +104,18 @@
       <file leaf-file-name="moncompte.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="158" column="50" lean-forward="false" selection-start-line="158" selection-start-column="50" selection-end-line="158" selection-end-column="50" />
+            <state relative-caret-position="17">
+              <caret line="114" column="2" lean-forward="false" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moncompte.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="286" column="128" lean-forward="false" selection-start-line="286" selection-start-column="113" selection-end-line="286" selection-end-column="128" />
               <folding />
             </state>
           </provider>
@@ -83,8 +136,8 @@
       <file leaf-file-name="authentication.service.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
+            <state relative-caret-position="493">
+              <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -92,21 +145,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="moncompte.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="144" column="26" lean-forward="false" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/server/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+            <state relative-caret-position="240">
+              <caret line="39" column="73" lean-forward="false" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -115,8 +158,8 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Web Application/server/controllers/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="164" column="49" lean-forward="false" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
+            <state relative-caret-position="685">
+              <caret line="202" column="19" lean-forward="false" selection-start-line="202" selection-start-column="19" selection-end-line="202" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -157,6 +200,7 @@
       <find>status</find>
       <find>onNoti</find>
       <find>pass</find>
+      <find>onSubmit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,13 +252,13 @@
         <option value="$PROJECT_DIR$/Web Application/server/migrations/20170427151223-unnamed-migration.js" />
         <option value="$PROJECT_DIR$/Web Application/server/models/user.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/app.component.html" />
-        <option value="$PROJECT_DIR$/Web Application/server/routes/index.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/Web Application/server/controllers/users.js" />
-        <option value="$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts" />
         <option value="$PROJECT_DIR$/Web Application/server/routes/clientRoutes.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/routes/app.routing.ts" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html" />
+        <option value="$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts" />
+        <option value="$PROJECT_DIR$/Web Application/server/routes/index.js" />
+        <option value="$PROJECT_DIR$/Web Application/server/controllers/users.js" />
         <option value="$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts" />
       </list>
     </option>
@@ -907,7 +951,7 @@
     <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29515418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24229075" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -938,7 +982,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40675476" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29515418" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1277,22 +1321,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/server/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="34" column="22" lean-forward="false" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/server/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="164" column="49" lean-forward="false" selection-start-line="164" selection-start-column="49" selection-end-line="164" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -1319,24 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="144" column="26" lean-forward="false" selection-start-line="144" selection-start-column="26" selection-end-line="144" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="10" lean-forward="false" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -1345,10 +1355,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/services/authentication.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="59" column="32" lean-forward="false" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="286" column="128" lean-forward="false" selection-start-line="286" selection-start-column="113" selection-end-line="286" selection-end-column="128" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/server/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="39" column="73" lean-forward="false" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web Application/server/controllers/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="202" column="19" lean-forward="false" selection-start-line="202" selection-start-column="19" selection-end-line="202" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web Application/client/src/app/moncompte/moncompte.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="158" column="50" lean-forward="false" selection-start-line="158" selection-start-column="50" selection-end-line="158" selection-end-column="50" />
+        <state relative-caret-position="17">
+          <caret line="114" column="2" lean-forward="false" selection-start-line="114" selection-start-column="2" selection-end-line="114" selection-end-column="2" />
           <folding />
         </state>
       </provider>

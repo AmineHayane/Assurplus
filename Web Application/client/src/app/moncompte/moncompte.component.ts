@@ -43,7 +43,6 @@ export class MoncompteComponent implements OnInit {
   isModified3 : Boolean = false;
   wrongPassword2:Boolean = false;
   responsePassword:String= "";
-  newUserPassword:String;
   UserPasswordConfirm:String;
   samePasswords: Boolean = true;
   changePasswordsuccess : Boolean = false;
@@ -113,7 +112,7 @@ showEmailModification(){
   this.isModified2 = (this.isModified2 === false ? true : false);
 
 }
-
+  
 showPasswordModification(){
 
    this.isModified3= (this.isModified3 === false ? true : false);
@@ -166,10 +165,18 @@ if (newUserEmail.newUserEmail == newUserEmail.newUserEmailConfirm) {
 
 onSubmitPassword(data){
 
- console.log(data);
+  var newUserPassword = data;
+  newUserPassword.UserEmail = this.User.user_mail;
+  console.log(newUserPassword);
 
+  if (newUserPassword.newUserPassword == newUserPassword.newUserPasswordConfirm) {
+    this.authService.changePassword(newUserPassword).subscribe((res) => {
+      console.log(res);
+    });
+  } else {
+    console.log('Les deux mots de passe ne correspondent pas');
+  }
 }
-
 
 /*changePassword(dataPassword){
 

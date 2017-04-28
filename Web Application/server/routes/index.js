@@ -37,6 +37,7 @@ module.exports = (app) => {
     app.post('/api/users', usersController.retrieve);
     app.put('/api/users', usersController.update);
     app.put('/api/users/changeEmail', usersController.changemail);
+    app.put('/api/users/changePassword', usersController.changepassword);
 
     // Uploads
 

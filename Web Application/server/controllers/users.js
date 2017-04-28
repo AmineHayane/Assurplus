@@ -169,5 +169,38 @@ module.exports = {
                         .catch((error) => res.status(400).send(error));
                   }
             }).catch(error => res.status(400).send(error));
+    },
+    changepassword(req ,res) {
+        return User
+            .findOne({where : {user_mail : req.body.UserEmail}})
+            .then((user) => {
+                if (!user) {
+                    return res.send({
+                        success : false,
+                        message: 'User does not exist',
+                    });
+                  }
+
+                if (!bcrypt.compareSync(req.body.oldUserPassword, user.user_password)) {
+                      return res.send({
+                          success : false,
+                          message : 'Incorrect password',
+                      });
+                  } else {
+                    return user
+                        .update({
+                            user_password : bcrypt.hashSync(req.body.newUserPassword, bcrypt.genSaltSync(8), null)
+                        })
+                        .then(() => {
+                        let content = {
+                                  user: user,
+                                  success: true,
+                                  message: 'Password successfully changed'
+                        };
+                        res.status(200).send(content);
+                        })
+                        .catch((error) => res.status(400).send(error));
+                  }
+            }).catch(error => res.status(400).send(error));
     }
 };

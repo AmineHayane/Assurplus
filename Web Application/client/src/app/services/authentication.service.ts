@@ -53,6 +53,13 @@ export class AuthenticationService {
       .map((res) => this.resetToken(res));
   }
 
+  changePassword(newUserPassword) {
+    var headers = new Headers;
+    headers.append('Content-Type', 'application/json');
+    return this.http.put('/api/users/changePassword', JSON.stringify(newUserPassword), {headers:headers})
+      .map((res) => res.json());
+  }
+
   updateUser(user : any) {
     var headers = new Headers;
     headers.append('Content-Type', 'application/json');
