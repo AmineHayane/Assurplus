@@ -16,33 +16,25 @@ declare var jQuery : any;
 export class ProduitComponent implements OnInit {
 
     myObjet = new objet();
-
+    userEmail : any;
     itemPrediction : string;
-
     choixPhoto: Boolean =true;
-
     fileUploadWindow : Boolean = false;
-
     recognitionButton : Boolean = false;
-
     uploads:any = [];
-
     predicting : Boolean = false;
-
     predicted : Boolean = false;
-
     predictionAnswered : Boolean = false;
-
     predictionAccepted : Boolean = false;
-
     public uploader:FileUploader = new FileUploader({url:'http://localhost:8000/upload'});
-
 
   constructor(private uploadsService:UploadsService, private router:Router) { }
 
   ngOnInit() {
 
-      /*this.getSubscribeUploads();*/
+      this.userEmail = {
+        user_mail : JSON.parse(localStorage.getItem('currentUser')).user_mail,
+      }
 
       this.uploader.onCompleteAll = function () {
         console.log('All uploads completed');
@@ -81,22 +73,26 @@ export class ProduitComponent implements OnInit {
 
   validateObject() {
     this.addUpload();
-    this.router.navigateByUrl('/coffrefort');
+    window.location.assign('http://localhost:8000/coffrefort');
   }
 
+  
   addUpload() {
     var newUpload = {
       imageurl : this.myObjet.imageurl,
       prixachat: this.myObjet.prixachat,
       description: this.myObjet.description,
       dateachat: this.myObjet.dateachat,
+      user_mail : this.userEmail.user_mail,
     }
 
+    console.log(newUpload);
     this.uploadsService.addUpload(newUpload).subscribe(upload => {
       this.uploads.push(upload);
       console.log(this.uploads);
     });
   }
+
 
   deleteUpload(uploadId) {
       var uploads = this.uploads;

@@ -11,6 +11,7 @@ import { InformationsProduitComponent } from '../informations-produit/informatio
 import { JustificatifsComponent } from '../justificatifs/justificatifs.component';
 import { ValidationComponent } from '../validation/validation.component';
 import {AppComponent} from "../app.component";
+import {AuthGuardService} from "../services/auth-guard.service";
 
 
 // Define the routes
@@ -38,12 +39,13 @@ export const ROUTES = [
     path: 'fileupload',
     component: FileuploadComponent
   },
-  { path: 'coffrefort',   component: CoffrefortComponent },
-  { path: 'moncompte',   component: MoncompteComponent},
+  { path: 'coffrefort',   component: CoffrefortComponent, canActivate : [AuthGuardService] },
+  { path: 'moncompte',   component: MoncompteComponent, canActivate : [AuthGuardService]},
   { path: 'inscription',   component: FormulaireInscriptionComponent},
-  { path: 'board',  component: TableauDeBordComponent },
-  { path: 'ajoutProduit', component: ProduitComponent },
+  { path: 'board',  component: TableauDeBordComponent, canActivate : [AuthGuardService] },
+  { path: 'ajoutProduit', component: ProduitComponent, canActivate : [AuthGuardService] },
   { path: 'informationsProduit', component: InformationsProduitComponent },
-  { path: 'ajoutJustifs', component: JustificatifsComponent },
+  { path: 'ajoutJustifs', component: JustificatifsComponent, canActivate : [AuthGuardService] },
   { path: 'validationProduit', component: ValidationComponent}
 ];
+

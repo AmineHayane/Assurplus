@@ -34,6 +34,7 @@ import {MonserviceService} from "./monservice.service";
 import { JustificatifsComponent } from './justificatifs/justificatifs.component';
 import { PdfViewerComponent } from 'ng2-pdf-viewer';
 import {ChartsModule} from "ng2-charts";
+import {AuthGuardService} from "./services/auth-guard.service";
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import {ChartsModule} from "ng2-charts";
     SuiProgressModule,
     ChartsModule
   ],
-  providers: [AuthenticationService, SignupService, UploadsService, MonserviceService],
+  providers: [AuthenticationService, SignupService, UploadsService, MonserviceService, AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

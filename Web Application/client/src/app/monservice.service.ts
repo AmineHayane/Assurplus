@@ -18,6 +18,14 @@ export class MonserviceService {
       .map(res => res.json());
   }
 
+
+  getDataUser(userEmail) {
+    var headers = new Headers;
+    headers.append('Content-Type', 'application/json');
+    return this.http.post('/api/objetsUser', JSON.stringify(userEmail), {headers:headers})
+      .map(res => res.json());
+  }
+
   AjoutObjet(newObject) {
 
     var headers = new Headers();

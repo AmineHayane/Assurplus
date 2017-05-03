@@ -3,6 +3,7 @@ import {Http, Headers } from "@angular/http";
 import 'rxjs/add/operator/map';
 import { User } from '../models/user';
 import {Subject, Observable} from "rxjs";
+import {tokenNotExpired} from 'angular2-jwt';
 
 @Injectable()
 export class AuthenticationService {
@@ -36,7 +37,7 @@ export class AuthenticationService {
     var headers = new Headers;
     headers.append('Content-Type', 'application/json');
     return this.http.post('/api/users', JSON.stringify(userEmail), {headers:headers})
-      .map((res) => this.clearPassword(res));
+      .map((res) => res.json());
   }
 
   clearPassword(res) {
@@ -70,6 +71,7 @@ export class AuthenticationService {
   logout() {
     this.token = null;
     localStorage.removeItem('currentUser');
+    localStorage.removeItem('token');
   }
 
   verify() : Observable<Object> {
@@ -86,6 +88,7 @@ export class AuthenticationService {
     let body = JSON.parse(res['_body']);
     if( body['success'] == true ){
       this.token = body['token'];
+      localStorage.setItem('token', JSON.stringify({token:this.token}));
       localStorage.setItem('currentUser', JSON.stringify({
         user_mail: body['user']['user_mail'],
         token: this.token
@@ -105,6 +108,11 @@ export class AuthenticationService {
       }));
     }
     return body;
+  }
+
+  loggedIn() {
+    console.log(tokenNotExpired('token'));
+    return tokenNotExpired('token');
   }
 
   parseRes(res){

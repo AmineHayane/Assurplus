@@ -93,11 +93,11 @@
 
   <div class="two fields">
 
-    <div class="field">
+    <div class="field" *ngFor="let phoneNumber of User.phoneNumbers; let i = index;">
         <label> Téléphone </label>
-
-        <input type="tel" name="UserPhoneNumber" placeholder={{fakeUser.UserPhoneNumber}} [(ngModel)]="UserPhoneNumber"
-               (keypress)=showButton1()>
+        <input type="tel" name="UserPhoneNumber"
+               placeholder= "00{{User.phoneNumbers[i].PhoneNumberCountryPrefix}}{{User.phoneNumbers[i].PhoneNumber}}"
+               [(ngModel)]="UserPhoneNumber" (keypress)=showButton1()>
     </div>
 
     <div class="field">

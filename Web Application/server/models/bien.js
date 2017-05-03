@@ -8,9 +8,14 @@ module.exports = function(sequelize, DataTypes) {
     evaluation: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
+      associate: (models) => {
+        biens.belongsToMany(models.User, {
+          as : 'users',
+          through : 'UserBiens',
+            foreignKey : 'biensId',
+            otherKey : 'userId'
+        });
+      },
     }
   });
   

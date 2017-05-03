@@ -1,30 +1,54 @@
 const biens = require('../models').biens;
+const User = require('../models').User;
 
 module.exports = {
 
   list(req, res) {
    
   return biens
-    .findAll()
+    .findAll({
+        include : [{
+            model : User,
+            as : 'users'
+        }]
+    })
     .then(biens => res.status(200).send(biens))
     .catch(error => res.status(400).send(error));
   
-    }, 
+    },
+
+    listUser(req, res) {
+      return biens
+          .findAll({
+              include : [{
+                  model: User,
+                  as : 'users',
+                  where : {user_mail : req.body.user_mail}
+              }]
+          })
+          .then(biens => res.status(200).send(biens))
+          .catch(error => res.status(400).send(error));
+    },
 
   create(req,res) {
     
-    return biens
+    return Promise.all([biens
       .create({
-        prixachat: req.body.prixachat, 
+        prixachat: req.body.prixachat,
         imageurl:  req.body.imageurl,
-        description: req.body.description, 
-        dateachat: req.body.dateachat, 
+        description: req.body.description,
+        dateachat: req.body.dateachat,
         evaluation: "0"
-      })
-      .then(biens => res.status(201).json(biens))
+      }),
+        User.findOne({where: {user_mail: req.body.user_mail}})
+    ])
+      .then(([bien, user]) => {
+        bien.addUser(user);
+        console.log('bien', bien);
+        console.log('user', user);
+        res.status(201).json(bien)
+    })
       .catch(error => res.status(400).send(error));
-
-      
   },
 
 delete(req,res) {

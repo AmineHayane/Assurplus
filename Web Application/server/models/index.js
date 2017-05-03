@@ -43,7 +43,37 @@ Object.keys(db).forEach(modelName => {
   }
 });
 
+var Product = sequelize.define('products', {
+  firstName: {
+    type: Sequelize.STRING
+  }
+});
+
+
+
+var Category = sequelize.define('category', {
+  name: {
+    type: Sequelize.STRING
+  }
+});
+
+Product.belongsToMany(Category, {through: 'ProductCategory'});
+Category.belongsToMany(Product, {through: 'ProductCategory'});
+
+
+const sync = () => {
+    return sequelize.sync().then(() => {
+       return Promise.all([Product.create({firstName : 'bob'}),Product.create({firstName : 'mike'}),
+           Product.create({firstName : 'john'}),Category.create({name: 'cohen'})])
+           .then((results) => {
+               results[0].addCategory(results[3]);
+           });
+       });
+};
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
 module.exports = db;
+
+/*sync().then(() => console.log('synched')).catch((err) => console.log(err));*/

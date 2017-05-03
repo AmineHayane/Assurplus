@@ -95,7 +95,10 @@ export class CoffrefortComponent implements OnInit, AfterViewChecked {
   private uploadsService : UploadsService, private sanitizer : DomSanitizer) { }
 
   ngOnInit()  {
-    this.serviceBiens.getData().subscribe(biens => {
+    var userEmail = {
+      user_mail : JSON.parse(localStorage.getItem('currentUser')).user_mail,
+    }
+    this.serviceBiens.getDataUser(userEmail).subscribe(biens => {
      this.biens = biens;
      this.calculPatrimoine();
      console.log(this.biens);

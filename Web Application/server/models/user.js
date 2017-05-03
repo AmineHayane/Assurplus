@@ -37,11 +37,25 @@ module.exports = (sequelize, DataTypes) => {
       UserBirthDate: {
       type : DataTypes.DATEONLY,
       },
+      UserProfilePicture: {
+      type : DataTypes.STRING,
+      }
   }, {
     classMethods: {
       associate: (models) => {
-        // associations can be defined here
-      }
+        User.belongsToMany(models.PhoneNumber, {
+          as : 'phoneNumbers',
+          through : 'UserPhoneNumber',
+            foreignKey : 'userId',
+            otherKey : 'phoneNumberId'
+        });
+        User.belongsToMany(models.biens, {
+          as : 'biens',
+          through : 'UserBiens',
+            foreignKey : 'userId',
+            otherKey : 'biensId'
+        });
+      },
     }
   });
 

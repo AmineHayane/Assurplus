@@ -52,31 +52,19 @@ export class MoncompteComponent implements OnInit {
   subscription:Subscription;
   keysUserObject = [];
 
-  fakeUser =
-
-    {
+  fakeUser = {
         UserGender:"Homme",
-        UserFirstName: "Amine",
-        UserLastName: "HAYANE",
         UserLivingSituation:"Locataire",
         UserJob:"Etudiant",
         UserPaymentType:"Prélèvement SEPA",
-        UserBirthDate:"28/11/1993",
         UserIdentityDocument:"",
-        UserEmail:"amine.hayane@yahoo.fr",
-        UserPhoneNumber:"0667874562",
-
-        /* Adresse liée à l'habitation principale de l'utilisateur et qui devra être récupérée de la table Adress*/
-
         AdressNumber:"1 ",
         AdressLabel:"Rue ",
         AdressLabelName:"Diderot",
         AdressZIPcode:"77420",
         AdressCity:"CHAMPS-SUR-MARNE",
         AdressCountry:"FRANCE",
-
     }
-
 
   ngOnInit() {
     this.userToken = JSON.parse(localStorage.getItem('currentUser'));
@@ -94,7 +82,6 @@ export class MoncompteComponent implements OnInit {
       console.log(this.keysUserObject);
 
     });
-
   }
 
 getNewUserInfos(){
@@ -102,25 +89,7 @@ getNewUserInfos(){
 }
 
 showButton1(){
-
 this.isModified1=true;
-
-}
-
-showEmailModification(){
-
-  this.isModified2 = (this.isModified2 === false ? true : false);
-
-}
-  
-showPasswordModification(){
-
-   this.isModified3= (this.isModified3 === false ? true : false);
-   this.changePasswordsuccess = false;
-   this.wrongPassword2 = false;
-   this.samePasswords = true;
-
-
 }
 
 onSubmitInfos(data){
@@ -142,6 +111,10 @@ this.authService.updateUser(this.User).subscribe((user) =>{
 });
 }
 
+showEmailModification(){
+  this.isModified2 = (this.isModified2 === false ? true : false);
+}
+
 onSubmitEmail(data){
 
  var newUserEmail = data;
@@ -161,6 +134,14 @@ if (newUserEmail.newUserEmail == newUserEmail.newUserEmailConfirm) {
 } else {
   console.log('Les deux Emails ne correspondent pas');
 }
+}
+
+
+showPasswordModification(){
+   this.isModified3= (this.isModified3 === false ? true : false);
+   this.changePasswordsuccess = false;
+   this.wrongPassword2 = false;
+   this.samePasswords = true;
 }
 
 onSubmitPassword(data){

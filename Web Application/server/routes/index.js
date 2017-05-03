@@ -6,6 +6,7 @@ const auth = require('../auth');
 const BienController = require('../controllers').biens;
 const predictionController = require('../controllers').prediction;
 const justificatifsController = require('../controllers').justificatifs;
+const phoneNumberController = require('../controllers').phonenumbers;
 
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
@@ -39,6 +40,10 @@ module.exports = (app) => {
     app.put('/api/users/changeEmail', usersController.changemail);
     app.put('/api/users/changePassword', usersController.changepassword);
 
+    // Phones
+
+    app.get('/api/phonenumbers', phoneNumberController.list);
+
     // Uploads
 
     app.post('/api/uploads', uploadsController.create);
@@ -48,6 +53,7 @@ module.exports = (app) => {
     // Coffre Fort
 
     app.get('/api/objets', BienController.list);
+    app.post('/api/objetsUser', BienController.listUser);
     app.get('/api/calculpatrimoine', BienController.calculPatrimoine);
 
     app.post('/api/ajoutobjet', BienController.create);

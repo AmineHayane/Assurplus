@@ -1,4 +1,5 @@
 const User = require('../models').User;
+const PhoneNumber = require('../models').PhoneNumber;
 const config = {secret : 'azertyuiopmlkjhgfdsqwxcvbn', database: 'postgres://qftioduv:ZPRMRqRgl8yZxdtayEILGwqnP7pUGrDE@fizzy-cherry.db.elephantsql.com:5432/qftioduv'};
 const jwt = require('jsonwebtoken');
 const auth = require('../auth');
@@ -27,10 +28,17 @@ module.exports = {
             message: 'user already exists',
         });
       } else {
-          User.create({
+          return Promise.all([User.create({
                 user_mail : req.body.user_mail,
-                user_password : bcrypt.hashSync(req.body.user_password, bcrypt.genSaltSync(8), null)
-          }).then(user =>  {
+                user_password : bcrypt.hashSync(req.body.user_password, bcrypt.genSaltSync(8), null),
+          }), PhoneNumber.create({
+              PhoneNumberCountryPrefix : 33,
+              PhoneNumber : 649594920,
+              PhoneNumberTypeMobile : true
+          })])
+              .then(([user, number]) => {
+                user.addPhoneNumber(number);
+                console.log('number', number);
                 console.log('user',user);
                 let token = jwt.sign({data:user}, 'azertyuiopmlkjhgfdsqwxcvbn', {
                       expiresIn : 60*60*24 // Token expires in 24h = 60*60*24
@@ -86,13 +94,26 @@ module.exports = {
 },
     list(req, res) {
   return User
-    .findAll()
+    .findAll({
+        attributes : {exclude : ['user_password']},
+      include: [{
+        model: PhoneNumber,
+          as: 'phoneNumbers',
+      }],
+    })
     .then(users => res.status(200).send(users))
     .catch(error => res.status(400).send(error));
 },
     retrieve(req, res) {
         return User
-            .findOne({where: {user_mail: req.body.user_mail}})
+            .findOne({
+                attributes : {exclude : ['user_password']},
+                where: {user_mail: req.body.user_mail},
+                include : [{
+                    model : PhoneNumber,
+                    as : 'phoneNumbers'
+                }]
+            })
             .then((user) => {
             if (!user) {
                 return res.send({
