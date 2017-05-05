@@ -11,7 +11,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Address.hasMany(models.Habitation, {
+          foreignKey : 'adressId',
+            as : 'habitations'
+        });
       }
     }
   });

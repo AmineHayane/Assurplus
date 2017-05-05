@@ -70,27 +70,6 @@
     </div>
   </div>
 
-
-  <div class="field">
-
-      <label> Adresse </label>
-
-
-      <div class="three fields">
-      <div class="field">
-        <input type="text" name="Adress" placeholder={{fakeUser.AdressNumber}}{{fakeUser.AdressLabel}}{{fakeUser.AdressLabelName}} [(ngModel)]="Adress" (keypress)=showButton1() >
-      </div>
-      <div class="field">
-        <input type="number" name="AdressZIPcode" placeholder={{fakeUser.AdressZIPcode}} [(ngModel)]="AdressZIPcode" (keypress)=showButton1()>
-      </div>
-       <div class="field">
-        <input type="text" name="AdressCity" placeholder={{fakeUser.AdressCity}} [(ngModel)]="AdressCity" (keypress)=showButton1()>
-      </div>
-    </div>
-
-
-  </div>
-
   <div class="two fields">
 
     <div class="field" *ngFor="let phoneNumber of User.phoneNumbers; let i = index;">
@@ -124,11 +103,118 @@
 </div>
 
 
-<div class="ui center clearing segment">
+<div class="ui clearing segment" *ngIf="User.habitations !== []">
 
- <h2 class="ui teal dividing header"> Mes adresses </h2>
+<form class="ui form" #form_habitation="ngForm">
+
+<h2 class="ui teal dividing header" > Mes habitations </h2>
+
+
+  <div class="field">
+    <div class="three fields">
+
+      <div class="field">
+          <label>Numéro de chambre</label>
+          <input type="text" name= "HabitationRoomNumber"  [(ngModel)]="HabitationRoomNumber">
+      </div>
+
+      <div class="field">
+          <label>Numéro d'étage</label>
+          <input type="text" name= "HabitationFloor"  [(ngModel)]="HabitationFloor">
+      </div>
+
+      <div class="field">
+          <label>Numéro de porte</label>
+          <input type="text" name= "HabitationDoorNumber"  [(ngModel)]="HabitationDoorNumber">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="field">
+    <div class="three fields">
+
+      <div class="field">
+          <label>Surface (m²)</label>
+            <input type="text" name="HabitationSurface"  [(ngModel)]="HabitationSurface">
+      </div>
+
+    </div>
+  </div>
+
+  <div class="field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden" name="HabitationRoommate" [(ngModel)]="HabitationRoommate">
+          <label>Je suis collocataire</label>
+        </div>
+  </div>
+
+  <div class="field">
+    <div class="three fields">
+      <div class="field">
+          <label>Nombre de collocataires</label>
+            <input type="text" name="HabitationRoommateNumber" [(ngModel)]="HabitationRoommateNumber">
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+        <div class="ui checkbox">
+          <input type="checkbox" tabindex="0" class="hidden" name="HabitationPrincipal" [(ngModel)]="HabitationPrincipal">
+          <label>Ce logement est mon habitation principale</label>
+        </div>
+  </div>
+
+  <h4 class="ui teal dividing header">Adresse</h4>
+
+  <div class="field">
+
+      <div class="three fields">
+        <div class="field">
+          <label>Numéro</label>
+          <input type="text" name="AddressNumber" placeholder={{fakeUser.AddressNumber}} [(ngModel)]="AddressNumber" (keypress)=showButton1() >
+        </div>
+          <div class="field">
+            <label>Libellé</label>
+          <input type="text" name="AddressLabel" placeholder={{fakeUser.AddressLabel}} [(ngModel)]="AddressLabel" (keypress)=showButton1() >
+        </div>
+          <div class="field">
+            <label>Nom</label>
+          <input type="text" name="AddressLabelName" placeholder={{fakeUser.AddressLabelName}} [(ngModel)]="AddressLabelName" (keypress)=showButton1() >
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Code Postal</label>
+        <input type="number" name="AddressZIPcode" placeholder={{fakeUser.AddressZIPcode}} [(ngModel)]="AddressZIPcode" (keypress)=showButton1()>
+      </div>
+
+    <div class="two fields">
+      <div class="field">
+        <label>Ville</label>
+        <input type="text" name="AddressCity" placeholder={{fakeUser.AddressCity}} [(ngModel)]="AddressCity" (keypress)=showButton1()>
+      </div>
+      <div class="field">
+        <label>Pays</label>
+        <input type="text" name="AddressCountry" placeholder={{fakeUser.AddressCountry}} [(ngModel)]="AddressCountry" (keypress)=showButton1()>
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="field">
+
+              <div class="ui left floated teal button" (click)="onSubmitHabitation(form_habitation.value)"> Valider </div>
+              <div class="ui left floated teal button"> Annuler  </div>
+
+  </div>
+  
+
+</form>
 
 </div>
+
 
 
 

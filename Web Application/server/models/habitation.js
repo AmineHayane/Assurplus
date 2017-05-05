@@ -12,7 +12,20 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Habitation.belongsToMany(models.User, {
+          as : 'users',
+          through : 'UserHabitation',
+            foreignKey : 'habitationId',
+            otherKey : 'userId'
+        });
+        Habitation.hasMany(models.Safe, {
+          foreignKey : 'habitationId',
+            as : 'safes'
+        });
+        Habitation.belongsTo(models.Address, {
+          foreignKey: 'adressId',
+          onDelete: 'CASCADE',
+        });
       }
     }
   });

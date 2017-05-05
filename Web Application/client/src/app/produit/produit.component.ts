@@ -76,7 +76,6 @@ export class ProduitComponent implements OnInit {
     window.location.assign('http://localhost:8000/coffrefort');
   }
 
-
   addUpload() {
     var newUpload = {
       imageurl : this.myObjet.imageurl,

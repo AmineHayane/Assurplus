@@ -62,13 +62,7 @@ Category.belongsToMany(Product, {through: 'ProductCategory'});
 
 
 const sync = () => {
-    return sequelize.sync().then(() => {
-       return Promise.all([Product.create({firstName : 'bob'}),Product.create({firstName : 'mike'}),
-           Product.create({firstName : 'john'}),Category.create({name: 'cohen'})])
-           .then((results) => {
-               results[0].addCategory(results[3]);
-           });
-       });
+    return sequelize.sync()
 };
 
 db.sequelize = sequelize;

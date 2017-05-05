@@ -6,7 +6,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Safe.belongsTo(models.Habitation, {
+          foreignKey: 'habitationId',
+          onDelete: 'CASCADE',
+        });
       }
     }
   });

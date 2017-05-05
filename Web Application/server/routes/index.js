@@ -7,6 +7,8 @@ const BienController = require('../controllers').biens;
 const predictionController = require('../controllers').prediction;
 const justificatifsController = require('../controllers').justificatifs;
 const phoneNumberController = require('../controllers').phonenumbers;
+const habitationController = require('../controllers').habitations;
+const safeController = require('../controllers').safes;
 
 module.exports = (app) => {
     app.get('/api', (req, res) => res.status(200).send({
@@ -43,6 +45,17 @@ module.exports = (app) => {
     // Phones
 
     app.get('/api/phonenumbers', phoneNumberController.list);
+
+    // Habitations
+
+    app.get('/api/habitations', habitationController.list);
+    app.post('/api/habitationsUser', habitationController.listUser);
+    app.post('/api/habitations', habitationController.create);
+
+    // Safes
+
+    app.get('/api/safes', safeController.list);
+    app.post('/api/safes', safeController.create);
 
     // Uploads
 

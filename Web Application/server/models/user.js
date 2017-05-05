@@ -55,6 +55,12 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey : 'userId',
             otherKey : 'biensId'
         });
+        User.belongsToMany(models.Habitation, {
+          as : 'habitations',
+          through : 'UserHabitation',
+            foreignKey : 'userId',
+            otherKey : 'habitationId'
+        });
       },
     }
   });

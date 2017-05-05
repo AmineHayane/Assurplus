@@ -53,11 +53,6 @@ export class MoncompteComponent implements OnInit {
   keysUserObject = [];
 
   fakeUser = {
-        UserGender:"Homme",
-        UserLivingSituation:"Locataire",
-        UserJob:"Etudiant",
-        UserPaymentType:"Prélèvement SEPA",
-        UserIdentityDocument:"",
         AdressNumber:"1 ",
         AdressLabel:"Rue ",
         AdressLabelName:"Diderot",
@@ -109,6 +104,10 @@ for (var prop in data) {
 this.authService.updateUser(this.User).subscribe((user) =>{
   console.log(user);
 });
+}
+
+onSubmitHabitation(data) {
+  console.log(data);
 }
 
 showEmailModification(){

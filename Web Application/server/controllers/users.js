@@ -1,5 +1,9 @@
 const User = require('../models').User;
 const PhoneNumber = require('../models').PhoneNumber;
+const Habitation = require('../models').Habitation;
+const Safe = require('../models').Safe;
+
+
 const config = {secret : 'azertyuiopmlkjhgfdsqwxcvbn', database: 'postgres://qftioduv:ZPRMRqRgl8yZxdtayEILGwqnP7pUGrDE@fizzy-cherry.db.elephantsql.com:5432/qftioduv'};
 const jwt = require('jsonwebtoken');
 const auth = require('../auth');
@@ -99,6 +103,13 @@ module.exports = {
       include: [{
         model: PhoneNumber,
           as: 'phoneNumbers',
+      }, {
+            model : Habitation,
+          as : 'habitations',
+          include : [{
+                model : Safe,
+              as : 'safes',
+          }]
       }],
     })
     .then(users => res.status(200).send(users))
@@ -112,6 +123,9 @@ module.exports = {
                 include : [{
                     model : PhoneNumber,
                     as : 'phoneNumbers'
+                }, {
+                    model : Habitation,
+                    as : 'habitations',
                 }]
             })
             .then((user) => {
