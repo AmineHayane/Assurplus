@@ -6,11 +6,13 @@ module.exports = function(sequelize, DataTypes) {
     GoodBuyDate: DataTypes.DATE,
     GoodEvaluation: DataTypes.STRING,
     GoodCategory: DataTypes.STRING,
-    GoodImageUrl: DataTypes.STRING
+    GoodImageUrl: DataTypes.STRING,
+    GoodInsured: DataTypes.BOOLEAN
   }, {
     classMethods: {
-      associate: function(models) {
-        // associations can be defined here
+      associate: (models) => {
+        Good.hasMany(models.SupportingDocument);
+        Good.hasMany(models.Safe, {through:'GoodSafe', foreignKey: 'goodId'}); 
       }
     }
   });
