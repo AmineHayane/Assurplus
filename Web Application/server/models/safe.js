@@ -10,6 +10,12 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: 'habitationId',
           onDelete: 'CASCADE',
         });
+        Safe.belongsToMany(models.Good, {
+          as : 'goods',
+          through:'GoodSafe',
+            foreignKey: 'safeId',
+            otherKey : 'goodId'
+        });
       }
     }
   });

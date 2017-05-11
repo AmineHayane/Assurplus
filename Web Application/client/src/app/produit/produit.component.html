@@ -153,7 +153,7 @@
 
     </div>
 
-      <div class="centered row" [@fadeInOut] *ngIf="predicting">
+      <div class="centered row" [@fadeInOut] *ngIf="predicting && !predictionAnswered">
         <div class="ui icon message">
           <i *ngIf="!predicted" class="notched circle loading icon"></i>
           <i *ngIf="predicted" class="checkmark green icon"></i>
@@ -206,11 +206,21 @@
           <div class="section">
             <div class="field">
               <div class="ui left icon input">
-                <input type="number" placeholder= "Prix d'achat" required name="prixAchatBien" [(ngModel)]="myObjet.prixachat">
+                <input type="number" placeholder= "Prix d'achat" required name="prixAchatBien" [(ngModel)]="myObjet.prixachat"
+                (keyup)="computeValue()">
                 <i class="euro icon"></i>
               </div>
             </div>
           </div>
+
+          <div class="section" *ngIf="myObjet.dateachat !== undefined && myObjet.imageurl !== undefined
+          && myObjet.prixachat !== undefined && myObjet.description !== undefined">
+              <div class="field">
+                <div class="ui positive  message" >
+                  Votre bien est estimé à  {{estimationValue}} €
+                </div>
+              </div>
+            </div>
 
           <div class="section button_next" *ngIf="myObjet.dateachat !== undefined && myObjet.imageurl !== undefined
           && myObjet.prixachat !== undefined && myObjet.description !== undefined"

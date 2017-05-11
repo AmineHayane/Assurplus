@@ -40,31 +40,72 @@
 </div>
 </div>
 
+<br/>
 
+<div class="ui text container">
+  <div class="centered row">
+    <sui-progress  class="tiny indicating active" [value]="percentageProfile">Profil complété à {{percentageProfile}}%</sui-progress>
+  </div>
+</div>
+
+<br/>
 
 <div *ngIf="User !== undefined" class="ui one column centered stackable grid container ">
 
 <div class="ten wide column">
 
-<div class="ui clearing segment">
+  <div class="ui positive message" *ngIf="identityModified" [@button]>
+    <div class="header">
+      Vos informations ont bien été enregistrées.
+    </div>
+  </div>
 
-<form class="ui form" #form="ngForm">
+<div class="ui clearing segment" *ngIf="!identityModified">
 
-<h2 class="ui teal dividing header" > Mes coordonnées </h2>
+<h2 class="ui teal dividing header">Identité</h2>
 
+      <div class="field">
+        <sui-select  placeholder="{{User.UserGender}}" [isDisabled]="identityFieldsReadOnly" [(ngModel)]="UserGender">
+                <sui-select-option value="Homme"></sui-select-option>
+                <sui-select-option value="Femme"></sui-select-option>
+        </sui-select>
+      </div>
+
+  <br/>
+
+  <form class="ui form" #form="ngForm">
+
+    <div class="two fields">
+      <div class="field">
+      <label>Job</label>
+            <input type="text" name="UserJob" placeholder={{User.UserJob}} [(ngModel)]="UserJob"
+                   [readonly]="identityFieldsReadOnly">
+      </div>
+      <div class="field">
+
+        <label> Date de naissance </label>
+
+        <input type="text" name="UserBirthDate" placeholder={{User.UserBirthDate}} [(ngModel)]="UserBirthDate"
+               [readonly]="identityFieldsReadOnly">
+    </div>
+    </div>
 
   <div class="field">
 
     <div class="two fields">
+
+      <input type="hidden" name="UserGender" [(ngModel)]="UserGender" [readonly]="identityFieldsReadOnly">
+
       <div class="field">
           <label>Nom</label>
-            <input type="text" name="UserLastName" placeholder={{User.UserLastName}} [(ngModel)]="UserLastName" (keypress)="showButton1()">
-
+            <input type="text" name="UserLastName" placeholder={{User.UserLastName}} [(ngModel)]="UserLastName"
+            [readonly]="identityFieldsReadOnly">
       </div>
+
       <div class="field">
           <label>Prénom</label>
-          <input type="text" name= "UserFirstName" placeholder={{User.UserFirstName}} [(ngModel)]="UserFirstName" (keypress)=showButton1() >
-
+          <input type="text" name= "UserFirstName" placeholder={{User.UserFirstName}} [(ngModel)]="UserFirstName"
+          [readonly]="identityFieldsReadOnly">
       </div>
 
     </div>
@@ -76,38 +117,95 @@
         <label> Téléphone </label>
         <input type="tel" name="UserPhoneNumber"
                placeholder= "00{{User.phoneNumbers[i].PhoneNumberCountryPrefix}}{{User.phoneNumbers[i].PhoneNumber}}"
-               [(ngModel)]="UserPhoneNumber" (keypress)=showButton1()>
-    </div>
-
-    <div class="field">
-
-        <label> Date de naissance </label>
-
-        <input type="text" name="UserBirthDate" placeholder={{User.UserBirthDate}} [(ngModel)]="UserBirthDate"
-               (keypress)=showButton1()>
+               [(ngModel)]="UserPhoneNumber" [readonly]="identityFieldsReadOnly">
     </div>
 
   </div>
 
   <div class="field">
 
-              <div class="ui left floated teal button"  *ngIf="isModified1" (click)="onSubmitInfos(form.value)"  [@button]> Valider </div>
-              <div class="ui left floated teal button"  *ngIf="isModified1" [@button] > Annuler  </div>
+              <div class="ui left floated teal button" (click)="onSubmitInfos(form.value)" [@button]
+              *ngIf="isModified1 && UserJob !== undefined && UserGender !== undefined && UserFirstName !== undefined
+&& UserLastName !== undefined && UserBirthDate !== undefined"> Valider </div>
+              <div *ngIf="!isModified1 && (User.UserIdentityModifed !== true)" class="ui left floated teal button" (click)="toggleReadOnlyFields()" [@button] >Modifier</div>
 
   </div>
 
-
-
 </form>
+
+  <div class="ui warning message" *ngIf="isModified1" [@button]>
+    <div class="header">
+      Vous ne pourrez modifier ces informations qu'une seule fois !
+    </div>
+  </div>
 
 </div>
 
+  <div class="ui clearing segment">
 
-<div class="ui clearing segment" *ngIf="User.habitations !== []">
+<h2 class="ui teal dividing header">Contacts téléphoniques</h2>
+
+    <button class="ui compact icon teal button" *ngIf="User.phoneNumbers.length < 2" (click)="toggleAddPhone()">
+  <i class="add icon"></i>
+</button>
+
+
+    <br/>
+    <br/>
+
+    <div *ngIf="isModifiedPhone">
+    <div class="field">
+        <sui-select  placeholder="Type" [(ngModel)]="PhoneNumberTypeMobile">
+                <sui-select-option value="Mobile"></sui-select-option>
+                <sui-select-option value="Fixe"></sui-select-option>
+        </sui-select>
+      </div>
+
+    <br/>
+
+    <form class="ui form" #form_phone="ngForm">
+
+    <div class="two fields">
+      <input type="hidden" name="PhoneNumberTypeMobile" [(ngModel)]="PhoneNumberTypeMobile">
+
+      <div class="field">
+        <label>Préfixe</label>
+        <input type="text" name="PhoneNumberCountryPrefix" [(ngModel)]="PhoneNumberCountryPrefix">
+      </div>
+
+      <div class="field">
+        <label>Numéro</label>
+        <input type="text" name="PhoneNumber" placeholder="X XX XX XX XX" [(ngModel)]="PhoneNumber">
+    </div>
+    </div>
+
+  <div class="two fields">
+
+    <div class="field" *ngFor="let phoneNumber of User.phoneNumbers; let i = index;">
+        <label> Téléphone </label>
+        <input type="tel" name="UserPhoneNumber"
+               placeholder= "00{{User.phoneNumbers[i].PhoneNumberCountryPrefix}}{{User.phoneNumbers[i].PhoneNumber}}"
+               [(ngModel)]="UserPhoneNumber" [readonly]="identityFieldsReadOnly">
+    </div>
+
+  </div>
+
+      <div class="field">
+              <div class="ui left floated teal button" (click)="onSubmitPhone(form_phone.value)" [@button]> Valider </div>
+  </div>
+
+</form>
+    </div>
+
+</div>
+
+<div class="ui clearing segment" *ngIf="User.habitations.length === 0">
 
 <form class="ui form" #form_habitation="ngForm">
 
-<h2 class="ui teal dividing header" > Mes habitations </h2>
+<h2 class="ui teal dividing header" >Habitations</h2>
+
+  <h4 class="ui teal dividing header">Logement</h4>
 
 
   <div class="field">
@@ -184,12 +282,11 @@
         </div>
       </div>
 
+    <div class="three fields">
       <div class="field">
         <label>Code Postal</label>
         <input type="number" name="AddressZIPcode" placeholder={{fakeUser.AddressZIPcode}} [(ngModel)]="AddressZIPcode" (keypress)=showButton1()>
       </div>
-
-    <div class="two fields">
       <div class="field">
         <label>Ville</label>
         <input type="text" name="AddressCity" placeholder={{fakeUser.AddressCity}} [(ngModel)]="AddressCity" (keypress)=showButton1()>
@@ -209,13 +306,15 @@
               <div class="ui left floated teal button"> Annuler  </div>
 
   </div>
-  
+
 
 </form>
 
 </div>
 
-
+<div class="ui clearing segment">
+  <h2 class="ui teal dividing header">Moyens de paiement</h2>
+</div>
 
 
 <div class="ui clearing segment">

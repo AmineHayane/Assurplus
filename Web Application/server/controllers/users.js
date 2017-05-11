@@ -32,17 +32,21 @@ module.exports = {
             message: 'user already exists',
         });
       } else {
-          return Promise.all([User.create({
+          /*return Promise.all([User.create({
                 user_mail : req.body.user_mail,
                 user_password : bcrypt.hashSync(req.body.user_password, bcrypt.genSaltSync(8), null),
           }), PhoneNumber.create({
               PhoneNumberCountryPrefix : 33,
               PhoneNumber : 649594920,
               PhoneNumberTypeMobile : true
-          })])
-              .then(([user, number]) => {
-                user.addPhoneNumber(number);
-                console.log('number', number);
+          })])*/
+          return User.create({
+              user_mail : req.body.user_mail,
+              user_password : bcrypt.hashSync(req.body.user_password, bcrypt.genSaltSync(8), null),
+          })
+              .then(user => {
+                /*user.addPhoneNumber(number);
+                console.log('number', number);*/
                 console.log('user',user);
                 let token = jwt.sign({data:user}, 'azertyuiopmlkjhgfdsqwxcvbn', {
                       expiresIn : 60*60*24 // Token expires in 24h = 60*60*24
@@ -162,7 +166,8 @@ module.exports = {
                           UserPaymentType : req.body.UserPaymentType || user.UserPaymentType,
                           UserIncome : req.body.UserIncome || user.UserIncome,
                           UserIdentityDocument : req.body.UserIdentityDocument || user.UserIdentityDocument,
-                          UserBirthDate : req.body.UserBirthDate || user.UserBirthDate
+                          UserBirthDate : req.body.UserBirthDate || user.UserBirthDate,
+                          UserIdentityModifed : true,
                       })
                       .then(() => res.status(200).send(user))
                       .catch((error) => res.status(400).send(error));

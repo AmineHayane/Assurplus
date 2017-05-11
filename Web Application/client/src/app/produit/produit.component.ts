@@ -17,6 +17,11 @@ export class ProduitComponent implements OnInit {
 
     myObjet = new objet();
     userEmail : any;
+
+    estimationValue : number = 0;
+    duration : number;
+    durationAnnee : number;
+
     itemPrediction : string;
     choixPhoto: Boolean =true;
     fileUploadWindow : Boolean = false;
@@ -120,6 +125,68 @@ changeChoixPhoto() {
 switch() {
     this.fileUploadWindow = (this.fileUploadWindow === true ? false : true);
 }
+
+computeDuration() {
+
+this.duration = (Date.now()) - + (new Date(this.myObjet.dateachat));
+
+this.durationAnnee = Math.trunc((this.duration /((8.64*10000000)*365)));
+
+console.log(this.durationAnnee);
+}
+
+computeValue() {
+
+  this.computeDuration();
+
+     if (this.durationAnnee==0) {
+
+     this.estimationValue= Math.round(this.myObjet.prixachat);
+     console.log(this.myObjet.prixachat);
+     console.log(this.estimationValue);
+
+  }
+
+    if (this.durationAnnee==1) {
+
+     this.estimationValue = Math.round(this.myObjet.prixachat*0.8);
+
+  }
+
+  if (this.durationAnnee==2) {
+
+     this.estimationValue= Math.round(this.myObjet.prixachat*0.6);
+
+  }
+
+  if (this.durationAnnee==3) {
+
+     this.estimationValue= Math.round(this.myObjet.prixachat*0.4);
+
+  }
+
+  if (this.durationAnnee==4) {
+
+     this.estimationValue= Math.round(this.myObjet.prixachat*0.2);
+
+  }
+
+  if (this.durationAnnee==5) {
+
+     this.estimationValue= Math.round(this.myObjet.prixachat*0.05);
+
+  }
+
+  if (this.durationAnnee > 5) {
+
+     this.estimationValue= Math.round(this.myObjet.prixachat*0);
+
+  }
+
+}
+
+
+
 
 }
 

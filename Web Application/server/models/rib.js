@@ -8,7 +8,12 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        Rib.belongsToMany(models.User, {
+          as : 'users',
+          through : 'UserRib',
+            foreignKey : 'ribId',
+            otherKey : 'userId'
+        });
       }
     }
   });

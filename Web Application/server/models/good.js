@@ -11,8 +11,13 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: (models) => {
-        Good.hasMany(models.SupportingDocument);
-        Good.hasMany(models.Safe, {through:'GoodSafe', foreignKey: 'goodId'}); 
+        Good.hasMany(models.SupportingDocument, {foreignKey : 'supportingDocumentId'});
+        Good.belongsToMany(models.Safe, {
+          as : 'safes',
+          through:'GoodSafe',
+            foreignKey: 'goodId',
+            otherKey : 'safeId'
+        });
       }
     }
   });

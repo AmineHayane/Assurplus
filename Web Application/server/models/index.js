@@ -62,7 +62,7 @@ Category.belongsToMany(Product, {through: 'ProductCategory'});
 
 
 const sync = () => {
-    return sequelize.sync()
+    return sequelize.sync();
 };
 
 db.sequelize = sequelize;

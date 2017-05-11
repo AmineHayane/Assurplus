@@ -39,6 +39,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       UserProfilePicture: {
       type : DataTypes.STRING,
+      },
+      UserIdentityModifed : {
+      type : DataTypes.BOOLEAN,
       }
   }, {
     classMethods: {
@@ -60,6 +63,16 @@ module.exports = (sequelize, DataTypes) => {
           through : 'UserHabitation',
             foreignKey : 'userId',
             otherKey : 'habitationId'
+        });
+        User.belongsToMany(models.Rib, {
+          as : 'ribs',
+          through : 'UserRib',
+            foreignKey : 'userId',
+            otherKey : 'ribId'
+        });
+        User.hasMany(models.RentingBail, {
+          foreignKey : 'userId',
+            as : 'rentingbails'
         });
       },
     }

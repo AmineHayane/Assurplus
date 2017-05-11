@@ -5,7 +5,10 @@ module.exports = function(sequelize, DataTypes) {
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
+        RentingBail.belongsTo(models.User, {
+          foreignKey : 'userId',
+            onDelete : 'CASCADE',
+        });
       }
     }
   });
